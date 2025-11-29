@@ -1,723 +1,195 @@
-:root {
-  /* Blue + white professional palette (Duke-ish but neutral) */
-  --bg: #f3f4f6;              /* page background */
-  --bg-soft: #f9fafb;         /* card background base */
-  --card: #ffffff;            /* cards */
-  --accent: #012169;          /* deep navy */
-  --accent-soft: rgba(1, 33, 105, 0.06);
-  --accent-2: #2563eb;        /* bright royal blue */
-  --text-main: #111827;
-  --text-muted: #6b7280;
-  --border-subtle: #e5e7eb;
-  --danger: #ef4444;
-  --radius-xl: 16px;
-  --shadow-soft: 0 10px 30px rgba(15, 23, 42, 0.08);
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
-  background: var(--bg);
-  color: var(--text-main);
-  line-height: 1.6;
-  scroll-behavior: smooth;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-img {
-  max-width: 100%;
-  display: block;
-}
-
-/* Layout */
-.page {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 1.5rem 3rem;
-}
-
-/* Header / Nav */
-header {
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  backdrop-filter: blur(10px);
-  background: rgba(255, 255, 255, 0.9);
-  border-bottom: 1px solid var(--border-subtle);
-}
-
-.nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.75rem 1.5rem;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.nav-logo {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.nav-logo-mark {
-  width: 32px;
-  height: 32px;
-  border-radius: 999px;
-  background: radial-gradient(circle at 30% 20%, #60a5fa, #012169);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 800;
-  font-size: 0.9rem;
-  color: #eff6ff;
-  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.5),
-              0 6px 18px rgba(15, 23, 42, 0.25);
-}
-
-.nav-logo-text {
-  font-size: 0.95rem;
-}
-
-.nav-logo-text strong {
-  display: block;
-  letter-spacing: 0.04em;
-  font-size: 0.8rem;
-  color: var(--accent);
-  text-transform: uppercase;
-}
-
-.nav-logo-text span {
-  font-size: 0.82rem;
-  color: var(--text-muted);
-}
-
-.nav-links {
-  display: flex;
-  gap: 0.75rem;
-  font-size: 0.85rem;
-  flex-wrap: wrap;
-}
-
-.nav-links a {
-  padding: 0.35rem 0.7rem;
-  border-radius: 999px;
-  border: 1px solid transparent;
-  color: var(--text-muted);
-  transition: 0.2s ease;
-  cursor: pointer;
-}
-
-.nav-links a:hover {
-  border-color: var(--border-subtle);
-  color: var(--accent);
-  background: #ffffff;
-}
-
-.nav-links a.active {
-  border-color: var(--accent-2);
-  background: var(--accent-soft);
-  color: var(--accent-2);
-}
-
-/* Hero */
-.hero {
-  padding: 2.25rem 0 2rem;
-  display: grid;
-  gap: 2rem;
-  grid-template-columns: minmax(0, 3fr) minmax(0, 2.2fr);
-  align-items: center;
-}
-
-@media (max-width: 900px) {
-  .hero {
-    grid-template-columns: minmax(0, 1fr);
-  }
-}
-
-.hero-left h1 {
-  font-size: clamp(2rem, 4vw, 2.6rem);
-  font-weight: 800;
-  letter-spacing: 0.02em;
-  margin-bottom: 0.75rem;
-  color: #0f172a;
-}
-
-.hero-left h1 span {
-  color: var(--accent-2);
-}
-
-.hero-subtitle {
-  color: var(--text-muted);
-  max-width: 34rem;
-  margin-bottom: 1.5rem;
-  font-size: 0.98rem;
-}
-
-.hero-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
-}
-
-.tag {
-  border-radius: 999px;
-  padding: 0.25rem 0.7rem;
-  border: 1px solid var(--border-subtle);
-  font-size: 0.78rem;
-  color: var(--text-muted);
-  background: #ffffff;
-}
-
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-}
-
-.btn-primary,
-.btn-ghost {
-  border-radius: 999px;
-  padding: 0.6rem 1.15rem;
-  font-size: 0.85rem;
-  border: 1px solid transparent;
-  cursor: pointer;
-  transition: 0.18s ease;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-}
-
-.btn-primary {
-  background: linear-gradient(135deg, #2563eb, #012169);
-  color: #f9fafb;
-  font-weight: 600;
-  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.35);
-}
-
-.btn-primary:hover {
-  filter: brightness(1.03);
-  transform: translateY(-1px);
-}
-
-.btn-ghost {
-  border-color: var(--border-subtle);
-  color: var(--accent);
-  background: #ffffff;
-}
-
-.btn-ghost:hover {
-  border-color: var(--accent-2);
-  color: var(--accent-2);
-  background: #f9fafb;
-}
-
-.hero-right {
-  position: relative;
-}
-
-.hero-card {
-  background: #ffffff;
-  border-radius: 18px;
-  padding: 1.1rem 1.25rem 1.25rem;
-  border: 1px solid var(--border-subtle);
-  box-shadow: var(--shadow-soft);
-}
-
-.hero-card-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 1rem;
-}
-
-.hero-card-title {
-  font-size: 0.9rem;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: 0.45rem;
-  color: #0f172a;
-}
-
-.hero-card-title span.dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 999px;
-  background: var(--accent-2);
-  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
-}
-
-.hero-player-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.55rem;
-  font-size: 0.72rem;
-}
-
-.player-pill {
-  border-radius: 999px;
-  padding: 0.35rem 0.55rem;
-  border: 1px solid var(--border-subtle);
-  display: flex;
-  flex-direction: column;
-  gap: 0.05rem;
-  background: var(--bg-soft);
-}
-
-.player-pill strong {
-  font-size: 0.74rem;
-  color: #111827;
-}
-
-.player-pill span {
-  color: var(--text-muted);
-  font-size: 0.7rem;
-}
-
-.hero-metrics {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.75rem;
-  margin-top: 1rem;
-  font-size: 0.8rem;
-}
-
-.metric {
-  padding: 0.6rem 0.7rem;
-  border-radius: 12px;
-  border: 1px solid var(--border-subtle);
-  background: #ffffff;
-}
-
-.metric-label {
-  font-size: 0.7rem;
-  color: var(--text-muted);
-}
-
-.metric-value {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--accent-2);
-}
-
-/* Sections */
-section {
-  margin-top: 2.5rem;
-}
-
-.section-heading {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  margin-bottom: 1.25rem;
-  gap: 1rem;
-}
-
-.section-heading h2 {
-  font-size: 1.3rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: #0f172a;
-}
-
-.section-heading p {
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  max-width: 420px;
-}
-
-/* Skills */
-.skill-tabs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-  margin-bottom: 1rem;
-  font-size: 0.8rem;
-}
-
-.skill-tab {
-  padding: 0.35rem 0.75rem;
-  border-radius: 999px;
-  border: 1px solid var(--border-subtle);
-  cursor: pointer;
-  color: var(--text-muted);
-  background: #ffffff;
-  transition: 0.18s ease;
-}
-
-.skill-tab:hover {
-  border-color: var(--accent-2);
-  color: var(--accent-2);
-}
-
-.skill-tab.active {
-  border-color: var(--accent-2);
-  background: var(--accent-soft);
-  color: var(--accent-2);
-}
-
-.skill-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 3fr) minmax(0, 2.3fr);
-  gap: 1.5rem;
-}
-
-@media (max-width: 900px) {
-  .skill-grid {
-    grid-template-columns: minmax(0, 1fr);
-  }
-}
-
-.card {
-  border-radius: var(--radius-xl);
-  background: var(--card);
-  border: 1px solid var(--border-subtle);
-  padding: 1.1rem 1.25rem;
-  box-shadow: var(--shadow-soft);
-}
-
-.card h3 {
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-  color: #111827;
-}
-
-.card small {
-  font-size: 0.75rem;
-  color: var(--accent-2);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-}
-
-.card p {
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  margin-bottom: 0.75rem;
-}
-
-.chip-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.3rem;
-  margin-bottom: 0.5rem;
-}
-
-.chip {
-  font-size: 0.72rem;
-  border-radius: 999px;
-  padding: 0.18rem 0.55rem;
-  border: 1px solid var(--border-subtle);
-  color: var(--text-muted);
-  background: var(--bg-soft);
-}
-
-ul {
-  margin-left: 1rem;
-  font-size: 0.83rem;
-}
-
-ul li + li {
-  margin-top: 0.25rem;
-}
-
-/* Media strip */
-.media-strip {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.75rem;
-  margin-top: 0.75rem;
-}
-
-@media (max-width: 700px) {
-  .media-strip {
-    grid-template-columns: minmax(0, 1fr);
-  }
-}
-
-.media-item {
-  border-radius: 12px;
-  overflow: hidden;
-  border: 1px solid var(--border-subtle);
-  background: #ffffff;
-  display: block;
-  transition: transform 0.18s ease, box-shadow 0.18s ease,
-    border-color 0.18s ease;
-}
-
-.media-item:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.15);
-  border-color: var(--accent-2);
-}
-
-.media-thumb {
-  position: relative;
-  height: 110px;
-  background: linear-gradient(135deg, #2563eb, #012169);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.8rem;
-  color: #e5e7eb;
-  font-weight: 700;
-}
-
-.media-thumb span.badge {
-  position: absolute;
-  top: 8px;
-  left: 8px;
-  font-size: 0.7rem;
-  padding: 0.15rem 0.45rem;
-  border-radius: 999px;
-  background: rgba(15, 23, 42, 0.8);
-  color: #bfdbfe;
-  border: 1px solid rgba(191, 219, 254, 0.8);
-}
-
-.media-thumb span.play {
-  width: 34px;
-  height: 34px;
-  border-radius: 999px;
-  border: 2px solid rgba(248, 250, 252, 0.95);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(15, 23, 42, 0.35);
-}
-
-.media-info {
-  padding: 0.5rem 0.7rem 0.7rem;
-  font-size: 0.78rem;
-}
-
-.media-info strong {
-  display: block;
-  margin-bottom: 0.15rem;
-  color: #111827;
-}
-
-.media-info a {
-  color: var(--accent-2);
-  text-decoration: underline;
-  text-decoration-style: dotted;
-  text-underline-offset: 2px;
-}
-
-/* Schedules */
-.schedule-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-  gap: 1.5rem;
-}
-
-@media (max-width: 900px) {
-  .schedule-layout {
-    grid-template-columns: minmax(0, 1fr);
-  }
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.8rem;
-  margin-top: 0.5rem;
-}
-
-th,
-td {
-  border: 1px solid var(--border-subtle);
-  padding: 0.4rem 0.5rem;
-  text-align: left;
-}
-
-th {
-  background: #f3f4f6;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  font-size: 0.72rem;
-  letter-spacing: 0.06em;
-}
-
-tbody tr:nth-child(even) {
-  background: #f9fafb;
-}
-
-tbody tr:nth-child(odd) {
-  background: #ffffff;
-}
-
-/* Drill diagrams */
-.drill-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
-}
-
-@media (max-width: 900px) {
-  .drill-grid {
-    grid-template-columns: minmax(0, 1fr);
-  }
-}
-
-.diagram {
-  border-radius: var(--radius-xl);
-  padding: 0.9rem;
-  border: 1px dashed #d1d5db;
-  background: #ffffff;
-  font-size: 0.8rem;
-}
-
-.diagram label {
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--accent);
-  display: block;
-  margin-bottom: 0.4rem;
-}
-
-.diagram pre {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-    "Liberation Mono", "Courier New", monospace;
-  font-size: 0.75rem;
-  color: #111827;
-  padding: 0.5rem;
-  background: #f3f4f6;
-  border-radius: 8px;
-  overflow-x: auto;
-  margin-bottom: 0.4rem;
-}
-
-.diagram ul {
-  margin-left: 0.8rem;
-}
-
-/* Leadership */
-.leadership-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
-  gap: 1.5rem;
-}
-
-@media (max-width: 900px) {
-  .leadership-layout {
-    grid-template-columns: minmax(0, 1fr);
-  }
-}
-
-.pill-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.3rem;
-  margin-bottom: 0.5rem;
-}
-
-.pill {
-  font-size: 0.7rem;
-  padding: 0.2rem 0.55rem;
-  border-radius: 999px;
-  background: #f3f4f6;
-  border: 1px solid var(--border-subtle);
-  color: var(--text-muted);
-}
-
-.quote-card {
-  border-radius: var(--radius-xl);
-  padding: 0.9rem 1rem;
-  border: 1px solid var(--border-subtle);
-  background: #ffffff;
-  font-size: 0.85rem;
-  box-shadow: var(--shadow-soft);
-}
-
-.quote-card p {
-  margin-bottom: 0.4rem;
-  color: #111827;
-}
-
-.quote-card span {
-  font-size: 0.78rem;
-  color: var(--text-muted);
-}
-
-/* Media Library */
-.media-library {
-  display: grid;
-  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
-  gap: 1.5rem;
-}
-
-@media (max-width: 900px) {
-  .media-library {
-    grid-template-columns: minmax(0, 1fr);
-  }
-}
-
-.video-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.9rem;
-}
-
-@media (max-width: 700px) {
-  .video-grid {
-    grid-template-columns: minmax(0, 1fr);
-  }
-}
-
-.video-card {
-  border-radius: 14px;
-  overflow: hidden;
-  border: 1px solid var(--border-subtle);
-  background: #ffffff;
-  font-size: 0.78rem;
-  box-shadow: var(--shadow-soft);
-}
-
-.video-card iframe {
-  width: 100%;
-  height: 160px;
-  border: none;
-  display: block;
-}
-
-.video-card-body {
-  padding: 0.55rem 0.65rem 0.7rem;
-}
-
-.video-card-body strong {
-  display: block;
-  margin-bottom: 0.1rem;
-  color: #111827;
-}
-
-.image-hints ul {
-  font-size: 0.8rem;
-}
-
-/* Footer */
-footer {
-  margin-top: 2.5rem;
-  padding-top: 1.25rem;
-  border-top: 1px solid var(--border-subtle);
-  font-size: 0.75rem;
-  color: var(--text-muted);
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  justify-content: space-between;
-  align-items: center;
-}
+// Nav highlighting on click
+document.querySelectorAll(".nav-link").forEach((link) => {
+  link.addEventListener("click", () => {
+    document
+      .querySelectorAll(".nav-link")
+      .forEach((l) => l.classList.remove("active"));
+    link.classList.add("active");
+  });
+});
+
+// Skill tabs – swap left card content
+const skillContent = {
+  dribbling: {
+    title: "Dribbling — Pace, Control & Deception",
+    subtitle: "Ball-Handling Package",
+    intro:
+      "Blend Curry’s pace changes, Murray’s hesitation, Nash’s probes, Jason Williams’ creativity, Trae’s shield dribble, and Wojo’s low stance to build a complete handle.",
+    chips: [
+      "Steph Curry – Float Dribble",
+      "Jamal Murray – Hang Hesitation",
+      "Jason Williams – Creative Handles",
+      "Steve Nash – Continuous Probe",
+      "Trae Young – Trailing Dribble",
+      "Wojo – Low Stance Control",
+    ],
+    teaching: [
+      "Float dribble (Curry): small hang to read the defender before changing speed.",
+      "Hang hesitation to attack (Murray): sell the pause, then explode into a long stride.",
+      "Live-dribble passing (Jason Williams): every dribble is a threat to deliver a pass.",
+      "Continuous probe (Nash): keep the dribble alive under the rim, never panic pick-ups.",
+      "Shield & trailing dribble (Trae): keep the ball behind your body vs pressure.",
+      "Low stance (Wojo): hips low, chest up, ball below the knee in traffic.",
+    ],
+    drills: [
+      "Two-Ball Pound + Float – one ball low & hard, the other floats at hip height.",
+      "Hang Hesitation Cone Series – at each cone, sell a pause then attack downhill.",
+      "Continuous Paint Dribble – circle the lane 8–10 seconds without picking up.",
+      "Shield Dribble vs Pad – have a partner bump you while you protect the ball.",
+      "Mirror Low-Stance Dribble – partner moves laterally, you mirror while dribbling.",
+    ],
+  },
+  shooting: {
+    title: "Shooting — Range, Balance & Game Shots",
+    subtitle: "Shot-Making Package",
+    intro:
+      "Take elements from Curry’s quick release, Murray’s stop-balance midrange, Trae’s floater and deep range, and Nash’s off-balance finishes.",
+    chips: [
+      "Steph Curry – Quick Release",
+      "Jamal Murray – Midrange Stops",
+      "Trae Young – Floaters & Deep 3s",
+      "Steve Nash – Runners & Scoops",
+    ],
+    teaching: [
+      "Foot prep (Curry): be ready to shoot before you catch the ball.",
+      "Hard stops (Murray): use 2-foot or stride stops to get balanced in tight spaces.",
+      "Touch floaters (Trae): soft release and high arc from different distances.",
+      "One-motion form (Curry): smooth rise from pocket to release.",
+      "Wrong-foot finishes (Nash): finish before help arrives by stepping off the 'wrong' foot.",
+    ],
+    drills: [
+      "Relocation Series – pass, relocate to corner or wing, catch & shoot.",
+      "Pacer Drill – vary speed (slow-fast-slow) into each jumper.",
+      "5-Spot Floater Ladder – short, mid, and long floaters from each elbow and hash.",
+      "Range Extension – shoot deep 3s with the same form you use at the line.",
+      "Runner / Nash Finish Series – 10 reps each side, wrong-foot and high glass.",
+    ],
+  },
+  passing: {
+    title: "Passing — Vision, Angles & Creativity",
+    subtitle: "Playmaking Package",
+    intro:
+      "Blend Nash’s vision, Jason Williams’ creativity, Trae’s lob timing, and Curry’s gravity skip passes.",
+    chips: [
+      "Steve Nash – Angles & Vision",
+      "Jason Williams – Flair & Deception",
+      "Trae Young – Lob Passing",
+      "Steph Curry – Skip Passes vs Help",
+    ],
+    teaching: [
+      "See two passes ahead (Nash): read both the roller and the weak-side shooter.",
+      "Deception (Jason Williams): use your eyes and body to mislead defenders.",
+      "Lob timing (Trae): throw it where only your big can get it, just as they jump.",
+      "Skip vs pocket (Curry): choose between hitting the roller or skipping to the weak side based on help.",
+    ],
+    drills: [
+      "Look-Off Passing – stare at one target while hitting another.",
+      "Moving Target Passing – partner jogs; you hit them in stride with chest and bounce passes.",
+      "Lob Window Drill – partner jumps from the dotted line; you must float the ball above help.",
+      "PnR Pocket Pass – use chairs or cones to rep threading the needle to the roller.",
+    ],
+  },
+  movement: {
+    title: "Movement Without the Ball — Cuts, Screens & Relocation",
+    subtitle: "Off-Ball Package",
+    intro:
+      "Move like Curry, Nash, and Jason Williams: constant relocation, smart cuts, and spacing.",
+    chips: [
+      "Steph Curry – Relocation",
+      "Steve Nash – Cut-After-Pass",
+      "Jason Williams – Random Movement",
+    ],
+    teaching: [
+      "Pass & relocate (Curry): never stand after you pass. Fill a new window.",
+      "Cut-after-pass (Nash): sprint into space, don’t drift.",
+      "Timing with drivers (Jason Williams): cut behind defenders who turn their head.",
+      "Use screens away from the ball: flare, curl, and back screen options.",
+    ],
+    drills: [
+      "3-Player Movement Wheel – pass, cut, fill an open spot.",
+      "Relocate After Every Shot – no standing on makes or misses.",
+      "Read-the-Tagger Drill – if help drops, cut behind their head for a layup.",
+      "Screen & Slip – set a screen then slip out when defenders overplay.",
+    ],
+  },
+  defense: {
+    title: "Defense — Pressure, Stance & IQ",
+    subtitle: "Two-Way Guard Package",
+    intro:
+      "Take Gary Payton’s pressure, Wojo’s stance and charge-taking, and Curry’s off-ball IQ.",
+    chips: [
+      "Gary Payton – On-Ball Pressure",
+      "Wojo – Stance & Charges",
+      "Steph Curry – Off-Ball Anticipation",
+      "Trae Young – Passing Lanes",
+    ],
+    teaching: [
+      "Force to the weak hand (Payton) and cut off angles instead of reaching.",
+      "Low, strong base (Wojo): chest up, hands active, no straight legs.",
+      "Jump to the ball early (Curry): be in help before the pass is thrown.",
+      "Read passing lanes (Trae): anticipate when ball-handlers stare down passes.",
+    ],
+    drills: [
+      "Shadow Slide Drill – mirror a partner without crossing your feet.",
+      "Closeout-Slide-Recover Circuit – contest, slide, then sprint to next spot.",
+      "Screen Navigation with Chairs – practice going under, over, and through screens.",
+      "Deflection Game – 30-second bursts trying to tip as many passes as possible.",
+    ],
+  },
+  pnr: {
+    title: "Pick & Roll Mastery — Reads & Counters",
+    subtitle: "Game Control Package",
+    intro:
+      "Run PnR like Curry, Murray, Nash, and Trae: pace changes, snake dribbles, and layered reads.",
+    chips: [
+      "Jamal Murray – Snake Dribble",
+      "Trae Young – Floater & Lob",
+      "Steve Nash – Pocket Pass",
+      "Steph Curry – Pull-Up Threat",
+    ],
+    teaching: [
+      "Use pace (Curry/Murray): slow to the screen, fast off of it.",
+      "Snake dribble (Murray): cross back over the screen to keep defenders on your back.",
+      "Manipulate the big (Nash): make them choose between you and the roller.",
+      "Read the tag defender (Trae): if tag steps in, skip to the corner.",
+    ],
+    drills: [
+      "PnR Reads with 3 Defenders – on-ball, big, and tagger.",
+      "Snake Ladder – weave around cones after the screen to keep your defender behind.",
+      "Floater or Lob Drill – choose between short floater and lob to roller.",
+      "Pull-Up or Pocket – take a 3 if the big drops, hit the pocket if they step up.",
+    ],
+  },
+};
+
+function renderSkill(skillKey) {
+  const data = skillContent[skillKey];
+  const container = document.getElementById("skillDetail");
+  if (!data || !container) return;
+
+  const chipsHtml = data.chips.map((c) => `<div class="chip">${c}</div>`).join("");
+  const teachingHtml = data.teaching.map((t) => `<li>${t}</li>`).join("");
+  const drillsHtml = data.drills.map((d) => `<li>${d}</li>`).join("");
+
+  container.innerHTML = `
+    <small>${data.subtitle}</small>
+    <h3>${data.title}</h3>
+    <p>${data.intro}</p>
+    <div class="chip-row">${chipsHtml}</div>
+    <h4 style="font-size:0.85rem;margin:0.4rem 0;">Key Teaching Points</h4>
+    <ul>${teachingHtml}</ul>
+    <h4 style="font-size:0.85rem;margin:0.6rem 0 0.2rem;">Drill Menu</h4>
+    <ul>${drillsHtml}</ul>
+  `;
+}
+
+document.querySelectorAll(".skill-tab").forEach((tab) => {
+  tab.addEventListener("click", () => {
+    document
+      .querySelectorAll(".skill-tab")
+      .forEach((t) => t.classList.remove("active"));
+    tab.classList.add("active");
+    const key = tab.getAttribute("data-skill");
+    renderSkill(key);
+  });
+});
