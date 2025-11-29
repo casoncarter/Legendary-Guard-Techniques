@@ -1,0 +1,1628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Elite Guard Basketball Training Hub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg: #050816;
+      --bg-soft: #0b1020;
+      --card: #111827;
+      --accent: #facc15;
+      --accent-soft: rgba(250, 204, 21, 0.1);
+      --accent-2: #38bdf8;
+      --text-main: #e5e7eb;
+      --text-muted: #9ca3af;
+      --border-subtle: #1f2933;
+      --danger: #f97373;
+      --radius-xl: 18px;
+      --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.6);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: radial-gradient(circle at top, #111827 0, #030712 40%, #000 100%);
+      color: var(--text-main);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* Layout */
+    .page {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem 3rem;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(12px);
+      background: linear-gradient(
+        to bottom,
+        rgba(3, 7, 18, 0.96),
+        rgba(3, 7, 18, 0.85),
+        transparent
+      );
+      border-bottom: 1px solid rgba(31, 41, 55, 0.9);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .nav-logo-mark {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 20%, #facc15, #f97316, #0f172a);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 0.9rem;
+      color: #020617;
+      box-shadow: 0 0 0 2px rgba(250, 204, 21, 0.5),
+        0 10px 25px rgba(0, 0, 0, 0.6);
+    }
+
+    .nav-logo-text {
+      font-size: 0.95rem;
+    }
+
+    .nav-logo-text strong {
+      display: block;
+      letter-spacing: 0.05em;
+      font-size: 0.8rem;
+      color: var(--accent);
+      text-transform: uppercase;
+    }
+
+    .nav-logo-text span {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 0.75rem;
+      font-size: 0.85rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      color: var(--text-muted);
+      transition: 0.2s ease;
+      cursor: pointer;
+    }
+
+    .nav-links a:hover {
+      border-color: rgba(148, 163, 184, 0.7);
+      color: var(--accent);
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    .nav-links a.active {
+      border-color: var(--accent);
+      background: var(--accent-soft);
+      color: var(--accent);
+    }
+
+    /* Hero */
+    .hero {
+      padding: 2.5rem 0 2rem;
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.2fr);
+      align-items: center;
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .hero-left h1 {
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 800;
+      letter-spacing: 0.03em;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-left h1 span {
+      color: var(--accent);
+    }
+
+    .hero-subtitle {
+      color: var(--text-muted);
+      max-width: 35rem;
+      margin-bottom: 1.5rem;
+      font-size: 0.98rem;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .tag {
+      border-radius: 999px;
+      padding: 0.25rem 0.7rem;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      background: rgba(15, 23, 42, 0.8);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .btn-primary,
+    .btn-ghost {
+      border-radius: 999px;
+      padding: 0.6rem 1.15rem;
+      font-size: 0.85rem;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #facc15, #f97316);
+      color: #020617;
+      font-weight: 600;
+      box-shadow: 0 15px 35px rgba(248, 181, 0, 0.45);
+    }
+
+    .btn-primary:hover {
+      filter: brightness(1.05);
+      transform: translateY(-1px);
+    }
+
+    .btn-ghost {
+      border-color: rgba(148, 163, 184, 0.6);
+      color: var(--text-muted);
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--accent-2);
+      color: var(--accent-2);
+      background: rgba(15, 23, 42, 1);
+    }
+
+    .hero-right {
+      position: relative;
+    }
+
+    .hero-card {
+      background: radial-gradient(circle at top left, #1e293b 0, #020617 65%);
+      border-radius: 24px;
+      padding: 1.25rem 1.3rem 1.3rem;
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .hero-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+
+    .hero-card-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .hero-card-title span.dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 5px rgba(250, 204, 21, 0.2);
+    }
+
+    .hero-player-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.55rem;
+      font-size: 0.72rem;
+    }
+
+    .player-pill {
+      border-radius: 999px;
+      padding: 0.35rem 0.55rem;
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      display: flex;
+      flex-direction: column;
+      gap: 0.05rem;
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    .player-pill strong {
+      font-size: 0.74rem;
+    }
+
+    .player-pill span {
+      color: var(--text-muted);
+      font-size: 0.7rem;
+    }
+
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.75rem;
+      margin-top: 1rem;
+      font-size: 0.8rem;
+    }
+
+    .metric {
+      padding: 0.7rem 0.8rem;
+      border-radius: 14px;
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    .metric-label {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+    }
+
+    .metric-value {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--accent-2);
+    }
+
+    /* Sections */
+    section {
+      margin-top: 2.5rem;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 1.25rem;
+      gap: 1rem;
+    }
+
+    .section-heading h2 {
+      font-size: 1.35rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .section-heading p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      max-width: 420px;
+    }
+
+    /* Skills */
+    .skill-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1rem;
+      font-size: 0.8rem;
+    }
+
+    .skill-tab {
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      cursor: pointer;
+      color: var(--text-muted);
+      background: rgba(15, 23, 42, 0.9);
+      transition: 0.18s ease;
+    }
+
+    .skill-tab.active {
+      border-color: var(--accent);
+      background: var(--accent-soft);
+      color: var(--accent);
+    }
+
+    .skill-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.3fr);
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 900px) {
+      .skill-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .card {
+      border-radius: var(--radius-xl);
+      background: radial-gradient(circle at top left, #111827 0, #020617 70%);
+      border: 1px solid rgba(31, 41, 55, 0.95);
+      padding: 1.1rem 1.25rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .card small {
+      font-size: 0.75rem;
+      color: var(--accent-2);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .card p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .chip {
+      font-size: 0.72rem;
+      border-radius: 999px;
+      padding: 0.18rem 0.55rem;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      color: var(--text-muted);
+    }
+
+    ul {
+      margin-left: 1rem;
+      font-size: 0.83rem;
+    }
+
+    ul li + li {
+      margin-top: 0.25rem;
+    }
+
+    .media-strip {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.75rem;
+      margin-top: 0.75rem;
+    }
+
+    @media (max-width: 700px) {
+      .media-strip {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .media-item {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(31, 41, 55, 0.9);
+      background: #020617;
+    }
+
+    .media-thumb {
+      position: relative;
+      height: 120px;
+      background: radial-gradient(circle at 20% 10%, #facc15, #0f172a 45%, #020617);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      color: rgba(15, 23, 42, 0.9);
+      font-weight: 700;
+    }
+
+    .media-thumb span.badge {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      font-size: 0.7rem;
+      padding: 0.15rem 0.45rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.85);
+      color: var(--accent);
+      border: 1px solid rgba(250, 204, 21, 0.6);
+    }
+
+    .media-thumb span.play {
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      border: 2px solid rgba(248, 250, 252, 0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(15, 23, 42, 0.4);
+    }
+
+    .media-info {
+      padding: 0.5rem 0.7rem 0.7rem;
+      font-size: 0.78rem;
+    }
+
+    .media-info strong {
+      display: block;
+      margin-bottom: 0.15rem;
+    }
+
+    .media-info a {
+      color: var(--accent-2);
+      text-decoration: underline;
+      text-decoration-style: dotted;
+      text-underline-offset: 2px;
+    }
+
+    /* Schedules */
+    .schedule-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 900px) {
+      .schedule-layout {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.8rem;
+      margin-top: 0.5rem;
+    }
+
+    th,
+    td {
+      border: 1px solid rgba(31, 41, 55, 0.9);
+      padding: 0.4rem 0.5rem;
+      text-align: left;
+    }
+
+    th {
+      background: rgba(15, 23, 42, 0.95);
+      color: var(--text-muted);
+      text-transform: uppercase;
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+    }
+
+    tbody tr:nth-child(even) {
+      background: rgba(15, 23, 42, 0.7);
+    }
+
+    tbody tr:nth-child(odd) {
+      background: rgba(15, 23, 42, 0.4);
+    }
+
+    /* Drill diagrams */
+    .drill-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    @media (max-width: 900px) {
+      .drill-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .diagram {
+      border-radius: var(--radius-xl);
+      padding: 0.9rem;
+      border: 1px dashed rgba(148, 163, 184, 0.6);
+      background: radial-gradient(circle at top, #020617 0, #020617 40%, #000 110%);
+      font-size: 0.8rem;
+    }
+
+    .diagram label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+
+    .diagram pre {
+      font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo,
+        Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 0.75rem;
+      color: #e5e7eb;
+      padding: 0.5rem;
+      background: rgba(15, 23, 42, 0.95);
+      border-radius: 10px;
+      overflow-x: auto;
+      margin-bottom: 0.4rem;
+    }
+
+    .diagram ul {
+      margin-left: 0.8rem;
+    }
+
+    /* Leadership */
+    .leadership-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 900px) {
+      .leadership-layout {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .pill {
+      font-size: 0.7rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      color: var(--text-muted);
+    }
+
+    .quote-card {
+      border-radius: var(--radius-xl);
+      padding: 0.9rem 1rem;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: radial-gradient(circle at top left, #1f2937 0, #020617 70%);
+      font-size: 0.85rem;
+    }
+
+    .quote-card p {
+      margin-bottom: 0.4rem;
+    }
+
+    .quote-card span {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    /* Media Library */
+    .media-library {
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 900px) {
+      .media-library {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.9rem;
+    }
+
+    @media (max-width: 700px) {
+      .video-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .video-card {
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(31, 41, 55, 0.9);
+      background: #020617;
+      font-size: 0.78rem;
+    }
+
+    .video-card iframe {
+      width: 100%;
+      height: 160px;
+      border: none;
+      display: block;
+    }
+
+    .video-card-body {
+      padding: 0.55rem 0.65rem 0.7rem;
+    }
+
+    .video-card-body strong {
+      display: block;
+      margin-bottom: 0.1rem;
+    }
+
+    .image-hints ul {
+      font-size: 0.8rem;
+    }
+
+    footer {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(31, 41, 55, 0.9);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: space-between;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="nav">
+      <div class="nav-logo">
+        <div class="nav-logo-mark">G</div>
+        <div class="nav-logo-text">
+          <strong>Elite Guard Lab</strong>
+          <span>Modeled on Curry · Nash · Payton & more</span>
+        </div>
+      </div>
+      <div class="nav-links">
+        <a href="#skills" class="nav-link active">Skills</a>
+        <a href="#schedules" class="nav-link">Schedules</a>
+        <a href="#drills" class="nav-link">Drill Book</a>
+        <a href="#leadership" class="nav-link">Coach K</a>
+        <a href="#media" class="nav-link">Videos & Images</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="page">
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="hero-left">
+        <h1>Elite <span>Guard</span> Training Package</h1>
+        <p class="hero-subtitle">
+          A complete skill, mindset, and leadership system for modern guards,
+          inspired by Steph Curry, Jamal Murray, Steve Nash, Jason Williams,
+          Trae Young, Gary Payton, Steve Wojciechowski and Coach K.
+        </p>
+        <div class="hero-tags">
+          <div class="tag">Ball Handling</div>
+          <div class="tag">Shooting</div>
+          <div class="tag">Passing</div>
+          <div class="tag">Off-ball Movement</div>
+          <div class="tag">Defense</div>
+          <div class="tag">Leadership</div>
+        </div>
+        <div class="hero-actions">
+          <button class="btn-primary" onclick="document.getElementById('schedules').scrollIntoView({behavior:'smooth'})">
+            Start Weekly Plan →
+          </button>
+          <button class="btn-ghost" onclick="document.getElementById('media').scrollIntoView({behavior:'smooth'})">
+            Watch Teaching Clips
+          </button>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="hero-card">
+          <div class="hero-card-header">
+            <div class="hero-card-title">
+              <span class="dot"></span>
+              Core Mentors
+            </div>
+            <span style="font-size:0.78rem;color:var(--text-muted);">
+              “Study the greats, steal their details.”
+            </span>
+          </div>
+          <div class="hero-player-grid">
+            <div class="player-pill">
+              <strong>Steph Curry</strong>
+              <span>Shooting · Relocation</span>
+            </div>
+            <div class="player-pill">
+              <strong>Jamal Murray</strong>
+              <span>Hesi · PnR Scoring</span>
+            </div>
+            <div class="player-pill">
+              <strong>Steve Nash</strong>
+              <span>Vision · Finishing</span>
+            </div>
+            <div class="player-pill">
+              <strong>Jason Williams</strong>
+              <span>Creativity · Flair</span>
+            </div>
+            <div class="player-pill">
+              <strong>Trae Young</strong>
+              <span>Floater · Deep 3</span>
+            </div>
+            <div class="player-pill">
+              <strong>Gary Payton</strong>
+              <span>On-ball Defense</span>
+            </div>
+            <div class="player-pill">
+              <strong>Wojo</strong>
+              <span>Stance · Charges</span>
+            </div>
+            <div class="player-pill">
+              <strong>Coach K</strong>
+              <span>Standards · Next Play</span>
+            </div>
+          </div>
+
+          <div class="hero-metrics">
+            <div class="metric">
+              <div class="metric-label">Skill Blocks</div>
+              <div class="metric-value">5</div>
+              <div style="font-size:0.72rem;color:var(--text-muted);">
+                Handle · Shot · Pass · Movement · D
+              </div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">Sessions / Week</div>
+              <div class="metric-value">6</div>
+              <div style="font-size:0.72rem;color:var(--text-muted);">
+                Built-in rest + film
+              </div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">Focus</div>
+              <div class="metric-value">Guard</div>
+              <div style="font-size:0.72rem;color:var(--text-muted);">
+                1–3 + combo guards
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <div class="section-heading">
+        <h2>Skill System</h2>
+        <p>
+          Core technical package for guards: dribbling, shooting, passing,
+          movement without the ball, defense, and pick-and-roll, all modeled
+          off the players above.
+        </p>
+      </div>
+
+      <div class="skill-tabs" id="skillTabs">
+        <button class="skill-tab active" data-skill="dribbling">Dribbling</button>
+        <button class="skill-tab" data-skill="shooting">Shooting</button>
+        <button class="skill-tab" data-skill="passing">Passing</button>
+        <button class="skill-tab" data-skill="movement">Off-Ball Movement</button>
+        <button class="skill-tab" data-skill="defense">Defense</button>
+        <button class="skill-tab" data-skill="pnr">Pick &amp; Roll</button>
+      </div>
+
+      <div class="skill-grid">
+        <!-- Left: Detail Card -->
+        <article class="card" id="skillDetail">
+          <!-- Dribbling content by default -->
+          <small>Ball-Handling Package</small>
+          <h3>Dribbling — Pace, Control & Deception</h3>
+          <p>
+            Blend Curry’s pace changes, Murray’s hesitation, Nash’s probes,
+            Jason Williams’ creativity, Trae’s shield dribble, and Wojo’s
+            low stance to build a complete handle.
+          </p>
+
+          <div class="chip-row">
+            <div class="chip">Steph Curry – Float Dribble</div>
+            <div class="chip">Jamal Murray – Hang Hesitation</div>
+            <div class="chip">Jason Williams – Creative Handles</div>
+            <div class="chip">Steve Nash – Continuous Probe</div>
+            <div class="chip">Trae Young – Trailing Dribble</div>
+            <div class="chip">Wojo – Low Stance Control</div>
+          </div>
+
+          <h4 style="font-size:0.85rem;margin:0.4rem 0;">Key Teaching Points</h4>
+          <ul>
+            <li><strong>Float dribble</strong> (Curry): small hang to read the defender before changing speed.</li>
+            <li><strong>Hang hesitation to attack</strong> (Murray): sell the pause, then explode into a long stride.</li>
+            <li><strong>Live-dribble passing</strong> (Jason Williams): every dribble is a threat to deliver a pass.</li>
+            <li><strong>Continuous probe</strong> (Nash): keep the dribble alive under the rim, never panic pick-ups.</li>
+            <li><strong>Shield & trailing dribble</strong> (Trae): keep the ball behind your body vs pressure.</li>
+            <li><strong>Low stance</strong> (Wojo): hips low, chest up, ball below the knee in traffic.</li>
+          </ul>
+
+          <h4 style="font-size:0.85rem;margin:0.6rem 0 0.2rem;">Drill Menu</h4>
+          <ul>
+            <li><strong>Two-Ball Pound + Float</strong> – one ball low & hard, the other floats at hip height.</li>
+            <li><strong>Hang Hesitation Cone Series</strong> – at each cone, sell a pause then attack downhill.</li>
+            <li><strong>Continuous Paint Dribble</strong> – circle the lane 8–10 seconds without picking up.</li>
+            <li><strong>Shield Dribble vs Pad</strong> – have a partner bump you while you protect the ball.</li>
+            <li><strong>Mirror Low-Stance Dribble</strong> – partner moves laterally, you mirror while dribbling.</li>
+          </ul>
+        </article>
+
+        <!-- Right: Example Media & Snapshots -->
+        <aside class="card">
+          <small>Visual Examples</small>
+          <h3>Dribbling Clips & Snapshots</h3>
+          <p>
+            Use these to study footwork, body angle, and ball height. Pause and
+            copy frame-by-frame.
+          </p>
+          <div class="media-strip">
+            <div class="media-item">
+              <div class="media-thumb">
+                <span class="badge">Steph Curry</span>
+                <span class="play">▶</span>
+              </div>
+              <div class="media-info">
+                <strong>Floats & Pace Changes</strong>
+                <p>
+                  Watch a Curry handle compilation and focus on how he slows
+                  down, then bursts past defenders.<br />
+                  <a href="https://www.youtube.com/results?search_query=steph+curry+handles"
+                    target="_blank" rel="noopener noreferrer">
+                    YouTube: “Steph Curry Handles”
+                  </a>
+                </p>
+              </div>
+            </div>
+
+            <div class="media-item">
+              <div class="media-thumb">
+                <span class="badge">Jamal Murray</span>
+                <span class="play">▶</span>
+              </div>
+              <div class="media-info">
+                <strong>Hesitation & Snake Dribble</strong>
+                <p>
+                  Study how Murray hesitates and “snakes” around screens into
+                  midrange jumpers.<br />
+                  <a href="https://www.youtube.com/results?search_query=jamal+murray+pick+and+roll"
+                    target="_blank" rel="noopener noreferrer">
+                    YouTube: “Jamal Murray PnR”
+                  </a>
+                </p>
+              </div>
+            </div>
+
+            <div class="media-item">
+              <div class="media-thumb">
+                <span class="badge">Jason Williams</span>
+                <span class="play">▶</span>
+              </div>
+              <div class="media-info">
+                <strong>Creative Live-Dribble Passing</strong>
+                <p>
+                  Look for behind-the-back, wraparound, and no-look passes off
+                  the dribble.<br />
+                  <a href="https://www.youtube.com/results?search_query=jason+williams+white+chocolate+highlights"
+                    target="_blank" rel="noopener noreferrer">
+                    YouTube: “Jason Williams Highlights”
+                  </a>
+                </p>
+              </div>
+            </div>
+
+            <div class="media-item">
+              <div class="media-thumb">
+                <span class="badge">Trae & Wojo</span>
+                <span class="play">▶</span>
+              </div>
+              <div class="media-info">
+                <strong>Shield Dribble & Stance</strong>
+                <p>
+                  Combine Trae’s ball protection with Wojo’s low, balanced
+                  stance in old Duke clips.<br />
+                  <a href="https://www.youtube.com/results?search_query=steve+wojciechowski+duke+highlights"
+                    target="_blank" rel="noopener noreferrer">
+                    YouTube: “Steve Wojciechowski Duke”
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- SCHEDULES -->
+    <section id="schedules">
+      <div class="section-heading">
+        <h2>Weekly & Monthly Plan</h2>
+        <p>
+          Use this structure to repeat high-quality reps. Adjust volume for age,
+          season, and game schedule.
+        </p>
+      </div>
+
+      <div class="schedule-layout">
+        <!-- Weekly -->
+        <article class="card">
+          <small>Weekly Rhythm</small>
+          <h3>6-Day Guard Training Schedule</h3>
+          <p style="font-size:0.82rem;color:var(--text-muted);margin-bottom:0.4rem;">
+            Aim for 60–90 minutes per day. Add warm-up and cool-down as needed.
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Day</th>
+                <th>Focus</th>
+                <th>Details (Player Inspiration)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Monday</td>
+                <td>Dribbling + Shooting</td>
+                <td>
+                  Curry float dribbles, Murray hesitations, form shooting +
+                  Curry relocation threes.
+                </td>
+              </tr>
+              <tr>
+                <td>Tuesday</td>
+                <td>Passing + Defense</td>
+                <td>
+                  Nash vision drills, Jason Williams creative passes, Payton
+                  pressure slides, Wojo closeouts.
+                </td>
+              </tr>
+              <tr>
+                <td>Wednesday</td>
+                <td>Movement + Conditioning</td>
+                <td>
+                  Curry relocation, Nash cut-after-pass, lane sprints,
+                  defensive slide ladders.
+                </td>
+              </tr>
+              <tr>
+                <td>Thursday</td>
+                <td>Pick &amp; Roll + Shooting</td>
+                <td>
+                  Murray snake dribble, Trae floater + deep pull-ups, Nash
+                  pocket passes.
+                </td>
+              </tr>
+              <tr>
+                <td>Friday</td>
+                <td>Scrimmage + Film</td>
+                <td>
+                  Controlled 3v3/5v5 with rules (e.g., must use PnR), then
+                  20–30 min film of the week’s focus player.
+                </td>
+              </tr>
+              <tr>
+                <td>Saturday</td>
+                <td>Long Skill Session</td>
+                <td>
+                  Combine all skills: handle into shot, shot fake into drive,
+                  drive into kick-out pass, finish in traffic.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p style="margin-top:0.6rem;font-size:0.78rem;color:var(--text-muted);">
+            Sunday = recovery, light shooting, stretching, and leadership
+            reflection using the Coach K section below.
+          </p>
+        </article>
+
+        <!-- Monthly -->
+        <article class="card">
+          <small>Monthly Emphasis</small>
+          <h3>4-Week Development Cycle</h3>
+          <p style="font-size:0.82rem;color:var(--text-muted);margin-bottom:0.4rem;">
+            Recycle this 4-week block throughout the year; each time, raise your
+            standards.
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Week</th>
+                <th>Theme</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Week 1</td>
+                <td>
+                  <strong>Handle &amp; Footwork</strong> – Curry/Murray handle,
+                  Nash probes, Wojo stance, jump-stop & stride-stop footwork.
+                </td>
+              </tr>
+              <tr>
+                <td>Week 2</td>
+                <td>
+                  <strong>Shooting &amp; Movement</strong> – Curry relocation,
+                  Trae range, Murray midrange; cutting and screening angles.
+                </td>
+              </tr>
+              <tr>
+                <td>Week 3</td>
+                <td>
+                  <strong>Passing &amp; PnR</strong> – Nash angles, Jason
+                  Williams creativity, Trae lobs, advanced PnR reads.
+                </td>
+              </tr>
+              <tr>
+                <td>Week 4</td>
+                <td>
+                  <strong>Defense &amp; Leadership</strong> – Payton pressure,
+                  Wojo charges, Curry off-ball IQ, Coach K “standards” and
+                  “next play.”
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p style="margin-top:0.6rem;font-size:0.78rem;color:var(--text-muted);">
+            Track notes each week: what improved, what still feels shaky, and
+            how your mindset evolved.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- DRILL BOOK -->
+    <section id="drills">
+      <div class="section-heading">
+        <h2>Illustrated Drill Book</h2>
+        <p>
+          Simple half-court diagrams in text form. You can redraw these on a
+          whiteboard or into a play-diagram app.
+        </p>
+      </div>
+
+      <div class="drill-grid">
+        <div class="diagram">
+          <label>Curry Relocation Shooting Drill</label>
+          <pre>
+Top view (3 players)
+   Wing           Top           Corner
+
+   A ●           B ●           C ●
+
+1. A passes to B, cuts to corner.
+2. B swings to C.
+3. A sprints to fill open spot for 3.
+          </pre>
+          <ul>
+            <li>Rotate A → B → C every few reps.</li>
+            <li>Focus on <strong>foot prep before the catch</strong>.</li>
+            <li>Add a defender later to chase A through the relocation.</li>
+          </ul>
+        </div>
+
+        <div class="diagram">
+          <label>Nash Continuous Paint Probe</label>
+          <pre>
+Side view – half court lane
+
+   O = ballhandler
+   X = cone/imaginary help
+
+   O dribbles in, loops under rim,
+   exits on opposite side without picking up.
+
+   X   X
+    \ /
+     O
+        </pre>
+          <ul>
+            <li>Stay low, eyes up, keep your dribble alive under the rim.</li>
+            <li>Add a passing option to the corner or dunker spot.</li>
+            <li>Great for learning patience in the paint.</li>
+          </ul>
+        </div>
+
+        <div class="diagram">
+          <label>Murray / Trae Pick &amp; Roll Pocket Pass</label>
+          <pre>
+Top view – high PnR
+
+     X2
+          X5
+   O1   ● (screener)
+          |
+         Rim
+
+1. O1 uses screen, defender X5 steps up.
+2. Roller ● dives.
+3. O1 slips ball into pocket before help rotates.
+          </pre>
+          <ul>
+            <li>Work on <strong>timing the pass</strong> as the big flips their hips.</li>
+            <li>Use both bounce and chest pocket passes.</li>
+            <li>Add a weak-side shooter to skip pass if tagger helps.</li>
+          </ul>
+        </div>
+
+        <div class="diagram">
+          <label>Gary Payton Pressure Defense Drill</label>
+          <pre>
+Side view – sideline channel drill
+
+Sideline
+| X  &lt;- defender slides, chest to dribbler
+| O  &lt;- ballhandler pushes up the floor
+|
+
+1. Defender X forces O to weaker hand.
+2. Stay in front, no reaching.
+3. Slide, cut off angles, contain to sideline.
+          </pre>
+          <ul>
+            <li>Short bursts: 3–4 dribbles, then reset.</li>
+            <li>Emphasize <strong>chest contact, not hands</strong>.</li>
+            <li>Switch roles every rep to feel both sides.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- LEADERSHIP -->
+    <section id="leadership">
+      <div class="section-heading">
+        <h2>Coach K Leadership Lab</h2>
+        <p>
+          This section is about approach, attitude, and leadership. Use it as
+          your mental training block at the end of each day.
+        </p>
+      </div>
+
+      <div class="leadership-layout">
+        <article class="card">
+          <small>Mindset &amp; Standards</small>
+          <h3>“Standards, Not Just Rules”</h3>
+          <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:0.5rem;">
+            Coach K’s teams were built on shared standards: how you talk, how
+            you compete, and how you treat teammates. As a guard, you set the
+            tone.
+          </p>
+
+          <div class="pill-list">
+            <div class="pill">Next Play Mentality</div>
+            <div class="pill">Communicate Constantly</div>
+            <div class="pill">Selfless Competitiveness</div>
+            <div class="pill">Arrive Early, Stay Late</div>
+            <div class="pill">Hold Teammates Accountable</div>
+          </div>
+
+          <h4 style="font-size:0.85rem;margin:0.5rem 0 0.2rem;">Daily Leadership Checklist</h4>
+          <ul>
+            <li>
+              <strong>Next Play</strong> – After every mistake or big play,
+              reset your body language within 3 seconds.
+            </li>
+            <li>
+              <strong>Communication</strong> – Call out screens, matchups, and
+              coverages every possession you’re on the floor.
+            </li>
+            <li>
+              <strong>Selfless Energy</strong> – Celebrate teammates’ success
+              louder than your own.
+            </li>
+            <li>
+              <strong>Preparation = Confidence</strong> – Know your workout
+              block before you step on the court.
+            </li>
+            <li>
+              <strong>Standards Talk</strong> – If a teammate’s effort slips,
+              talk to them privately and directly.
+            </li>
+          </ul>
+
+          <h4 style="font-size:0.85rem;margin:0.7rem 0 0.2rem;">Weekly Reflection Prompts</h4>
+          <ul>
+            <li>When did I live our team standards this week?</li>
+            <li>Where did my body language slip?</li>
+            <li>Who did I encourage? Who can I encourage next week?</li>
+            <li>What did I prepare well for? What did I wing?</li>
+          </ul>
+        </article>
+
+        <aside class="quote-card">
+          <p>
+            “Leadership is not about you; it’s about the people you serve. The
+            moment you understand that, you start to lead the way your team
+            needs you to.”
+          </p>
+          <span>— Inspired by Coach K’s leadership philosophy</span>
+
+          <hr style="border:none;border-top:1px solid rgba(148,163,184,0.4);margin:0.7rem 0;" />
+
+          <p style="margin-bottom:0.3rem;">
+            Use your guard spot to:
+          </p>
+          <ul style="margin-left:0.9rem;">
+            <li>Organize huddles before free throws and after timeouts.</li>
+            <li>Call mini “reset” huddles when momentum swings either way.</li>
+            <li>Match your <strong>voice</strong> with your <strong>effort</strong> and <strong>defense</strong>.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- MEDIA LIBRARY -->
+    <section id="media">
+      <div class="section-heading">
+        <h2>Video & Image Library</h2>
+        <p>
+          Curated teaching clips and image ideas. Swap in your favorite links
+          and screenshots to customize.
+        </p>
+      </div>
+
+      <div class="media-library">
+        <!-- Videos -->
+        <div class="card">
+          <small>Video Breakdown Hub</small>
+          <h3>Teaching Clips (YouTube)</h3>
+          <p style="font-size:0.82rem;color:var(--text-muted);margin-bottom:0.6rem;">
+            These are example embeds. Replace <code>src</code> with the exact
+            highlight or breakdown links you prefer.
+          </p>
+          <div class="video-grid">
+            <div class="video-card">
+              <iframe
+                src="https://www.youtube.com/embed/5RIVWnQfTe0"
+                title="Steph Curry Shooting Form (example)"
+                allowfullscreen
+              ></iframe>
+              <div class="video-card-body">
+                <strong>Steph Curry – Shooting &amp; Footwork</strong>
+                <span style="color:var(--text-muted);">
+                  Watch footwork into catch-and-shoot, relocation, and
+                  step-back threes.
+                </span>
+              </div>
+            </div>
+
+            <div class="video-card">
+              <iframe
+                src="https://www.youtube.com/embed/5Kxjz8XFqFs"
+                title="Jamal Murray Pick and Roll (example)"
+                allowfullscreen
+              ></iframe>
+              <div class="video-card-body">
+                <strong>Jamal Murray – PnR Scoring</strong>
+                <span style="color:var(--text-muted);">
+                  Study his hesitation, snake dribble, and midrange pull-ups.
+                </span>
+              </div>
+            </div>
+
+            <div class="video-card">
+              <iframe
+                src="https://www.youtube.com/embed/axT5pUX6iLE"
+                title="Steve Nash Passing (example)"
+                allowfullscreen
+              ></iframe>
+              <div class="video-card-body">
+                <strong>Steve Nash – Passing Angles</strong>
+                <span style="color:var(--text-muted);">
+                  Look for bounce passes, skip passes, and eye deception.
+                </span>
+              </div>
+            </div>
+
+            <div class="video-card">
+              <iframe
+                src="https://www.youtube.com/embed/1E7t11pJArM"
+                title="Gary Payton Defense (example)"
+                allowfullscreen
+              ></iframe>
+              <div class="video-card-body">
+                <strong>Gary Payton – On-Ball Defense</strong>
+                <span style="color:var(--text-muted);">
+                  Focus on his stance, angles, and how he harasses ball
+                  handlers without fouling.
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Images / Photo Prompts -->
+        <div class="card image-hints">
+          <small>Images</small>
+          <h3>Photo & Screenshot Ideas</h3>
+          <p style="font-size:0.82rem;color:var(--text-muted);margin-bottom:0.5rem;">
+            Use still frames or photos as teaching tools. You can drop them into
+            this column or use them in PDFs/slides.
+          </p>
+          <ul>
+            <li>
+              <strong>Shooting</strong> – side and front views of your shot at
+              release, compared to a Steph Curry frame.
+            </li>
+            <li>
+              <strong>Dribbling</strong> – low crossover stance, with a frame of
+              Jason Williams or Jamal Murray for comparison.
+            </li>
+            <li>
+              <strong>Defense</strong> – Gary Payton / Wojo defensive stance
+              next to a photo of your stance.
+            </li>
+            <li>
+              <strong>Movement</strong> – Curry relocating to the corner vs your
+              relocation in a game or workout.
+            </li>
+            <li>
+              <strong>Leadership</strong> – huddle photo with you leading a
+              quick “next play” message.
+            </li>
+          </ul>
+          <p style="font-size:0.78rem;color:var(--text-muted);margin-top:0.6rem;">
+            Tip: take screenshots from film and mark them up with arrows and
+            notes to create your own visual teaching cards.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <span>Elite Guard Lab &copy; 2025. Built for guards who want to think and train like pros.</span>
+      <span>Modules: Skills · Schedules · Drill Book · Coach K Leadership · Media Library</span>
+    </footer>
+  </main>
+
+  <script>
+    // Nav highlighting on click
+    document.querySelectorAll(".nav-link").forEach((link) => {
+      link.addEventListener("click", () => {
+        document
+          .querySelectorAll(".nav-link")
+          .forEach((l) => l.classList.remove("active"));
+        link.classList.add("active");
+      });
+    });
+
+    // Skill tabs – swap left card content
+    const skillContent = {
+      dribbling: {
+        title: "Dribbling — Pace, Control & Deception",
+        subtitle: "Ball-Handling Package",
+        intro:
+          "Blend Curry’s pace changes, Murray’s hesitation, Nash’s probes, Jason Williams’ creativity, Trae’s shield dribble, and Wojo’s low stance to build a complete handle.",
+        chips: [
+          "Steph Curry – Float Dribble",
+          "Jamal Murray – Hang Hesitation",
+          "Jason Williams – Creative Handles",
+          "Steve Nash – Continuous Probe",
+          "Trae Young – Trailing Dribble",
+          "Wojo – Low Stance Control",
+        ],
+        teaching: [
+          "Float dribble (Curry): small hang to read the defender before changing speed.",
+          "Hang hesitation to attack (Murray): sell the pause, then explode into a long stride.",
+          "Live-dribble passing (Jason Williams): every dribble is a threat to deliver a pass.",
+          "Continuous probe (Nash): keep the dribble alive under the rim, never panic pick-ups.",
+          "Shield & trailing dribble (Trae): keep the ball behind your body vs pressure.",
+          "Low stance (Wojo): hips low, chest up, ball below the knee in traffic.",
+        ],
+        drills: [
+          "Two-Ball Pound + Float – one ball low & hard, the other floats at hip height.",
+          "Hang Hesitation Cone Series – at each cone, sell a pause then attack downhill.",
+          "Continuous Paint Dribble – circle the lane 8–10 seconds without picking up.",
+          "Shield Dribble vs Pad – have a partner bump you while you protect the ball.",
+          "Mirror Low-Stance Dribble – partner moves laterally, you mirror while dribbling.",
+        ],
+      },
+      shooting: {
+        title: "Shooting — Range, Balance & Game Shots",
+        subtitle: "Shot-Making Package",
+        intro:
+          "Take elements from Curry’s quick release, Murray’s stop-balance midrange, Trae’s floater and deep range, and Nash’s off-balance finishes.",
+        chips: [
+          "Steph Curry – Quick Release",
+          "Jamal Murray – Midrange Stops",
+          "Trae Young – Floaters & Deep 3s",
+          "Steve Nash – Runners & Scoops",
+        ],
+        teaching: [
+          "Foot prep (Curry): be ready to shoot before you catch the ball.",
+          "Hard stops (Murray): use 2-foot or stride stops to get balanced in tight spaces.",
+          "Touch floaters (Trae): soft release and high arc from different distances.",
+          "One-motion form (Curry): smooth rise from pocket to release.",
+          "Wrong-foot finishes (Nash): finish before help arrives by stepping off the 'wrong' foot.",
+        ],
+        drills: [
+          "Relocation Series – pass, relocate to corner or wing, catch & shoot.",
+          "Pacer Drill – vary speed (slow-fast-slow) into each jumper.",
+          "5-Spot Floater Ladder – short, mid, and long floaters from each elbow and hash.",
+          "Range Extension – shoot deep 3s with the same form you use at the line.",
+          "Runner / Nash Finish Series – 10 reps each side, wrong-foot and high glass.",
+        ],
+      },
+      passing: {
+        title: "Passing — Vision, Angles & Creativity",
+        subtitle: "Playmaking Package",
+        intro:
+          "Blend Nash’s vision, Jason Williams’ creativity, Trae’s lob timing, and Curry’s gravity skip passes.",
+        chips: [
+          "Steve Nash – Angles & Vision",
+          "Jason Williams – Flair & Deception",
+          "Trae Young – Lob Passing",
+          "Steph Curry – Skip Passes vs Help",
+        ],
+        teaching: [
+          "See two passes ahead (Nash): read both the roller and the weak-side shooter.",
+          "Deception (Jason Williams): use your eyes and body to mislead defenders.",
+          "Lob timing (Trae): throw it where only your big can get it, just as they jump.",
+          "Skip vs pocket (Curry): choose between hitting the roller or skipping to the weak side based on help.",
+        ],
+        drills: [
+          "Look-Off Passing – stare at one target while hitting another.",
+          "Moving Target Passing – partner jogs; you hit them in stride with chest and bounce passes.",
+          "Lob Window Drill – partner jumps from the dotted line; you must float the ball above help.",
+          "PnR Pocket Pass – use chairs or cones to rep threading the needle to the roller.",
+        ],
+      },
+      movement: {
+        title: "Movement Without the Ball — Cuts, Screens & Relocation",
+        subtitle: "Off-Ball Package",
+        intro:
+          "Move like Curry, Nash, and Jason Williams: constant relocation, smart cuts, and spacing.",
+        chips: [
+          "Steph Curry – Relocation",
+          "Steve Nash – Cut-After-Pass",
+          "Jason Williams – Random Movement",
+        ],
+        teaching: [
+          "Pass & relocate (Curry): never stand after you pass. Fill a new window.",
+          "Cut-after-pass (Nash): sprint into space, don’t drift.",
+          "Timing with drivers (Jason Williams): cut behind defenders who turn their head.",
+          "Use screens away from the ball: flare, curl, and back screen options.",
+        ],
+        drills: [
+          "3-Player Movement Wheel – pass, cut, fill an open spot.",
+          "Relocate After Every Shot – no standing on makes or misses.",
+          "Read-the-Tagger Drill – if help drops, cut behind their head for a layup.",
+          "Screen & Slip – set a screen then slip out when defenders overplay.",
+        ],
+      },
+      defense: {
+        title: "Defense — Pressure, Stance & IQ",
+        subtitle: "Two-Way Guard Package",
+        intro:
+          "Take Gary Payton’s pressure, Wojo’s stance and charge-taking, and Curry’s off-ball IQ.",
+        chips: [
+          "Gary Payton – On-Ball Pressure",
+          "Wojo – Stance & Charges",
+          "Steph Curry – Off-Ball Anticipation",
+          "Trae Young – Passing Lanes",
+        ],
+        teaching: [
+          "Force to the weak hand (Payton) and cut off angles instead of reaching.",
+          "Low, strong base (Wojo): chest up, hands active, no straight legs.",
+          "Jump to the ball early (Curry): be in help before the pass is thrown.",
+          "Read passing lanes (Trae): anticipate when ball-handlers stare down passes.",
+        ],
+        drills: [
+          "Shadow Slide Drill – mirror a partner without crossing your feet.",
+          "Closeout-Slide-Recover Circuit – contest, slide, then sprint to next spot.",
+          "Screen Navigation with Chairs – practice going under, over, and through screens.",
+          "Deflection Game – 30-second bursts trying to tip as many passes as possible.",
+        ],
+      },
+      pnr: {
+        title: "Pick & Roll Mastery — Reads & Counters",
+        subtitle: "Game Control Package",
+        intro:
+          "Run PnR like Curry, Murray, Nash, and Trae: pace changes, snake dribbles, and layered reads.",
+        chips: [
+          "Jamal Murray – Snake Dribble",
+          "Trae Young – Floater & Lob",
+          "Steve Nash – Pocket Pass",
+          "Steph Curry – Pull-Up Threat",
+        ],
+        teaching: [
+          "Use pace (Curry/Murray): slow to the screen, fast off of it.",
+          "Snake dribble (Murray): cross back over the screen to keep defenders on your back.",
+          "Manipulate the big (Nash): make them choose between you and the roller.",
+          "Read the tag defender (Trae): if tag steps in, skip to the corner.",
+        ],
+        drills: [
+          "PnR Reads with 3 Defenders – on-ball, big, and tagger.",
+          "Snake Ladder – weave around cones after the screen to keep your defender behind.",
+          "Floater or Lob Drill – choose between short floater and lob to roller.",
+          "Pull-Up or Pocket – take a 3 if the big drops, hit the pocket if they step up.",
+        ],
+      },
+    };
+
+    function renderSkill(skillKey) {
+      const data = skillContent[skillKey];
+      const container = document.getElementById("skillDetail");
+      if (!data || !container) return;
+
+      let chipsHtml = data.chips
+        .map((c) => `<div class="chip">${c}</div>`)
+        .join("");
+
+      let teachingHtml = data.teaching
+        .map((t) => `<li>${t}</li>`)
+        .join("");
+
+      let drillsHtml = data.drills
+        .map((d) => `<li>${d}</li>`)
+        .join("");
+
+      container.innerHTML = `
+        <small>${data.subtitle}</small>
+        <h3>${data.title}</h3>
+        <p>${data.intro}</p>
+        <div class="chip-row">${chipsHtml}</div>
+        <h4 style="font-size:0.85rem;margin:0.4rem 0;">Key Teaching Points</h4>
+        <ul>${teachingHtml}</ul>
+        <h4 style="font-size:0.85rem;margin:0.6rem 0 0.2rem;">Drill Menu</h4>
+        <ul>${drillsHtml}</ul>
+      `;
+    }
+
+    document.querySelectorAll(".skill-tab").forEach((tab) => {
+      tab.addEventListener("click", () => {
+        document
+          .querySelectorAll(".skill-tab")
+          .forEach((t) => t.classList.remove("active"));
+        tab.classList.add("active");
+        const key = tab.getAttribute("data-skill");
+        renderSkill(key);
+      });
+    });
+  </script>
+</body>
+</html>
