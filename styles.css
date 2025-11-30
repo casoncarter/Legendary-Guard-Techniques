@@ -692,6 +692,68 @@ tbody tr:nth-child(odd) {
 .diagram ul {
   margin-left: 0.8rem;
 }
+/* Pro drill court graphics */
+.drill-court {
+  margin-bottom: 0.6rem;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  background: #fefce8; /* light hardwood tone */
+}
+
+.court-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.court-floor {
+  fill: #fef3c7; /* pale wood */
+}
+
+.court-line {
+  stroke: #9ca3af; /* light gray lines */
+  stroke-width: 1;
+  fill: none;
+}
+
+.court-key {
+  fill: #fefce8;
+  stroke: #9ca3af;
+  stroke-width: 1;
+}
+
+.court-arc {
+  stroke: #9ca3af;
+  stroke-width: 1;
+  fill: none;
+}
+
+/* icons */
+.player-icon {
+  fill: #2563eb;
+  stroke: #1d4ed8;
+  stroke-width: 1;
+}
+
+.ball-icon {
+  fill: #f97316; /* orange ball */
+  stroke: #ea580c;
+  stroke-width: 0.8;
+}
+
+.cone-icon {
+  fill: #b91c1c; /* red cone */
+  stroke: #7f1d1d;
+  stroke-width: 0.7;
+}
+
+.text-label {
+  font-size: 6px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  fill: #374151;
+}
 
 /* Leadership */
 .leadership-layout {
