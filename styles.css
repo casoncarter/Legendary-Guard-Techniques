@@ -393,10 +393,23 @@ section {
   max-width: 420px;
 }
 
+/* Skill categories (icons) *//* SKILL SECTION LAYOUT */
+#skills {
+  margin-top: 3rem;
+}
+
+/* Centered heading for this section */
+#skills .section-heading {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 1.25rem;
+}
+
 /* Skill categories (icons) */
 .category-icons {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;         /* center under heading */
   gap: 0.5rem;
   margin-bottom: 1rem;
   font-size: 0.8rem;
@@ -427,10 +440,11 @@ section {
   font-weight: 600;
 }
 
-/* Skills */
+/* Skills tabs */
 .skill-tabs {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;         /* center tabs instead of left */
   gap: 0.4rem;
   margin-bottom: 1rem;
   font-size: 0.8rem;
@@ -457,11 +471,22 @@ section {
   color: var(--accent-2);
 }
 
+/* Skill content card layout */
 .skill-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr); /* single full-width column */
+  grid-template-columns: minmax(0, 1fr);  /* one column */
+  max-width: 900px;                       /* keeps it from going too wide */
+  margin: 1.5rem auto 0;                  /* center on page */
   gap: 1.5rem;
-  margin-top: 1.25rem;
+}
+
+/* Make the skill card feel like a main feature */
+.skill-grid .card {
+  background: #ffffff;
+  border-radius: 1rem;
+  border: 1px solid var(--border-subtle);
+  padding: 1.5rem 1.75rem;
+  box-shadow: 0 14px 40px rgba(15, 23, 42, 0.12);
 }
 
 @media (max-width: 900px) {
