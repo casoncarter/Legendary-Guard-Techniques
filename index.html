@@ -519,100 +519,238 @@
 
     <!-- DRILL BOOK -->
     <section id="drills">
-      <div class="section-heading">
-        <h2>Illustrated Drill Book</h2>
-        <p>
-          Simple half-court diagrams in text form. You can redraw these on a
-          whiteboard or into a play-diagram app.
+  <div class="section-heading">
+    <h2>Illustrated Drill Book</h2>
+    <p>
+      Use these game-specific drills to build the float dribble, hesitation, Nash probe,
+      and trap escapes. Each diagram uses a half-court graphic with clear icons for the
+      player, ball, and cones so you can run them on your own or with a coach.
+    </p>
+  </div>
+
+  <div class="card">
+    <small>Handle Labs</small>
+    <h3>Float · Hesitation · Nash Probe · Trap Escape</h3>
+    <p>
+      Start with one or two drills per workout. Prioritize <strong>perfect footwork</strong>,
+      <strong>eyes up</strong>, and <strong>game-speed decisions</strong> over rushed reps.
+    </p>
+
+    <div class="drill-grid">
+
+      <!-- Drill 1: Float Dribble Lane -->
+      <div class="diagram">
+        <label>Drill 1 · Float Dribble Lane (Both Sides)</label>
+
+        <div class="drill-court">
+          <svg viewBox="0 0 200 180" class="court-svg">
+            <!-- Court floor -->
+            <rect x="0" y="0" width="200" height="180" class="court-floor" />
+
+            <!-- Baseline & sidelines -->
+            <rect x="10" y="10" width="180" height="160" class="court-key" />
+
+            <!-- Key / lane -->
+            <rect x="70" y="10" width="60" height="80" class="court-key" />
+            <!-- Free throw line -->
+            <line x1="70" y1="90" x2="130" y2="90" class="court-line" />
+
+            <!-- Rim & restricted area -->
+            <circle cx="100" cy="20" r="4" class="court-line" />
+            <circle cx="100" cy="20" r="14" class="court-arc" />
+
+            <!-- Lane lines (for float path) -->
+            <line x1="70" y1="10" x2="70" y2="170" class="court-line" />
+            <line x1="130" y1="10" x2="130" y2="170" class="court-line" />
+
+            <!-- Cones on right lane -->
+            <polygon points="135,40 140,50 130,50" class="cone-icon" />
+            <polygon points="135,75 140,85 130,85" class="cone-icon" />
+            <polygon points="135,110 140,120 130,120" class="cone-icon" />
+            <polygon points="135,145 140,155 130,155" class="cone-icon" />
+
+            <!-- Cones on left lane -->
+            <polygon points="65,40 70,50 60,50" class="cone-icon" />
+            <polygon points="65,75 70,85 60,85" class="cone-icon" />
+            <polygon points="65,110 70,120 60,120" class="cone-icon" />
+            <polygon points="65,145 70,155 60,155" class="cone-icon" />
+
+            <!-- Player start (top) -->
+            <circle cx="100" cy="150" r="6" class="player-icon" />
+            <!-- Ball at player's hand -->
+            <circle cx="106" cy="150" r="3" class="ball-icon" />
+
+            <text x="100" y="165" text-anchor="middle" class="text-label">
+              Start
+            </text>
+          </svg>
+        </div>
+
+        <ul>
+          <li>Place 4 cones along each lane line about 8–10 feet apart.</li>
+          <li>Start at the top (blue circle) with the ball in your right hand, attacking down the right lane.</li>
+          <li>At each cone, use a <strong>float dribble</strong>: hang the ball, rise slightly, then explode past the cone.</li>
+          <li>Finish with a layup or floater at the rim, then switch to the left side and repeat with the left hand.</li>
+          <li>Go 3–4 trips each side. Focus on staying low as you explode out of the float.</li>
+        </ul>
+        <p style="font-size:0.78rem;color:var(--text-muted);margin-top:0.2rem;">
+          Coaching points: hang the dribble just long enough to make the defender guess, then punch out hard past each cone.
         </p>
       </div>
 
-      <div class="drill-grid">
-        <div class="diagram">
-          <label>Curry Relocation Shooting Drill</label>
-          <pre>
-Top view (3 players)
-   Wing           Top           Corner
+      <!-- Drill 2: Hesitation Into Burst (Wing) -->
+      <div class="diagram">
+        <label>Drill 2 · Hesitation into Burst (Wing)</label>
 
-   A ●           B ●           C ●
+        <div class="drill-court">
+          <svg viewBox="0 0 200 180" class="court-svg">
+            <!-- Court floor -->
+            <rect x="0" y="0" width="200" height="180" class="court-floor" />
 
-1. A passes to B, cuts to corner.
-2. B swings to C.
-3. A sprints to fill open spot for 3.
-          </pre>
-          <ul>
-            <li>Rotate A → B → C every few reps.</li>
-            <li>Focus on <strong>foot prep before the catch</strong>.</li>
-            <li>Add a defender later to chase A through the relocation.</li>
-          </ul>
+            <!-- Perimeter box -->
+            <rect x="10" y="10" width="180" height="160" class="court-key" />
+
+            <!-- 3-point arc (simplified) -->
+            <path d="M40 140 A60 60 0 0 1 160 140" class="court-arc" />
+
+            <!-- Wing cone (right wing) -->
+            <polygon points="145,95 150,105 140,105" class="cone-icon" />
+            <text x="145" y="118" text-anchor="middle" class="text-label">
+              Wing cone
+            </text>
+
+            <!-- Player start at top -->
+            <circle cx="100" cy="145" r="6" class="player-icon" />
+            <circle cx="106" cy="145" r="3" class="ball-icon" />
+            <text x="100" y="160" text-anchor="middle" class="text-label">
+              Start (Top)
+            </text>
+
+            <!-- Arrow path (top to wing) -->
+            <line x1="102" y1="138" x2="140" y2="110" class="court-line" />
+          </svg>
         </div>
 
-        <div class="diagram">
-          <label>Nash Continuous Paint Probe</label>
-          <pre>
-Side view – half court lane
-
-   O = ballhandler
-   X = cone/imaginary help
-
-   O dribbles in, loops under rim,
-   exits on opposite side without picking up.
-
-   X   X
-    \ /
-     O
-        </pre>
-          <ul>
-            <li>Stay low, eyes up, keep your dribble alive under the rim.</li>
-            <li>Add a passing option to the corner or dunker spot.</li>
-            <li>Great for learning patience in the paint.</li>
-          </ul>
-        </div>
-
-        <div class="diagram">
-          <label>Murray / Trae Pick &amp; Roll Pocket Pass</label>
-          <pre>
-Top view – high PnR
-
-     X2
-          X5
-   O1   ● (screener)
-          |
-         Rim
-
-1. O1 uses screen, defender X5 steps up.
-2. Roller ● dives.
-3. O1 slips ball into pocket before help rotates.
-          </pre>
-          <ul>
-            <li>Work on <strong>timing the pass</strong> as the big flips their hips.</li>
-            <li>Use both bounce and chest pocket passes.</li>
-            <li>Add a weak-side shooter to skip pass if tagger helps.</li>
-          </ul>
-        </div>
-
-        <div class="diagram">
-          <label>Gary Payton Pressure Defense Drill</label>
-          <pre>
-Side view – sideline channel drill
-
-Sideline
-| X  &lt;- defender slides, chest to dribbler
-| O  &lt;- ballhandler pushes up the floor
-|
-
-1. Defender X forces O to weaker hand.
-2. Stay in front, no reaching.
-3. Slide, cut off angles, contain to sideline.
-          </pre>
-          <ul>
-            <li>Short bursts: 3–4 dribbles, then reset.</li>
-            <li>Emphasize <strong>chest contact, not hands</strong>.</li>
-            <li>Switch roles every rep to feel both sides.</li>
-          </ul>
-        </div>
+        <ul>
+          <li>Place one cone at the right wing, just outside the 3-point line (red triangle).</li>
+          <li>Start at the top (blue circle), attack toward the cone at game speed.</li>
+          <li>As you reach the cone, use a <strong>Jamal Murray-style hesitation</strong>:
+              hang the ball, rise up slightly, eyes to the rim.</li>
+          <li>When you “read” that the defender is standing up or freezing, drop your hips and burst past.</li>
+          <li>Finish with a pull-up, floater, or layup. Repeat from the left wing with the opposite hand.</li>
+        </ul>
+        <p style="font-size:0.78rem;color:var(--text-muted);margin-top:0.2rem;">
+          Coaching points: your eyes and body language must sell shot or stop. The hesitation only works if the defender believes it.
+        </p>
       </div>
-    </section>
+
+      <!-- Drill 3: Nash Dribble Paint Laps -->
+      <div class="diagram">
+        <label>Drill 3 · Nash Dribble Paint Laps</label>
+
+        <div class="drill-court">
+          <svg viewBox="0 0 200 180" class="court-svg">
+            <!-- Court floor -->
+            <rect x="0" y="0" width="200" height="180" class="court-floor" />
+
+            <!-- Key / paint area -->
+            <rect x="70" y="10" width="60" height="80" class="court-key" />
+            <!-- Rim & restricted area -->
+            <circle cx="100" cy="20" r="4" class="court-line" />
+            <circle cx="100" cy="20" r="14" class="court-arc" />
+
+            <!-- Baseline & sideline box -->
+            <rect x="10" y="10" width="180" height="160" class="court-key" />
+
+            <!-- Corner "teammates" -->
+            <circle cx="30" cy="150" r="4" class="court-line" />
+            <text x="30" y="163" text-anchor="middle" class="text-label">
+              Corner
+            </text>
+
+            <circle cx="170" cy="150" r="4" class="court-line" />
+            <text x="170" y="163" text-anchor="middle" class="text-label">
+              Corner
+            </text>
+
+            <!-- Dunker spot (imaginary roller) -->
+            <circle cx="85" cy="40" r="4" class="court-line" />
+            <text x="85" y="53" text-anchor="middle" class="text-label">
+              Roller
+            </text>
+
+            <!-- Player path under rim -->
+            <path d="M70 70 C100 90 130 50 130 30" class="court-arc" />
+
+            <!-- Player icon inside paint -->
+            <circle cx="80" cy="70" r="6" class="player-icon" />
+            <circle cx="86" cy="70" r="3" class="ball-icon" />
+            <text x="80" y="85" text-anchor="middle" class="text-label">
+              Probe
+            </text>
+          </svg>
+        </div>
+
+        <ul>
+          <li>Start at the wing, drive hard toward the paint, then keep your dribble alive and circle under the basket.</li>
+          <li>As you move, imagine reads: corners (both sides) and the roller/dunker spot.</li>
+          <li>On each lap, call out your “read” (corner, roller, skip) even if you don’t pass.</li>
+          <li>Work on staying low, shielding the ball, and keeping your eyes up like Steve Nash.</li>
+          <li>Alternate exiting on the strong-side corner, weak-side corner, or re-attacking the paint.</li>
+        </ul>
+        <p style="font-size:0.78rem;color:var(--text-muted);margin-top:0.2rem;">
+          Coaching points: treat the paint as your office. Don’t rush; probe, read, and then decide.
+        </p>
+      </div>
+
+      <!-- Drill 4: Trap Escape Box (Trae Young) -->
+      <div class="diagram">
+        <label>Drill 4 · Trap Escape Box (Trae Young)</label>
+
+        <div class="drill-court">
+          <svg viewBox="0 0 200 180" class="court-svg">
+            <!-- Court floor -->
+            <rect x="0" y="0" width="200" height="180" class="court-floor" />
+
+            <!-- Half-court line -->
+            <line x1="10" y1="60" x2="190" y2="60" class="court-line" />
+
+            <!-- Trap defenders (cones/chairs) -->
+            <polygon points="85,50 90,60 80,60" class="cone-icon" />
+            <polygon points="115,50 120,60 110,60" class="cone-icon" />
+            <text x="100" y="48" text-anchor="middle" class="text-label">
+              Trap
+            </text>
+
+            <!-- Escape box -->
+            <rect x="70" y="80" width="60" height="50" class="court-key" />
+            <text x="100" y="112" text-anchor="middle" class="text-label">
+              Escape box
+            </text>
+
+            <!-- Player inside box -->
+            <circle cx="100" cy="105" r="6" class="player-icon" />
+            <circle cx="106" cy="105" r="3" class="ball-icon" />
+
+            <!-- Arrow showing retreat -->
+            <line x1="100" y1="100" x2="100" y2="130" class="court-line" />
+          </svg>
+        </div>
+
+        <ul>
+          <li>Create a small “box” with 4 cones at half court (shown in the middle rectangle).</li>
+          <li>Use 2 cones or chairs in front to represent defenders trapping you (red triangles).</li>
+          <li>Start inside the box with the ball, facing the “trap.” Work on retreat dribbles and changes of direction to exit without picking up your dribble.</li>
+          <li>Once you “escape” the box, make a strong imaginary pass to the open teammate (call out “middle,” “opposite,” or “short”).</li>
+          <li>Rotate positions on the court: middle, sideline, and near the logo to simulate different trap angles.</li>
+        </ul>
+        <p style="font-size:0.78rem;color:var(--text-muted);margin-top:0.2rem;">
+          Coaching points: stay calm, keep your dribble, and use your body as a shield. Watch Trae Young’s clips to see how he moves the trap instead of letting the trap move him.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
     <!-- LEADERSHIP -->
     <section id="leadership">
