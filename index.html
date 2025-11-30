@@ -847,41 +847,44 @@
       </div>
     </section>
 
-   <!-- MEDIA LIBRARY -->
+  <!-- MEDIA LIBRARY -->
 <section id="media">
   <div class="section-heading">
     <h2>Video &amp; Image Library</h2>
     <p>
-      Curated teaching clips and image ideas. Swap in your favorite links
-      and screenshots to customize.
+      Curated teaching clips and visual references. Use these for film study and
+      to create your own screenshots and play cards.
     </p>
   </div>
 
   <div class="media-library">
-    <!-- Videos -->
-    <article class="card">
-      <small>Video Breakdown Hub</small>
-      <h3>Teaching Clips (YouTube)</h3>
-      <p style="font-size:0.82rem;color:var(--text-muted);margin-bottom:0.6rem;">
-        Click any card to open a YouTube search in a new tab. You can later replace
-        these with your favorite specific videos.
+    <!-- LEFT COLUMN: VIDEO BREAKDOWN HUB -->
+    <article class="card media-column">
+      <small>Film Room</small>
+      <h3>Video Breakdown Hub</h3>
+      <p class="media-intro">
+        Each tile opens a film playlist or search in a new tab. Use these as starting
+        points, then save your favorite clips.
       </p>
 
-      <div class="video-grid">
+      <div class="media-grid">
         <!-- Steph Curry -->
         <a class="video-card"
            href="https://www.youtube.com/results?search_query=steph+curry+shooting+form"
            target="_blank"
            rel="noopener noreferrer">
           <div class="video-thumb">
-            <span class="badge">Steph Curry</span>
-            <div class="play-circle">▶</div>
+            <div class="video-label">
+              <span class="video-tag">Shooting</span>
+              <span class="video-player">YouTube</span>
+            </div>
+            <div class="video-play-icon">▶</div>
           </div>
           <div class="video-card-body">
-            <strong>Steph Curry – Shooting &amp; Footwork</strong>
-            <span style="color:var(--text-muted);">
-              Watch footwork into catch-and-shoot, relocation, and step-back threes.
-            </span>
+            <h4>Steph Curry – Shooting &amp; Footwork</h4>
+            <p>
+              Focus on his balance, footwork into catch-and-shoot, and relocation threes.
+            </p>
           </div>
         </a>
 
@@ -891,14 +894,17 @@
            target="_blank"
            rel="noopener noreferrer">
           <div class="video-thumb">
-            <span class="badge">Jamal Murray</span>
-            <div class="play-circle">▶</div>
+            <div class="video-label">
+              <span class="video-tag">PnR</span>
+              <span class="video-player">YouTube</span>
+            </div>
+            <div class="video-play-icon">▶</div>
           </div>
           <div class="video-card-body">
-            <strong>Jamal Murray – PnR Scoring</strong>
-            <span style="color:var(--text-muted);">
-              Study his hesitation, snake dribble, and midrange pull-ups.
-            </span>
+            <h4>Jamal Murray – Pick-and-Roll Scoring</h4>
+            <p>
+              Study his hesitation, snake dribble, and midrange pull-ups out of ball screens.
+            </p>
           </div>
         </a>
 
@@ -908,14 +914,17 @@
            target="_blank"
            rel="noopener noreferrer">
           <div class="video-thumb">
-            <span class="badge">Steve Nash</span>
-            <div class="play-circle">▶</div>
+            <div class="video-label">
+              <span class="video-tag">Playmaking</span>
+              <span class="video-player">YouTube</span>
+            </div>
+            <div class="video-play-icon">▶</div>
           </div>
           <div class="video-card-body">
-            <strong>Steve Nash – Passing Angles</strong>
-            <span style="color:var(--text-muted);">
-              Look for bounce passes, skip passes, and eye deception.
-            </span>
+            <h4>Steve Nash – Passing Angles &amp; Probes</h4>
+            <p>
+              Look for skip passes, pocket passes, and how he keeps his dribble alive in the paint.
+            </p>
           </div>
         </a>
 
@@ -925,25 +934,36 @@
            target="_blank"
            rel="noopener noreferrer">
           <div class="video-thumb">
-            <span class="badge">Jason Williams</span>
-            <div class="play-circle">▶</div>
+            <div class="video-label">
+              <span class="video-tag">Creativity</span>
+              <span class="video-player">YouTube</span>
+            </div>
+            <div class="video-play-icon">▶</div>
           </div>
           <div class="video-card-body">
-            <strong>Jason Williams – Handle Creativity</strong>
-            <span style="color:var(--text-muted);">
-              Study live-dribble passing, flair, and creativity.
-            </span>
+            <h4>Jason Williams – Handle Creativity</h4>
+            <p>
+              Study live-dribble passing, no-looks, and how flair still leads to simple shots.
+            </p>
           </div>
         </a>
       </div>
     </article>
 
-    <!-- Images / Photo Prompts -->
-    <article class="card image-hints">
-      <!-- Athlete Image Gallery -->
+    <!-- RIGHT COLUMN: IMAGES / GALLERY -->
+    <article class="card media-column">
+      <small>Stills &amp; Screenshots</small>
+      <h3>Athlete Image Gallery</h3>
+      <p class="media-intro">
+        Use photos and screenshots as freeze-frames for teaching. Compare your form and
+        spacing to elite guards.
+      </p>
+
       <div class="athlete-gallery">
         <div class="athlete-photo-card">
-          <img src="images/steph-curry.jpeg" alt="Steph Curry shooting">
+          <div class="athlete-photo-frame">
+            <img src="images/steph-curry.jpeg" alt="Steph Curry shooting">
+          </div>
           <div class="athlete-photo-card-body">
             <strong>Steph Curry</strong>
             <span>Shooting &amp; relocation</span>
@@ -951,7 +971,9 @@
         </div>
 
         <div class="athlete-photo-card">
-          <img src="images/jamal-murray.jpeg" alt="Jamal Murray PnR">
+          <div class="athlete-photo-frame">
+            <img src="images/jamal-murray.jpeg" alt="Jamal Murray PnR">
+          </div>
           <div class="athlete-photo-card-body">
             <strong>Jamal Murray</strong>
             <span>Hesi &amp; pick-and-roll</span>
@@ -959,7 +981,9 @@
         </div>
 
         <div class="athlete-photo-card">
-          <img src="images/steve-nash.jpeg" alt="Steve Nash passing">
+          <div class="athlete-photo-frame">
+            <img src="images/steve-nash.jpeg" alt="Steve Nash passing">
+          </div>
           <div class="athlete-photo-card-body">
             <strong>Steve Nash</strong>
             <span>Vision &amp; passing</span>
@@ -967,7 +991,9 @@
         </div>
 
         <div class="athlete-photo-card">
-          <img src="images/jason-williams.jpeg" alt="Jason Williams handles">
+          <div class="athlete-photo-frame">
+            <img src="images/jason-williams.jpeg" alt="Jason Williams handles">
+          </div>
           <div class="athlete-photo-card-body">
             <strong>Jason Williams</strong>
             <span>Handle creativity</span>
@@ -975,37 +1001,28 @@
         </div>
       </div>
 
-      <small>Images</small>
-      <h3>Photo &amp; Screenshot Ideas</h3>
-      <p style="font-size:0.82rem;color:var(--text-muted);margin-bottom:0.5rem;">
-        Use still frames or photos as teaching tools. You can drop them into
-        this column or use them in PDFs/slides.
-      </p>
-      <ul>
+      <h4 class="media-subtitle">Photo &amp; Screenshot Ideas</h4>
+      <ul class="media-list">
         <li>
-          <strong>Shooting</strong> – side and front views of your shot at
-          release, compared to a Steph Curry frame.
+          <strong>Shooting:</strong> side and front view at release, compared to a Steph Curry frame.
         </li>
         <li>
-          <strong>Dribbling</strong> – low crossover stance, with a frame of
-          Jason Williams or Jamal Murray for comparison.
+          <strong>Dribbling:</strong> low crossover stance, matched with Jason Williams or Jamal Murray.
         </li>
         <li>
-          <strong>Defense</strong> – Gary Payton / Wojo defensive stance
-          next to a photo of your stance.
+          <strong>Defense:</strong> Gary Payton / Wojo stance next to your own closeout stance.
         </li>
         <li>
-          <strong>Movement</strong> – Curry relocating to the corner vs your
-          relocation in a game or workout.
+          <strong>Movement:</strong> Curry relocating to the corner vs your relocation in a game.
         </li>
         <li>
-          <strong>Leadership</strong> – huddle photo with you leading a
-          quick “next play” message.
+          <strong>Leadership:</strong> a huddle frame where you’re organizing teammates.
         </li>
       </ul>
-      <p style="font-size:0.78rem;color:var(--text-muted);margin-top:0.6rem;">
-        Tip: take screenshots from film and mark them up with arrows and
-        notes to create your own visual teaching cards.
+
+      <p style="font-size:0.78rem;color:var(--text-muted);margin-top:0.5rem;">
+        Tip: take screenshots from film, then draw arrows and notes on them in a simple editor
+        (Preview, PowerPoint, or Canva) to build your own play cards.
       </p>
     </article>
   </div>
