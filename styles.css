@@ -754,6 +754,26 @@ tbody tr:nth-child(odd) {
     sans-serif;
   fill: #374151;
 }
+/* Small "video linked" pill */
+.video-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  margin-left: 0.4rem;
+  padding: 0.06rem 0.4rem;
+  border-radius: 999px;
+  background: rgba(37, 99, 235, 0.08);
+  border: 1px solid rgba(37, 99, 235, 0.35);
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #1d4ed8;
+}
+
+.video-tag::before {
+  content: "▶";
+  font-size: 0.6rem;
+}
 
 /* Leadership */
 .leadership-layout {
