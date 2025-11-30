@@ -459,8 +459,9 @@ section {
 
 .skill-grid {
   display: grid;
-  grid-template-columns: minmax(0, 3fr) minmax(0, 2.3fr);
+  grid-template-columns: minmax(0, 1fr); /* single full-width column */
   gap: 1.5rem;
+  margin-top: 1.25rem;
 }
 
 @media (max-width: 900px) {
