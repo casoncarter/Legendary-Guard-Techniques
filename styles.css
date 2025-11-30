@@ -471,17 +471,17 @@ section {
   color: var(--accent-2);
 }
 
-/* Skill content card layout */
+/* Skill content card layout – match site two-column sections */
 .skill-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr);  /* one column */
-  max-width: 900px;                       /* keeps it from going too wide */
-  margin: 1.5rem auto 0;                  /* center on page */
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
   gap: 1.5rem;
+  margin-top: 1.5rem;
+  align-items: flex-start;
 }
 
-/* Make the skill card feel like a main feature */
-.skill-grid .card {
+/* Make the left skill detail card feel like a main feature */
+.skill-grid #skillDetail {
   background: #ffffff;
   border-radius: 1rem;
   border: 1px solid var(--border-subtle);
@@ -489,6 +489,12 @@ section {
   box-shadow: 0 14px 40px rgba(15, 23, 42, 0.12);
 }
 
+/* Right-hand summary card uses normal .card styling but stays aligned */
+.skill-grid .skill-summary {
+  height: 100%;
+}
+
+/* Mobile: stack vertically */
 @media (max-width: 900px) {
   .skill-grid {
     grid-template-columns: minmax(0, 1fr);
