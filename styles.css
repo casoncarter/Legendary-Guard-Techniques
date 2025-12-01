@@ -1192,3 +1192,55 @@ footer {
   justify-content: space-between;
   align-items: center;
 }
+
+/* === GLOBAL OVERRIDE: UNIFY ALL SECTION HEADERS === */
+/* This will override earlier styles, even #skills/#drillbook/#media ones. */
+
+.mentor-cards .section-heading,
+#program-overview .program-section-heading,
+#skills .section-heading,
+#drillbook .section-heading,
+#schedules .section-heading,
+#leadership .section-heading,
+#media .section-heading {
+  max-width: 900px;
+  margin: 0 auto 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.4rem;
+}
+
+/* Unified title style */
+.mentor-cards .section-heading h2,
+#program-overview .program-section-heading h2,
+#skills .section-heading h2,
+#drillbook .section-heading h2,
+#schedules .section-heading h2,
+#leadership .section-heading h2,
+#media .section-heading h2 {
+  font-size: clamp(1.6rem, 2vw + 1rem, 2.1rem);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+/* Unified intro-sentence style (bigger + centered) */
+.mentor-cards .section-heading p,
+#program-overview .program-section-heading p,
+#skills .section-heading p,
+#drillbook .section-heading p,
+#schedules .section-heading p,
+#leadership .section-heading p,
+#media .section-heading p {
+  margin: 0;
+  font-size: 1.08rem;     /* larger intros */
+  line-height: 1.7;
+  color: #111827;         /* darker so it reads like a proper subheadline */
+  max-width: 800px;
+}
+
+
+
