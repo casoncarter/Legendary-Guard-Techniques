@@ -307,6 +307,61 @@ header {
   color: var(--text-muted);
 }
 
+.hero-thumb-tag {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+/* ============================
+   INTRO HERO SECTION 
+   ============================ */
+
+.intro-hero {
+  width: 100%;
+  padding: 80px 0;
+  background: #ffffff;
+}
+
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.intro-text h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #0a2a43;
+  margin-bottom: 20px;
+}
+
+.intro-text p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  max-width: 700px;
+}
+
+.intro-images {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.intro-images img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  aspect-ratio: 16 / 9;
+}
+
+/* ------------------ GENERIC SECTIONS & CARDS ------------------ */
+section {
+  margin-top: 2.5rem;
+}
 
 /* ------------------ GENERIC SECTIONS & CARDS ------------------ */
 
