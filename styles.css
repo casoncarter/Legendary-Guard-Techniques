@@ -200,6 +200,16 @@ ul li + li {
   margin-top: 0.25rem;
 }
 
+.mentor-intro {
+  max-width: 900px;
+  margin: 0 auto 1.5rem;
+  text-align: center;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #111827;
+  line-height: 1.6;
+}
+
 /* ------------------ HERO (TOP INTRO) ------------------ */
 
 .hero {
