@@ -50,6 +50,30 @@ img {
   padding: 0 1.5rem 3rem;
 }
 
+/* Uniform section headers */
+
+.section-heading {
+  max-width: 720px;
+  margin: 0 auto 2.5rem;
+  text-align: center;            /* change to left if you prefer */
+}
+
+.section-heading h2 {
+  font-size: clamp(1.4rem, 1.6vw + 1rem, 1.8rem);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-weight: 700;
+  margin: 0 0 0.4rem 0;
+}
+
+.section-heading p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+
 /* ------------------ HEADER / NAV ------------------ */
 
 header {
