@@ -771,6 +771,11 @@ tbody tr:nth-child(odd) {
   object-position: center;     /* keeps focus in the middle */
   border-radius: 12px;
 }
+/* Adjust crop so taller images don't cut off heads */
+.drill-card.drill-nash img,
+.drill-card.drill-gary-head img {
+  object-position: center top;
+}
 
 /* Titles & text */
 .drill-card h3 {
