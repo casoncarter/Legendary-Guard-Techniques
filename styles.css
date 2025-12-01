@@ -713,137 +713,116 @@ tbody tr:nth-child(odd) {
   background: #ffffff;
 }
 
-/* ------------------ DRILL BOOK & COURT DIAGRAMS ------------------ */
+/* ------------------ DRILL BOOK ------------------ */
 
-#drills .card {
-  max-width: 1000px;
-  margin: 1.5rem auto 0;
+#drillbook {
+  margin-top: 3rem;
 }
 
-.drill-grid {
+#drillbook .section-heading {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 1.25rem;
+  flex-direction: column;
+  align-items: center;
+}
+
+.drillbook-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.3rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.25rem;
 }
 
-@media (max-width: 900px) {
-  .drill-grid {
+@media (max-width: 1000px) {
+  .drillbook-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .drillbook-grid {
     grid-template-columns: minmax(0, 1fr);
   }
 }
 
-.diagram {
-  border-radius: var(--radius-xl);
-  padding: 0.9rem;
-  border: 1px dashed #d1d5db;
+.drill-card {
   background: #ffffff;
-  font-size: 0.8rem;
+  border-radius: 16px;
+  border: 1px solid var(--border-subtle);
+  padding: 0.9rem 1rem 1.1rem;
+  box-shadow: var(--shadow-soft);
+  font-size: 0.82rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
 }
 
-.diagram label {
+/* Image container: centers & normalizes all images (Steph, Gary, Wojo, etc.) */
+.drill-img {
+  width: 100%;
+  max-width: 320px;
+  height: 190px;
+  margin: 0 auto 0.4rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  font-weight: 600;
-  font-size: 0.82rem;
-  margin-bottom: 0.4rem;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--accent);
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #f3f4f6;
 }
 
-/* Small "video linked" pill */
-.video-tag {
+.drill-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Titles & text */
+.drill-card h3 {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #111827;
+}
+
+.drill-tagline {
+  margin: 0;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.drill-card ul {
+  margin: 0.35rem 0 0.4rem;
+  padding-left: 1.1rem;
+  font-size: 0.78rem;
+  color: #111827;
+}
+
+.drill-card ul li + li {
+  margin-top: 0.18rem;
+}
+
+/* Link to video */
+.drill-link {
+  margin-top: auto;
+  font-size: 0.78rem;
+  color: var(--accent-2);
+  text-decoration: none;
   display: inline-flex;
   align-items: center;
-  gap: 0.2rem;
-  margin-left: 0.4rem;
-  padding: 0.06rem 0.4rem;
-  border-radius: 999px;
-  background: rgba(37, 99, 235, 0.08);
-  border: 1px solid rgba(37, 99, 235, 0.35);
-  font-size: 0.6rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: #1d4ed8;
+  gap: 0.25rem;
 }
 
-.video-tag::before {
-  content: "▶";
-  font-size: 0.6rem;
+.drill-link::after {
+  content: "↗";
+  font-size: 0.7rem;
 }
 
-/* Pro drill court graphics */
-.drill-court {
-  margin-bottom: 0.6rem;
-  border-radius: 12px;
-  overflow: hidden;
-  border: 1px solid var(--border-subtle);
-  background: #fefce8; /* light hardwood tone */
+.drill-link:hover {
+  text-decoration: underline;
 }
 
-.court-svg {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.court-floor {
-  fill: #fef3c7; /* pale wood */
-}
-
-.court-line {
-  stroke: #9ca3af; /* light gray lines */
-  stroke-width: 1;
-  fill: none;
-}
-
-.court-key {
-  fill: #fefce8;
-  stroke: #9ca3af;
-  stroke-width: 1;
-}
-
-.court-arc {
-  stroke: #9ca3af;
-  stroke-width: 1;
-  fill: none;
-}
-
-/* icons */
-.player-icon {
-  fill: #2563eb;
-  stroke: #1d4ed8;
-  stroke-width: 1;
-}
-
-.ball-icon {
-  fill: #f97316; /* orange ball */
-  stroke: #ea580c;
-  stroke-width: 0.8;
-}
-
-.cone-icon {
-  fill: #b91c1c; /* red cone */
-  stroke: #7f1d1d;
-  stroke-width: 0.7;
-}
-
-.text-label {
-  font-size: 6px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
-  fill: #374151;
-}
-
-.diagram ul {
-  margin-left: 0.8rem;
-  font-size: 0.83rem;
-}
-
-.diagram ul li + li {
-  margin-top: 0.2rem;
-}
 
 /* ------------------ LEADERSHIP ------------------ */
 
