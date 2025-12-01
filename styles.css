@@ -319,9 +319,9 @@ ul li + li {
 }
 
 .program-stat-card {
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  line-height: 1.5;
+  font-size: 0.95rem;         /* bigger text */
+  color: #111827;             /* darker */
+  line-height: 1.7;
 }
 
 .program-stat-card h3 {
