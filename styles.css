@@ -546,72 +546,107 @@ ul li + li {
 
 /* Skill clip rows (inside the skill card only) */
 #skills .media-strip {
-  margin-top: 0.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  margin-top: 0.75rem;
 }
 
+/* Video card container */
 #skills .media-item {
   display: flex;
-  gap: 0.6rem;
-  padding: 0.45rem 0.55rem;
-  border-radius: 0.8rem;
+  align-items: stretch;
+  gap: 0.8rem;
+  padding: 0.75rem 0.9rem;
+  border-radius: 14px;
+  background: #ffffff;
   border: 1px solid var(--border-subtle);
-  background: var(--bg-soft);
-  align-items: center;
-  transition: 0.18s ease;
+  box-shadow: var(--shadow-soft);
+  text-decoration: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease,
+    border-color 0.15s ease, background-color 0.15s ease;
 }
 
 #skills .media-item:hover {
-  border-color: var(--accent-2);
-  background: #ffffff;
-  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.12);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
+  border-color: var(--accent-soft);
+  background-color: #f9fafb;
 }
 
+/* Thumbnail area with play overlay */
 #skills .media-thumb {
-  width: 48px;
+  flex: 0 0 170px;
+  aspect-ratio: 16 / 9;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(circle at 0 0, #e5f0ff, #1f2937);
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 0.45rem 0.55rem;
+}
+
+/* Top-left label badge (Float Dribble, Steve Nash, etc.) */
+#skills .media-thumb .badge {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  padding: 0.18rem 0.6rem;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.9);
+  color: #f9fafb;
+  font-size: 0.7rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+/* Circular play button bottom-right */
+#skills .media-thumb .play {
+  position: absolute;
+  bottom: 0.55rem;
+  right: 0.6rem;
+  width: 32px;
   height: 32px;
-  border-radius: 0.5rem;
-  background: linear-gradient(135deg, #2563eb, #012169);
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.95);
+  color: #f9fafb;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
+  font-size: 1rem;
+  box-shadow: 0 6px 12px rgba(15, 23, 42, 0.45);
 }
 
-#skills .media-thumb .badge {
-  position: absolute;
-  top: -8px;
-  left: 4px;
-  font-size: 0.6rem;
-  padding: 0.06rem 0.4rem;
-  border-radius: 999px;
-  background: #ffffff;
-  color: var(--accent-2);
-  border: 1px solid rgba(148, 163, 184, 0.5);
-}
-
-#skills .media-thumb .play {
-  font-size: 0.8rem;
-  color: #ffffff;
-}
-
+/* Text content on the right */
 #skills .media-info {
   display: flex;
   flex-direction: column;
-  gap: 0.05rem;
+  justify-content: center;
+  gap: 0.2rem;
 }
 
 #skills .media-info strong {
-  font-size: 0.8rem;
-  color: #0f172a;
+  font-size: 0.9rem;
+  color: #111827;
 }
 
 #skills .media-info span {
-  font-size: 0.74rem;
+  font-size: 0.78rem;
   color: var(--text-muted);
+  line-height: 1.4;
 }
+
+/* Mobile: stack thumbnail over text */
+@media (max-width: 700px) {
+  #skills .media-item {
+    flex-direction: column;
+  }
+
+  #skills .media-thumb {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+}
+
 
 /* ------------------ SCHEDULES ------------------ */
 
