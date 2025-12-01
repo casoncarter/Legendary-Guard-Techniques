@@ -163,6 +163,28 @@ section {
   color: var(--text-muted);
   max-width: 420px;
 }
+/* Centered style just for Player Mentors heading */
+#player-mentors .section-heading,
+.section-heading.section-heading--center {
+  justify-content: center;
+  text-align: center;
+}
+
+#player-mentors .section-heading > div {
+  max-width: 900px;
+}
+
+#player-mentors .section-heading h2 {
+  font-size: 1.6rem;
+  letter-spacing: 0.08em;
+}
+
+#player-mentors .section-heading p {
+  margin-top: 0.4rem;
+  font-size: 1.02rem;
+  color: #111827;
+  line-height: 1.7;
+}
 
 .card {
   border-radius: var(--radius-xl);
