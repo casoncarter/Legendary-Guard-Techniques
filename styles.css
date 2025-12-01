@@ -287,19 +287,20 @@ ul li + li {
 
 .program-section-heading {
   text-align: center;
-  max-width: 720px;
-  margin: 0 auto 1.5rem;
+  max-width: 1000px;        /* was 720px */
+  margin: 0 auto 1.75rem;   /* a bit more breathing room */
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.program-section-heading h2 {
-  font-size: 1.5rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: #0f172a;
+.program-section-heading p {
+  font-size: 1.05rem;       /* larger */
+  color: #111827;           /* darker, more important */
+  max-width: 980px;         /* fill more of the page */
+  line-height: 1.7;
 }
+
 
 .program-section-heading p {
   font-size: 0.95rem;
