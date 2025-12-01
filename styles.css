@@ -15,7 +15,7 @@
   --shadow-medium: 0 16px 40px rgba(15, 23, 42, 0.14);
 }
 
-/* Reset / base */
+/* ------------------ RESET / BASE ------------------ */
 
 * {
   box-sizing: border-box;
@@ -50,12 +50,16 @@ img {
   padding: 0 1.5rem 3rem;
 }
 
-/* Uniform section headers */
+/* ------------------ UNIFORM SECTION HEADERS ------------------ */
+
+section {
+  margin-top: 3rem;
+}
 
 .section-heading {
   max-width: 720px;
   margin: 0 auto 2.5rem;
-  text-align: center;            /* change to left if you prefer */
+  text-align: center;
 }
 
 .section-heading h2 {
@@ -64,6 +68,7 @@ img {
   letter-spacing: 0.18em;
   font-weight: 700;
   margin: 0 0 0.4rem 0;
+  color: #0f172a;
 }
 
 .section-heading p {
@@ -73,6 +78,45 @@ img {
   color: var(--text-muted);
 }
 
+/* Generic cards */
+
+.card {
+  border-radius: var(--radius-xl);
+  background: var(--card);
+  border: 1px solid var(--border-subtle);
+  padding: 1.1rem 1.25rem;
+  box-shadow: var(--shadow-soft);
+}
+
+.card h3 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: #111827;
+}
+
+.card small {
+  font-size: 0.75rem;
+  color: var(--accent-2);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.card p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+}
+
+/* Generic lists */
+
+ul {
+  margin-left: 1rem;
+  font-size: 0.83rem;
+}
+
+ul li + li {
+  margin-top: 0.25rem;
+}
 
 /* ------------------ HEADER / NAV ------------------ */
 
@@ -161,110 +205,13 @@ header {
   color: var(--accent-2);
 }
 
-/* ------------------ GENERIC SECTIONS & CARDS ------------------ */
-
-section {
-  margin-top: 2.5rem;
-}
-
-.section-heading {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  margin-bottom: 1.25rem;
-  gap: 1rem;
-}
-
-.section-heading h2 {
-  font-size: 1.3rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: #0f172a;
-}
-
-.section-heading p {
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  max-width: 420px;
-}
-/* Centered style just for Player Mentors heading */
-#player-mentors .section-heading,
-.section-heading.section-heading--center {
-  justify-content: center;
-  text-align: center;
-}
-
-#player-mentors .section-heading > div {
-  max-width: 900px;
-}
-
-#player-mentors .section-heading h2 {
-  font-size: 1.6rem;
-  letter-spacing: 0.08em;
-}
-
-#player-mentors .section-heading p {
-  margin-top: 0.4rem;
-  font-size: 1.02rem;
-  color: #111827;
-  line-height: 1.7;
-}
-
-.card {
-  border-radius: var(--radius-xl);
-  background: var(--card);
-  border: 1px solid var(--border-subtle);
-  padding: 1.1rem 1.25rem;
-  box-shadow: var(--shadow-soft);
-}
-
-.card h3 {
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-  color: #111827;
-}
-
-.card small {
-  font-size: 0.75rem;
-  color: var(--accent-2);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-}
-
-.card p {
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  margin-bottom: 0.75rem;
-}
-
-ul {
-  margin-left: 1rem;
-  font-size: 0.83rem;
-}
-
-ul li + li {
-  margin-top: 0.25rem;
-}
-
-.mentor-intro {
-  max-width: 900px;
-  margin: 0 auto 1.5rem;
-  text-align: center;
-  font-size: 1.05rem;
-  font-weight: 500;
-  color: #111827;
-  line-height: 1.6;
-}
-
 /* ------------------ HERO (TOP INTRO) ------------------ */
 
 .hero {
   margin-top: 2.5rem;
 }
 
-/* ================
-   NEW CLEAN HERO
-   ================ */
+/* Clean hero stack */
 
 .hero-heading-stack {
   max-width: 1000px;
@@ -306,16 +253,15 @@ ul li + li {
   margin-top: 0.5rem;
 }
 
-/* mobile */
 @media (max-width: 700px) {
   .hero-title {
     font-size: 1.9rem;
-    white-space: normal;  /* allow wrapping on smaller screens */
+    white-space: normal;
   }
 
   .hero-subtitle {
     font-size: 1.05rem;
-    white-space: normal;  /* allow wrapping on smaller screens */
+    white-space: normal;
   }
 
   .hero-kicker-large {
@@ -323,38 +269,12 @@ ul li + li {
   }
 }
 
-/* ------------------ PROGRAM OVERVIEW (HOW THE GUARD LAB WORKS) ------------------ */
+/* ------------------ PROGRAM OVERVIEW ------------------ */
 
-#program-overview {
-  margin-top: 3rem;
+#program-overview .section-heading {
+  /* Uses same global style; this just tweaks width a bit if needed */
+  max-width: 900px;
 }
-
-/* match skills / media heading style */
-
-.program-section-heading {
-  text-align: center;
-  max-width: 1000px;        /* was 720px */
-  margin: 0 auto 1.75rem;   /* a bit more breathing room */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.program-section-heading p {
-  font-size: 1.05rem;       /* larger */
-  color: #111827;           /* darker, more important */
-  max-width: 980px;         /* fill more of the page */
-  line-height: 1.7;
-}
-
-
-.program-section-heading p {
-  font-size: 0.95rem;
-  color: var(--text-muted);
-  max-width: 640px;
-}
-
-/* three “stat” cards */
 
 .program-stats-row {
   max-width: 1100px;
@@ -365,8 +285,8 @@ ul li + li {
 }
 
 .program-stat-card {
-  font-size: 0.95rem;         /* bigger text */
-  color: #111827;             /* darker */
+  font-size: 0.95rem;
+  color: #111827;
   line-height: 1.7;
 }
 
@@ -375,8 +295,6 @@ ul li + li {
   font-size: 0.95rem;
   color: #0f172a;
 }
-
-/* four pillars */
 
 .program-pillars-grid {
   max-width: 1100px;
@@ -403,8 +321,6 @@ ul li + li {
   line-height: 1.4;
 }
 
-/* responsive */
-
 @media (max-width: 900px) {
   .program-stats-row {
     grid-template-columns: minmax(0, 1fr);
@@ -421,7 +337,7 @@ ul li + li {
   }
 }
 
-/* ------------------ MENTOR PLAYER CARDS ------------------ */
+/* ------------------ PLAYER MENTORS ------------------ */
 
 .mentor-cards {
   margin-top: 1.5rem;
@@ -502,19 +418,10 @@ ul li + li {
   margin-top: 0.2rem;
 }
 
-/* ------------------ SKILL SECTION ------------------ */
+/* ------------------ SKILL SYSTEM ------------------ */
 
 #skills {
   margin-top: 3rem;
-}
-
-#skills .section-heading {
-  text-align: center;
-  max-width: 640px;
-  margin: 0 auto 1.25rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 /* Skill categories (icons) */
@@ -592,7 +499,7 @@ ul li + li {
   margin: 0 auto;
 }
 
-/* Skill clip rows */
+/* Skill media strip */
 
 #skills .media-strip {
   margin-top: 0.75rem;
@@ -710,8 +617,6 @@ ul li + li {
   line-height: 1.4;
 }
 
-/* Skill media responsive */
-
 @media (max-width: 700px) {
   #skills .media-item {
     flex-direction: column;
@@ -773,15 +678,6 @@ tbody tr:nth-child(odd) {
   margin-top: 3rem;
 }
 
-#drillbook .section-heading {
-  text-align: center;
-  max-width: 640px;
-  margin: 0 auto 1.25rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 /* Grid for drill cards */
 
 .drillbook-grid {
@@ -830,8 +726,7 @@ tbody tr:nth-child(odd) {
   border-radius: 12px;
 }
 
-/* Adjust crop to show more head on tall images */
-
+/* Adjust crop so taller images don't cut off heads */
 .drill-card.drill-nash img,
 .drill-card.drill-gary-head img {
   object-position: center top;
@@ -883,8 +778,7 @@ tbody tr:nth-child(odd) {
   text-decoration: underline;
 }
 
-/* ------------------ LEADERSHIP ------------------ */
-/* Leadership section layout */
+/* ------------------ COACH K LEADERSHIP LAB ------------------ */
 
 .leadership {
   padding: 4rem 0;
@@ -935,6 +829,7 @@ tbody tr:nth-child(odd) {
   text-transform: uppercase;
   letter-spacing: 0.08em;
   margin-bottom: 0.5rem;
+  color: #e5e7eb;
 }
 
 .leadership-resources ul {
@@ -950,6 +845,7 @@ tbody tr:nth-child(odd) {
 .leadership-resources a {
   text-decoration: none;
   border-bottom: 1px solid rgba(148, 163, 184, 0.4);
+  color: #e5e7eb;
 }
 
 .leadership-resources a:hover {
@@ -959,6 +855,7 @@ tbody tr:nth-child(odd) {
 .resources-note {
   font-size: 0.8rem;
   opacity: 0.85;
+  color: #e5e7eb;
 }
 
 /* Right-side content */
@@ -987,46 +884,7 @@ tbody tr:nth-child(odd) {
   padding-left: 1.1rem;
 }
 
-/* Quote card touch-ups */
-
-.quote-card hr {
-  border: none;
-  border-top: 1px solid rgba(148, 163, 184, 0.4);
-  margin: 0.7rem 0;
-}
-
-.quote-usage-title {
-  margin-bottom: 0.25rem;
-}
-
-.quote-usage-list {
-  margin-left: 0.9rem;
-}
-
-/* Stack vertically on smaller screens */
-
-@media (max-width: 800px) {
-  .leadership-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .coachk-card {
-    max-width: 440px;
-    margin: 0 auto 1.5rem auto;
-  }
-}
-
-.leadership-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
-  gap: 1.5rem;
-}
-
-@media (max-width: 900px) {
-  .leadership-layout {
-    grid-template-columns: minmax(0, 1fr);
-  }
-}
+/* Pill list */
 
 .pill-list {
   display: flex;
@@ -1043,6 +901,8 @@ tbody tr:nth-child(odd) {
   border: 1px solid var(--border-subtle);
   color: var(--text-muted);
 }
+
+/* Quote card */
 
 .quote-card {
   border-radius: var(--radius-xl);
@@ -1063,16 +923,32 @@ tbody tr:nth-child(odd) {
   color: var(--text-muted);
 }
 
-/* ------------------ MEDIA SECTION ------------------ */
-
-#media .section-heading {
-  text-align: center;
-  max-width: 640px;
-  margin: 0 auto 1.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.quote-card hr {
+  border: none;
+  border-top: 1px solid rgba(148, 163, 184, 0.4);
+  margin: 0.7rem 0;
 }
+
+.quote-usage-title {
+  margin-bottom: 0.25rem;
+}
+
+.quote-usage-list {
+  margin-left: 0.9rem;
+}
+
+@media (max-width: 800px) {
+  .leadership-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .coachk-card {
+    max-width: 440px;
+    margin: 0 auto 1.5rem auto;
+  }
+}
+
+/* ------------------ MEDIA (VIDEO & IMAGE LIBRARY) ------------------ */
 
 .media-library {
   display: grid;
