@@ -137,17 +137,81 @@ header {
   color: var(--accent-2);
 }
 
-/* ------------------ HERO ------------------ */
+/* ------------------ GENERIC SECTIONS & CARDS ------------------ */
+
+section {
+  margin-top: 2.5rem;
+}
+
+.section-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+  gap: 1rem;
+}
+
+.section-heading h2 {
+  font-size: 1.3rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #0f172a;
+}
+
+.section-heading p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  max-width: 420px;
+}
+
+.card {
+  border-radius: var(--radius-xl);
+  background: var(--card);
+  border: 1px solid var(--border-subtle);
+  padding: 1.1rem 1.25rem;
+  box-shadow: var(--shadow-soft);
+}
+
+.card h3 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: #111827;
+}
+
+.card small {
+  font-size: 0.75rem;
+  color: var(--accent-2);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.card p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+}
+
+ul {
+  margin-left: 1rem;
+  font-size: 0.83rem;
+}
+
+ul li + li {
+  margin-top: 0.25rem;
+}
+
+/* ------------------ HERO (TOP INTRO) ------------------ */
 
 .hero {
   margin-top: 2.5rem;
 }
 
-/* make hero heading match the look of skills/program sections */
+/* top centered heading (matches other section headings) */
 .hero-section-heading {
   text-align: center;
   max-width: 720px;
   margin: 0 auto 1.5rem;
+  display: flex;
   flex-direction: column;
   align-items: center;
 }
@@ -220,7 +284,7 @@ header {
   margin-top: 0.25rem;
 }
 
-/* reuse hero-actions, btn-primary, btn-ghost you already have */
+/* hero metrics (small stats in the intro) */
 
 .hero-metrics-inline {
   margin-top: 1.1rem;
@@ -231,11 +295,20 @@ header {
 
 .hero-metrics-inline .metric {
   padding: 0.6rem 0.7rem;
+  border-radius: 0.9rem;
+  background: var(--bg-soft);
+  border: 1px solid var(--border-subtle);
 }
 
 .metric-caption {
   font-size: 0.7rem;
   color: var(--text-muted);
+}
+
+.metric-value {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0f172a;
 }
 
 /* right column: images — all normalized */
@@ -266,7 +339,11 @@ header {
   padding: 0.45rem 0.6rem;
   font-size: 0.78rem;
   color: #f9fafb;
-  background: linear-gradient(to right, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.7));
+  background: linear-gradient(
+    to right,
+    rgba(15, 23, 42, 0.9),
+    rgba(15, 23, 42, 0.7)
+  );
 }
 
 /* thumbnail row */
@@ -307,293 +384,13 @@ header {
   color: var(--text-muted);
 }
 
-.hero-thumb-tag {
-  font-size: 0.72rem;
-  color: var(--text-muted);
-}
-
-/* ============================
-   INTRO HERO SECTION 
-   ============================ */
-
-.intro-hero {
-  width: 100%;
-  padding: 80px 0;
-  background: #ffffff;
-}
-
-.intro-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 40px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 40px;
-}
-
-.intro-text h1 {
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: #0a2a43;
-  margin-bottom: 20px;
-}
-
-.intro-text p {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  max-width: 700px;
-}
-
-.intro-images {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.intro-images img {
-  width: 100%;
-  border-radius: 12px;
-  object-fit: cover;
-  aspect-ratio: 16 / 9;
-}
-/* ============================
-   HERO INTRO SECTION
-   ============================ */
-
-.hero-intro {
-  margin-top: 2.5rem;
-}
-
-.hero-intro-card {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 1.75rem 1.5rem 1.9rem;
-  border-radius: var(--radius-xl);
-  background: var(--card);
-  border: 1px solid var(--border-subtle);
-  box-shadow: var(--shadow-soft);
-}
-
-.hero-intro-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
-  gap: 1.8rem;
-  align-items: center;
-}
-
-/* LEFT SIDE */
-
-.hero-intro-text h1 {
-  font-size: 1.7rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #0f172a;
-  margin: 0 0 0.65rem;
-}
-
-.hero-intro-lead {
-  font-size: 0.98rem;
-  color: #111827;
-  margin: 0 0 0.5rem;
-}
-
-.hero-intro-sub {
-  font-size: 0.9rem;
-  color: var(--text-muted);
-  max-width: 620px;
-  margin: 0 0 1rem;
-}
-
-.hero-intro-ctas {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 1.1rem;
-}
-
-/* reuse your existing .btn-primary / .btn-ghost styles if you have them */
-
-.hero-intro-metrics {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.75rem;
-}
-
-.hero-intro-metrics .metric {
-  padding: 0.7rem 0.75rem;
-  border-radius: 0.9rem;
-  background: var(--bg-soft);
-  border: 1px solid var(--border-subtle);
-}
-
-.hero-intro-metrics .metric-label {
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--text-muted);
-  margin-bottom: 0.1rem;
-}
-
-.hero-intro-metrics .metric-value {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #0f172a;
-}
-
-.hero-intro-metrics .metric-note {
-  font-size: 0.75rem;
-  color: var(--text-muted);
-}
-
-/* RIGHT SIDE: IMAGE COLLAGE */
-
-.hero-intro-images {
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-}
-
-.hero-intro-main {
-  border-radius: 1rem;
-  overflow: hidden;
-  border: 1px solid var(--border-subtle);
-  box-shadow: var(--shadow-soft);
-  background: #020617;
-}
-
-.hero-intro-main img {
-  width: 100%;
-  height: 190px;
-  object-fit: cover;
-}
-
-.hero-intro-main figcaption {
-  padding: 0.45rem 0.6rem;
-  font-size: 0.78rem;
-  color: #f9fafb;
-  background: linear-gradient(
-    to right,
-    rgba(15, 23, 42, 0.95),
-    rgba(15, 23, 42, 0.7)
-  );
-}
-
-.hero-intro-thumbs {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.55rem;
-}
-
-.hero-intro-thumbs figure {
-  border-radius: 0.8rem;
-  border: 1px solid var(--border-subtle);
-  background: #ffffff;
-  padding: 0.35rem;
-  box-shadow: var(--shadow-soft);
-  font-size: 0.74rem;
-}
-
-.hero-intro-thumbs img {
-  width: 100%;
-  height: 80px;
-  object-fit: cover;
-  border-radius: 0.55rem;
-  margin-bottom: 0.2rem;
-}
-
-.hero-intro-thumbs figcaption {
-  font-size: 0.72rem;
-  color: var(--text-muted);
-}
-
-/* Responsive */
-
-@media (max-width: 900px) {
-  .hero-intro-grid {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .hero-intro-metrics {
+@media (max-width: 700px) {
+  .hero-metrics-inline {
     grid-template-columns: minmax(0, 1fr);
   }
 }
 
-@media (max-width: 600px) {
-  .hero-intro-card {
-    padding: 1.25rem 1.1rem 1.4rem;
-  }
-}
-
-/* ------------------ GENERIC SECTIONS & CARDS ------------------ */
-section {
-  margin-top: 2.5rem;
-}
-
-/* ------------------ GENERIC SECTIONS & CARDS ------------------ */
-
-section {
-  margin-top: 2.5rem;
-}
-
-.section-heading {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  margin-bottom: 1.25rem;
-  gap: 1rem;
-}
-
-.section-heading h2 {
-  font-size: 1.3rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: #0f172a;
-}
-
-.section-heading p {
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  max-width: 420px;
-}
-
-.card {
-  border-radius: var(--radius-xl);
-  background: var(--card);
-  border: 1px solid var(--border-subtle);
-  padding: 1.1rem 1.25rem;
-  box-shadow: var(--shadow-soft);
-}
-
-.card h3 {
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-  color: #111827;
-}
-
-.card small {
-  font-size: 0.75rem;
-  color: var(--accent-2);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-}
-
-.card p {
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  margin-bottom: 0.75rem;
-}
-
-ul {
-  margin-left: 1rem;
-  font-size: 0.83rem;
-}
-
-ul li + li {
-  margin-top: 0.25rem;
-}
-
-/* ------------------ PROGRAM OVERVIEW ------------------ */
+/* ------------------ PROGRAM OVERVIEW (HOW THE GUARD LAB WORKS) ------------------ */
 
 #program-overview {
   margin-top: 3rem;
@@ -605,6 +402,7 @@ ul li + li {
   text-align: center;
   max-width: 720px;
   margin: 0 auto 1.5rem;
+  display: flex;
   flex-direction: column;
   align-items: center;
 }
@@ -655,7 +453,6 @@ ul li + li {
 }
 
 .program-pillars-grid .pillar-card {
-  /* pillar-card already styled as a card earlier */
   padding: 0.85rem 1rem;
 }
 
@@ -781,6 +578,7 @@ ul li + li {
   text-align: center;
   max-width: 640px;
   margin: 0 auto 1.25rem;
+  display: flex;
   flex-direction: column;
   align-items: center;
 }
@@ -1045,6 +843,7 @@ tbody tr:nth-child(odd) {
   text-align: center;
   max-width: 640px;
   margin: 0 auto 1.25rem;
+  display: flex;
   flex-direction: column;
   align-items: center;
 }
@@ -1205,6 +1004,7 @@ tbody tr:nth-child(odd) {
   text-align: center;
   max-width: 640px;
   margin: 0 auto 1.5rem;
+  display: flex;
   flex-direction: column;
   align-items: center;
 }
