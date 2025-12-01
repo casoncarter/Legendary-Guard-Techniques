@@ -12,7 +12,10 @@
   --danger: #ef4444;
   --radius-xl: 16px;
   --shadow-soft: 0 10px 30px rgba(15, 23, 42, 0.08);
+  --shadow-medium: 0 16px 40px rgba(15, 23, 42, 0.14);
 }
+
+/* Reset / base */
 
 * {
   box-sizing: border-box;
@@ -39,14 +42,16 @@ img {
   display: block;
 }
 
-/* Layout */
+/* Layout wrapper */
+
 .page {
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 1.5rem 3rem;
 }
 
-/* Header / Nav */
+/* ------------------ HEADER / NAV ------------------ */
+
 header {
   position: sticky;
   top: 0;
@@ -132,7 +137,8 @@ header {
   color: var(--accent-2);
 }
 
-/* Hero */
+/* ------------------ HERO ------------------ */
+
 .hero {
   padding: 2.25rem 0 1.5rem;
   display: grid;
@@ -261,33 +267,6 @@ header {
   box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
 }
 
-.hero-player-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.55rem;
-  font-size: 0.72rem;
-}
-
-.player-pill {
-  border-radius: 999px;
-  padding: 0.35rem 0.55rem;
-  border: 1px solid var(--border-subtle);
-  display: flex;
-  flex-direction: column;
-  gap: 0.05rem;
-  background: var(--bg-soft);
-}
-
-.player-pill strong {
-  font-size: 0.74rem;
-  color: #111827;
-}
-
-.player-pill span {
-  color: var(--text-muted);
-  font-size: 0.7rem;
-}
-
 .hero-metrics {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -314,7 +293,8 @@ header {
   color: var(--accent-2);
 }
 
-/* Sections */
+/* ------------------ GENERIC SECTIONS & CARDS ------------------ */
+
 section {
   margin-top: 2.5rem;
 }
@@ -340,7 +320,6 @@ section {
   max-width: 420px;
 }
 
-/* Generic card + text */
 .card {
   border-radius: var(--radius-xl);
   background: var(--card);
@@ -375,6 +354,184 @@ ul {
 
 ul li + li {
   margin-top: 0.25rem;
+}
+
+/* ------------------ PROGRAM OVERVIEW ------------------ */
+
+#program-overview {
+  margin-top: 3rem;
+}
+
+.program-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 2.1fr) minmax(0, 1.4fr);
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.program-text .section-heading {
+  text-align: left;
+  max-width: none;
+  margin: 0 0 1rem 0;
+}
+
+.program-text .section-heading h2 {
+  font-size: 1.75rem;
+  color: #0f172a;
+  margin: 0 0 0.4rem 0;
+}
+
+.program-text .section-heading p {
+  font-size: 0.98rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.program-summary {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-soft);
+  padding: 1.1rem 1.3rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #111827;
+  margin-bottom: 1.5rem;
+}
+
+/* Pillars inside program overview */
+
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.pillar-card {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-soft);
+  padding: 0.9rem 1.1rem;
+}
+
+.pillar-card h3 {
+  margin: 0 0 0.3rem 0;
+  font-size: 0.95rem;
+  color: #0f172a;
+}
+
+.pillar-card p {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+
+/* Right column: mentor faces + Coach K */
+
+.program-mentors {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.program-mentors-title {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #6b7280;
+}
+
+.program-mentors-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.program-mentor-face {
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.program-mentor-face img {
+  width: 70px;
+  height: 70px;
+  border-radius: 999px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 0.3rem;
+  border: 2px solid var(--accent-soft);
+}
+
+.program-coach-card {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-soft);
+  padding: 0.9rem 1rem;
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.program-coach-image img {
+  width: 60px;
+  height: 60px;
+  border-radius: 999px;
+  object-fit: cover;
+  border: 2px solid var(--accent-soft);
+}
+
+.program-coach-text h4 {
+  margin: 0 0 0.2rem 0;
+  font-size: 0.9rem;
+  color: #0f172a;
+}
+
+.program-coach-text p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+/* Program overview responsive */
+
+@media (max-width: 900px) {
+  .program-inner {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .program-text .section-heading {
+    text-align: center;
+  }
+
+  .program-summary {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .pillars-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .program-mentors-title {
+    text-align: center;
+  }
+
+  .program-mentors {
+    align-items: center;
+  }
+
+  .program-mentors-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 /* ------------------ MENTOR PLAYER CARDS ------------------ */
@@ -413,7 +570,7 @@ ul li + li {
 .mentor-card-top {
   display: flex;
   align-items: center;
-  gap: 0.8rem; /* slightly larger gap for bigger avatar */
+  gap: 0.8rem;
   margin-bottom: 0.6rem;
 }
 
@@ -473,6 +630,7 @@ ul li + li {
 }
 
 /* Skill categories (icons) */
+
 .category-icons {
   display: flex;
   flex-wrap: wrap;
@@ -508,6 +666,7 @@ ul li + li {
 }
 
 /* Skills tabs */
+
 .skill-tabs {
   display: flex;
   flex-wrap: wrap;
@@ -539,17 +698,20 @@ ul li + li {
 }
 
 /* Main skill card */
+
 .skill-card {
   max-width: 900px;
   margin: 0 auto;
 }
 
-/* Skill clip rows (inside the skill card only) */
+/* Skill clip rows */
+
 #skills .media-strip {
   margin-top: 0.75rem;
 }
 
 /* Video card container */
+
 #skills .media-item {
   display: flex;
   align-items: stretch;
@@ -574,25 +736,25 @@ ul li + li {
   background-color: #f9fafb;
 }
 
-/* Thumbnail area with play overlay + background image */
+/* Thumbnail with background image */
+
 #skills .media-thumb {
   flex: 0 0 170px;
   aspect-ratio: 16 / 9;
   border-radius: 10px;
   position: relative;
   overflow: hidden;
-
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
   display: flex;
   align-items: flex-end;
   justify-content: flex-start;
   padding: 0.45rem 0.55rem;
 }
 
-/* Subtle dark gradient for text/icon readability */
+/* Dark gradient overlay */
+
 #skills .media-thumb::after {
   content: "";
   position: absolute;
@@ -605,7 +767,8 @@ ul li + li {
   pointer-events: none;
 }
 
-/* Top-left label badge (Float Dribble, Steve Nash, etc.) */
+/* Badge top-left */
+
 #skills .media-thumb .badge {
   position: absolute;
   top: 0.5rem;
@@ -620,7 +783,8 @@ ul li + li {
   z-index: 1;
 }
 
-/* Circular play button bottom-right */
+/* Play button bottom-right */
+
 #skills .media-thumb .play {
   position: absolute;
   bottom: 0.55rem;
@@ -638,7 +802,8 @@ ul li + li {
   z-index: 1;
 }
 
-/* Text content on the right */
+/* Text content on right */
+
 #skills .media-info {
   display: flex;
   flex-direction: column;
@@ -657,7 +822,8 @@ ul li + li {
   line-height: 1.4;
 }
 
-/* Mobile: stack thumbnail over text */
+/* Skill media responsive */
+
 @media (max-width: 700px) {
   #skills .media-item {
     flex-direction: column;
@@ -712,96 +878,6 @@ tbody tr:nth-child(even) {
 tbody tr:nth-child(odd) {
   background: #ffffff;
 }
-/* ------------------ PROGRAM OVERVIEW ------------------ */
-
-#program-overview {
-  margin-top: 3rem;
-}
-
-#program-overview .section-heading {
-  text-align: center;
-  max-width: 760px;
-  margin: 0 auto 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-}
-
-#program-overview .section-heading h2 {
-  font-size: 1.75rem;
-  color: #0f172a;
-  margin: 0;
-}
-
-#program-overview .section-heading p {
-  font-size: 1rem;
-  color: var(--text-muted);
-  line-height: 1.5;
-}
-
-/* Program Summary Card */
-.program-summary {
-  max-width: 880px;
-  margin: 0 auto 2rem;
-  background: #ffffff;
-  border-radius: 16px;
-  border: 1px solid var(--border-subtle);
-  box-shadow: var(--shadow-soft);
-  padding: 1.25rem 1.5rem;
-  font-size: 0.95rem;
-  line-height: 1.5;
-  display: flex;
-  flex-direction: column;
-  gap: 0.9rem;
-  color: #111827;
-}
-
-/* Pillars Grid */
-.pillars-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1.25rem;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-@media (max-width: 1000px) {
-  .pillars-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 650px) {
-  .pillars-grid {
-    grid-template-columns: minmax(0, 1fr);
-  }
-}
-
-/* Individual Pillar Cards */
-.pillar-card {
-  background: #ffffff;
-  border-radius: 16px;
-  border: 1px solid var(--border-subtle);
-  padding: 1rem 1.25rem;
-  box-shadow: var(--shadow-soft);
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.pillar-card h3 {
-  margin: 0;
-  font-size: 1rem;
-  color: #0f172a;
-  font-weight: 600;
-}
-
-.pillar-card p {
-  margin: 0;
-  font-size: 0.87rem;
-  color: var(--text-muted);
-  line-height: 1.45;
-}
 
 /* ------------------ DRILL BOOK ------------------ */
 
@@ -818,6 +894,7 @@ tbody tr:nth-child(odd) {
 }
 
 /* Grid for drill cards */
+
 .drillbook-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -837,7 +914,8 @@ tbody tr:nth-child(odd) {
   }
 }
 
-/* Card styling */
+/* Drill cards */
+
 .drill-card {
   background: #ffffff;
   border-radius: 16px;
@@ -850,24 +928,28 @@ tbody tr:nth-child(odd) {
   gap: 0.4rem;
 }
 
-/* 🔥 Image styling: center & normalize all images */
+/* Drill images */
+
 .drill-card img {
   display: block;
-  margin: 0 auto 0.5rem;       /* centers image */
+  margin: 0 auto 0.5rem;
   width: 100%;
-  max-width: 320px;            /* controls visual size */
-  height: 190px;               /* makes them consistent height */
-  object-fit: cover;           /* crops tall/vertical ones nicely */
-  object-position: center;     /* keeps focus in the middle */
+  max-width: 320px;
+  height: 190px;
+  object-fit: cover;
+  object-position: center;
   border-radius: 12px;
 }
-/* Adjust crop so taller images don't cut off heads */
+
+/* Adjust crop to show more head on tall images */
+
 .drill-card.drill-nash img,
 .drill-card.drill-gary-head img {
   object-position: center top;
 }
 
-/* Titles & text */
+/* Drill text */
+
 .drill-card h3 {
   margin: 0;
   font-size: 0.95rem;
@@ -891,7 +973,8 @@ tbody tr:nth-child(odd) {
   margin-top: 0.18rem;
 }
 
-/* Video/link at bottom of card */
+/* Drill links */
+
 .drill-link {
   margin-top: auto;
   font-size: 0.78rem;
@@ -960,7 +1043,7 @@ tbody tr:nth-child(odd) {
   color: var(--text-muted);
 }
 
-/* ------------------ MEDIA SECTION (VIDEOS + IMAGES) ------------------ */
+/* ------------------ MEDIA SECTION ------------------ */
 
 #media .section-heading {
   text-align: center;
@@ -988,7 +1071,8 @@ tbody tr:nth-child(odd) {
   margin-bottom: 1rem;
 }
 
-/* Video grid – single-column stacked, consistent tile size */
+/* Video grid */
+
 .media-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
@@ -996,6 +1080,7 @@ tbody tr:nth-child(odd) {
 }
 
 /* Video card */
+
 .video-card {
   display: flex;
   flex-direction: column;
@@ -1017,6 +1102,7 @@ tbody tr:nth-child(odd) {
 }
 
 /* Thumbnail */
+
 .video-thumb {
   position: relative;
   width: 100%;
@@ -1054,7 +1140,8 @@ tbody tr:nth-child(odd) {
   border: 1px solid rgba(209, 213, 219, 0.9);
 }
 
-/* Big play icon */
+/* Play icon */
+
 .video-play-icon {
   width: 54px;
   height: 54px;
@@ -1068,7 +1155,8 @@ tbody tr:nth-child(odd) {
   box-shadow: 0 10px 30px rgba(15, 23, 42, 0.4);
 }
 
-/* Body */
+/* Video card body */
+
 .video-card-body {
   padding: 0.9rem 1rem 1rem;
 }
@@ -1085,7 +1173,8 @@ tbody tr:nth-child(odd) {
   margin: 0;
 }
 
-/* Athlete gallery – consistent grid & sizes */
+/* Athlete gallery */
+
 .athlete-gallery {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1146,6 +1235,8 @@ tbody tr:nth-child(odd) {
 .media-list li + li {
   margin-top: 0.3rem;
 }
+
+/* Media responsive */
 
 @media (max-width: 900px) {
   .media-library {
