@@ -860,6 +860,137 @@ tbody tr:nth-child(odd) {
 }
 
 /* ------------------ LEADERSHIP ------------------ */
+/* Leadership section layout */
+
+.leadership {
+  padding: 4rem 0;
+}
+
+.leadership-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.45fr);
+  gap: 2.5rem;
+  align-items: flex-start;
+}
+
+/* Coach K card */
+
+.coachk-card {
+  margin: 0;
+  background: #020617;
+  border-radius: 1.5rem;
+  padding: 1.25rem;
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.75);
+}
+
+.coachk-photo {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  border-radius: 1.25rem;
+  object-fit: cover;
+  margin: 0 auto 0.75rem auto;
+}
+
+.coachk-caption {
+  font-size: 0.85rem;
+  line-height: 1.4;
+  opacity: 0.8;
+  text-align: center;
+}
+
+/* Resources under Coach K */
+
+.leadership-resources {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.leadership-resources h3 {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.5rem;
+}
+
+.leadership-resources ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0.75rem 0;
+}
+
+.leadership-resources li {
+  margin-bottom: 0.35rem;
+}
+
+.leadership-resources a {
+  text-decoration: none;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.4);
+}
+
+.leadership-resources a:hover {
+  border-bottom-color: rgba(248, 250, 252, 0.9);
+}
+
+.resources-note {
+  font-size: 0.8rem;
+  opacity: 0.85;
+}
+
+/* Right-side content */
+
+.leadership-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.leadership-intro {
+  font-size: 0.98rem;
+  color: var(--text-muted);
+  margin-bottom: 0.9rem;
+}
+
+.subheading {
+  font-size: 0.85rem;
+  margin: 0.8rem 0 0.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.leadership-list {
+  font-size: 0.9rem;
+  padding-left: 1.1rem;
+}
+
+/* Quote card touch-ups */
+
+.quote-card hr {
+  border: none;
+  border-top: 1px solid rgba(148, 163, 184, 0.4);
+  margin: 0.7rem 0;
+}
+
+.quote-usage-title {
+  margin-bottom: 0.25rem;
+}
+
+.quote-usage-list {
+  margin-left: 0.9rem;
+}
+
+/* Stack vertically on smaller screens */
+
+@media (max-width: 800px) {
+  .leadership-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .coachk-card {
+    max-width: 440px;
+    margin: 0 auto 1.5rem auto;
+  }
+}
 
 .leadership-layout {
   display: grid;
