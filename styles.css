@@ -727,6 +727,7 @@ tbody tr:nth-child(odd) {
   align-items: center;
 }
 
+/* Grid for drill cards */
 .drillbook-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -746,6 +747,7 @@ tbody tr:nth-child(odd) {
   }
 }
 
+/* Card styling */
 .drill-card {
   background: #ffffff;
   border-radius: 16px;
@@ -758,25 +760,16 @@ tbody tr:nth-child(odd) {
   gap: 0.4rem;
 }
 
-/* Image container: centers & normalizes all images (Steph, Gary, Wojo, etc.) */
-.drill-img {
+/* 🔥 Image styling: center & normalize all images */
+.drill-card img {
+  display: block;
+  margin: 0 auto 0.5rem;       /* centers image */
   width: 100%;
-  max-width: 320px;
-  height: 190px;
-  margin: 0 auto 0.4rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
+  max-width: 320px;            /* controls visual size */
+  height: 190px;               /* makes them consistent height */
+  object-fit: cover;           /* crops tall/vertical ones nicely */
+  object-position: center;     /* keeps focus in the middle */
   border-radius: 12px;
-  background: #f3f4f6;
-}
-
-.drill-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
 }
 
 /* Titles & text */
@@ -803,7 +796,7 @@ tbody tr:nth-child(odd) {
   margin-top: 0.18rem;
 }
 
-/* Link to video */
+/* Video/link at bottom of card */
 .drill-link {
   margin-top: auto;
   font-size: 0.78rem;
@@ -822,7 +815,6 @@ tbody tr:nth-child(odd) {
 .drill-link:hover {
   text-decoration: underline;
 }
-
 
 /* ------------------ LEADERSHIP ------------------ */
 
