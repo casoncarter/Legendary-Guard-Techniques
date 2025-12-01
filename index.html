@@ -27,148 +27,134 @@
   </header>
 
 <main class="page">
-  <!-- HERO -->
-  <section class="hero" id="top">
-    <div class="hero-inner">
-      <!-- Left: copy -->
-      <div class="hero-copy">
-        <p class="hero-kicker">Guard Development Platform</p>
-        <h1>Henry’s <span>Custom Elite</span> Guard Lab</h1>
-        <p class="hero-subtitle">
-          A complete skill, mindset, and leadership system for modern guards,
-          blending the games of Steph Curry, Jamal Murray, Steve Nash,
-          Jason Williams, Trae Young, Gary Payton, and Steve Wojciechowski —
-          guided by the championship leadership standards of Coach K.
-        </p>
-
-        <ul class="hero-highlights">
-          <li>Modeled off the habits and reads of elite NBA and Duke guards.</li>
-          <li>Structured weekly plan with skill blocks, film, and leadership work.</li>
-          <li>Designed specifically for serious 1–3 and combo guards.</li>
-        </ul>
-
-        <div class="hero-actions">
-          <button class="btn-primary" onclick="document.getElementById('schedules').scrollIntoView({behavior:'smooth'})">
-            Start Weekly Plan →
-          </button>
-          <button class="btn-ghost" onclick="document.getElementById('media').scrollIntoView({behavior:'smooth'})">
-            Watch Teaching Clips
-          </button>
-        </div>
-
-        <div class="hero-metrics hero-metrics-inline">
-          <div class="metric">
-            <div class="metric-label">Skill Blocks</div>
-            <div class="metric-value">5</div>
-            <div class="metric-caption">Handle · Shot · Pass · Movement · D</div>
-          </div>
-          <div class="metric">
-            <div class="metric-label">Sessions / Week</div>
-            <div class="metric-value">6</div>
-            <div class="metric-caption">Built-in rest + film</div>
-          </div>
-          <div class="metric">
-            <div class="metric-label">Mentor Profiles</div>
-            <div class="metric-value">8</div>
-            <div class="metric-caption">Players + Coach K</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Right: splashy athlete images -->
-      <div class="hero-visual">
-        <div class="hero-visual-bg"></div>
-
-        <div class="hero-photo hero-photo-main">
-          <img src="images/steph-curry.jpeg" alt="Steph Curry shooting">
-          <div class="hero-photo-label">
-            <span class="hero-photo-tag">Shooting</span>
-            <span>Steph Curry · Range & Footwork</span>
-          </div>
-        </div>
-
-        <div class="hero-photo-column">
-          <div class="hero-photo hero-photo-small">
-            <img src="images/jamal-murray.jpg" alt="Jamal Murray dribbling">
-            <div class="hero-photo-label">
-              <span class="hero-photo-tag">Handle</span>
-              <span>Jamal Murray · Pace & Craft</span>
-            </div>
-          </div>
-
-          <div class="hero-photo hero-photo-small">
-            <img src="images/Steve Nash2.jpg" alt="Steve Nash probing in the paint">
-            <div class="hero-photo-label">
-              <span class="hero-photo-tag">Playmaking</span>
-              <span>Steve Nash · Paint Probe Reads</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="hero-mentor-strip">
-          <div class="hero-mentor-avatars">
-            <div class="hero-avatar">
-              <img src="images/trae-young.jpeg" alt="Trae Young">
-            </div>
-            <div class="hero-avatar">
-              <img src="images/gary-payton.jpeg" alt="Gary Payton">
-            </div>
-            <div class="hero-avatar">
-              <img src="images/steve-wojo.jpg" alt="Steve Wojciechowski">
-            </div>
-            <div class="hero-avatar">
-              <img src="images/coach-k.jpg" alt="Coach K">
-            </div>
-          </div>
-          <div class="hero-mentor-copy">
-            <p>Trae · Payton · Wojo · Coach K standards baked into every block.</p>
-          </div>
-        </div>
-      </div>
+  <!-- INTRO / HERO -->
+  <section id="top" class="hero">
+    <div class="section-heading hero-section-heading">
+      <h2>Henry’s Custom Elite Guard Development Lab</h2>
+      <p>
+        A complete skill, mindset, and leadership system for modern guards, blending the games of
+        Steph Curry, Jamal Murray, Steve Nash, Jason Williams, Trae Young, Gary Payton, and
+        Steve Wojciechowski — guided by the championship leadership standards of Coach K.
+      </p>
     </div>
+
+    <article class="card hero-card-pro">
+      <div class="hero-card-grid">
+        <!-- Left: text + actions -->
+        <div class="hero-card-text">
+          <p class="hero-kicker">Guard Development Platform</p>
+          <p class="hero-lead">
+            Built for serious 1–3 and combo guards who want a repeatable weekly system for
+            skill work, film study, and leadership habits — not just a list of drills.
+          </p>
+
+          <ul class="hero-highlights">
+            <li>Five core skill blocks: handle, shot, passing, off-ball movement, and defense.</li>
+            <li>Modeled off real game film from elite NBA and Duke guards.</li>
+            <li>Aligned with school / team schedules so the load is tough but sustainable.</li>
+          </ul>
+
+          <div class="hero-actions">
+            <button class="btn-primary"
+              onclick="document.getElementById('schedules').scrollIntoView({behavior:'smooth'})">
+              Start Weekly Plan →
+            </button>
+            <button class="btn-ghost"
+              onclick="document.getElementById('media').scrollIntoView({behavior:'smooth'})">
+              Watch Teaching Clips
+            </button>
+          </div>
+
+          <div class="hero-metrics hero-metrics-inline">
+            <div class="metric">
+              <div class="metric-label">Skill Blocks</div>
+              <div class="metric-value">5</div>
+              <div class="metric-caption">Handle · Shot · Pass · Movement · D</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">Sessions / Week</div>
+              <div class="metric-value">6</div>
+              <div class="metric-caption">Built-in rest + film</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">Mentor Profiles</div>
+              <div class="metric-value">8</div>
+              <div class="metric-caption">Players + Coach K</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: clean, consistent images -->
+        <div class="hero-card-images">
+          <div class="hero-main-image">
+            <img src="images/steph-curry.jpeg" alt="Steph Curry shooting">
+            <div class="hero-main-caption">
+              Steph Curry · Shooting Footwork & Range
+            </div>
+          </div>
+
+          <div class="hero-thumb-row">
+            <div class="hero-thumb">
+              <img src="images/jamal-murray.jpg" alt="Jamal Murray dribbling">
+              <span class="hero-thumb-title">Jamal Murray</span>
+              <span class="hero-thumb-tag">Handle & Pace</span>
+            </div>
+            <div class="hero-thumb">
+              <img src="images/Steve Nash2.jpg" alt="Steve Nash probing in the paint">
+              <span class="hero-thumb-title">Steve Nash</span>
+              <span class="hero-thumb-tag">Paint Probing</span>
+            </div>
+            <div class="hero-thumb">
+              <img src="images/trae-young.jpeg" alt="Trae Young pick and roll">
+              <span class="hero-thumb-title">Trae Young</span>
+              <span class="hero-thumb-tag">Pick &amp; Roll Reads</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
   </section>
-  <!-- end HERO -->
 
   <!-- PROGRAM OVERVIEW -->
   <section id="program-overview">
-    <div class="program-header">
+    <div class="section-heading program-section-heading">
       <h2>How the Guard Lab Works</h2>
       <p>
-        Modern guards must be complete: they have to score from all three levels, make reads out of the pick-and-roll,
-        compete defensively, and lead. This platform organizes that work into a repeatable weekly system.
+        Modern guards must be complete: they need to score from all three levels, make reads out of the pick-and-roll,
+        compete defensively, and lead. The Guard Lab organizes that work into a clear weekly system.
       </p>
     </div>
 
     <div class="program-stats-row">
-      <article class="program-stat-card">
+      <article class="card program-stat-card">
         <h3>Skill System</h3>
         <p>
-          Five core blocks: <strong>dribbling, shooting, passing, off-ball movement, and defense</strong> — each mapped
-          to one or more mentor players so the “why” behind the drill is always clear.
+          Five core blocks — <strong>dribbling, shooting, passing, off-ball movement, and defense</strong> — each tied
+          to mentor players so drills always connect back to real game situations.
         </p>
       </article>
-      <article class="program-stat-card">
+      <article class="card program-stat-card">
         <h3>Weekly Rhythm</h3>
         <p>
-          6 sessions per week with built-in <strong>rest, film, and leadership work</strong>, so the load is serious but
-          sustainable during a real school and team schedule.
+          Six sessions per week with built-in <strong>rest, film, and leadership work</strong>, sized for a real
+          academic and team schedule so the work is tough but sustainable.
         </p>
       </article>
-      <article class="program-stat-card">
+      <article class="card program-stat-card">
         <h3>Film & Leadership</h3>
         <p>
-          Clips and prompts pulled from <strong>Curry, Nash, Trae, Payton, Wojo, and Coach K</strong> — teaching not just
-          moves, but decision-making, communication, and competitive identity.
+          Clips and standards from <strong>Curry, Nash, Trae, Payton, Wojo, and Coach K</strong> — emphasizing decision
+          making, communication, and competitive identity, not just highlights.
         </p>
       </article>
     </div>
 
-    <div class="pillars-grid">
+    <div class="program-pillars-grid">
       <article class="pillar-card">
         <h3>Skill Execution</h3>
         <p>
-          Mechanics, footwork, ball control, and finishing variety — built on Curry, Murray, and Nash templates and
-          repeated until they hold up against pressure.
+          Mechanics, footwork, ball control, and finishing variety — built around Curry, Murray, and Nash templates and
+          repeated until they hold up against real pressure.
         </p>
       </article>
 
@@ -183,7 +169,7 @@
       <article class="pillar-card">
         <h3>Competition Identity</h3>
         <p>
-          On-ball defense, physicality, and pride in every possession — inspired by Gary Payton’s edge and Wojo’s
+          On-ball defense, physicality, and pride in each possession — inspired by Gary Payton’s edge and Wojo’s
           floor-slap compete level.
         </p>
       </article>
@@ -198,6 +184,8 @@
     </div>
   </section>
   <!-- end PROGRAM OVERVIEW -->
+
+  <!-- ⬇️ Player Mentors section starts next (leave as-is) ⬇️ -->
 
   <!-- ⬇️ Your existing Player Mentors section should follow next ⬇️ -->
 
