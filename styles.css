@@ -1670,106 +1670,6 @@ footer {
 }
 
 /* =========================
-   NIKE / JORDAN-STYLE HERO
-   (no content changes needed)
-   ========================== */
-
-/* Treat the first block of content as the hero.
-   If your main wrapper is .page, this will hit it;
-   if not, the body/markdown-body selectors will still help. */
-
-.page > :first-child,
-.markdown-body > h1:first-of-type {
-  position: relative;
-  margin-top: 2.75rem;
-  margin-bottom: 3rem;
-  padding: 3.25rem 2.25rem 3rem;
-  border-radius: 26px;
-  background:
-    radial-gradient(circle at top left, #1d4ed8 0, #020617 55%, #000000 100%);
-  box-shadow: 0 28px 80px rgba(15, 23, 42, 0.75);
-  color: #f9fafb;
-  text-align: center;
-  overflow: hidden;
-}
-
-/* Subtle texture overlay */
-.page > :first-child::before,
-.markdown-body > h1:first-of-type::before {
-  content: "";
-  position: absolute;
-  inset: -40%;
-  opacity: 0.18;
-  background-image:
-    linear-gradient(135deg, rgba(148, 163, 184, 0.35) 1px, transparent 1px),
-    linear-gradient(225deg, rgba(148, 163, 184, 0.35) 1px, transparent 1px);
-  background-size: 26px 26px;
-  pointer-events: none;
-}
-
-/* Make sure the text sits above the overlay */
-.page > :first-child *:not(::before),
-.markdown-body > h1:first-of-type,
-.markdown-body > h1:first-of-type + h2,
-.markdown-body > h1:first-of-type + h2 + p {
-  position: relative;
-  z-index: 1;
-}
-
-/* Top title (HENRY'S CUSTOM...) */
-.page > :first-child h1,
-.markdown-body > h1:first-of-type {
-  margin: 0;
-  font-size: clamp(2.1rem, 3vw + 1rem, 3.1rem);
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 0.24em;
-  color: #f9fafb;
-}
-
-/* Subtitle line right under it (Modern skill, mindset...) */
-.page > :first-child h2,
-.markdown-body > h1:first-of-type + h2 {
-  margin: 0.9rem auto 0;
-  font-size: 1.25rem;
-  font-weight: 400;
-  max-width: 40rem;
-  line-height: 1.5;
-  color: #e5e7eb;
-}
-
-/* Optional one more line of intro text, if present */
-.page > :first-child p,
-.markdown-body > h1:first-of-type + h2 + p {
-  margin: 1.1rem auto 0;
-  max-width: 40rem;
-  font-size: 0.95rem;
-  line-height: 1.7;
-  color: #cbd5f5;
-}
-
-/* Slightly tighten hero spacing on small screens */
-@media (max-width: 640px) {
-  .page > :first-child,
-  .markdown-body > h1:first-of-type {
-    margin-top: 1.75rem;
-    padding: 2.4rem 1.4rem 2.3rem;
-    border-radius: 20px;
-  }
-
-  .page > :first-child h1,
-  .markdown-body > h1:first-of-type {
-    font-size: 1.85rem;
-    letter-spacing: 0.18em;
-  }
-
-  .page > :first-child h2,
-  .markdown-body > h1:first-of-type + h2 {
-    font-size: 1.05rem;
-  }
-}
-
-/* =========================
    CLEAN HERO FOR TOP TITLE
    ========================== */
 
@@ -1825,3 +1725,4 @@ footer {
     margin-bottom: 1.3rem;
   }
 }
+
