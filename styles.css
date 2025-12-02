@@ -1,9 +1,9 @@
 :root {
-  /* Blue + white professional palette */
+  /* Blue + white professional palette, plus a max width token */
   --bg: #f3f4f6;              /* page background */
   --bg-soft: #f9fafb;         /* card background base */
   --card: #ffffff;            /* cards */
-  --accent: #012169;          /* deep navy */
+  --accent: #012169;          /* deep navy (Duke-ish) */
   --accent-soft: rgba(1, 33, 105, 0.06);
   --accent-2: #2563eb;        /* bright royal blue */
   --text-main: #111827;
@@ -13,6 +13,7 @@
   --radius-xl: 16px;
   --shadow-soft: 0 10px 30px rgba(15, 23, 42, 0.08);
   --shadow-medium: 0 16px 40px rgba(15, 23, 42, 0.14);
+  --max-width: 1100px;
 }
 
 /* ------------------ RESET / BASE ------------------ */
@@ -45,12 +46,12 @@ img {
 /* Layout wrapper */
 
 .page {
-  max-width: 1100px;
+  max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 1.5rem 3rem;
 }
 
-/* ------------------ UNIFORM SECTION HEADERS ------------------ */
+/* ------------------ UNIFORM SECTION HEADERS (BASE) ------------------ */
 
 section {
   margin-top: 3rem;
@@ -118,7 +119,8 @@ ul li + li {
   margin-top: 0.25rem;
 }
 
-/* ------------------ HEADER / NAV ------------------ */
+/* ------------------ HEADER / NAV (ORIGINAL STRUCTURE) ------------------ */
+/* Base sticky header – will be visually overridden by Nike/Duke styles below */
 
 header {
   position: sticky;
@@ -134,7 +136,7 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 0.75rem 1.5rem;
-  max-width: 1100px;
+  max-width: var(--max-width);
   margin: 0 auto;
 }
 
@@ -205,7 +207,7 @@ header {
   color: var(--accent-2);
 }
 
-/* ------------------ HERO (TOP INTRO) ------------------ */
+/* ------------------ HERO (OLD STACK – KEPT FOR SAFETY) ------------------ */
 
 .hero {
   margin-top: 2.5rem;
@@ -277,7 +279,7 @@ header {
 }
 
 .program-stats-row {
-  max-width: 1100px;
+  max-width: var(--max-width);
   margin: 0 auto 1.75rem;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -297,7 +299,7 @@ header {
 }
 
 .program-pillars-grid {
-  max-width: 1100px;
+  max-width: var(--max-width);
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -778,7 +780,7 @@ tbody tr:nth-child(odd) {
   text-decoration: underline;
 }
 
-/* ------------------ COACH K LEADERSHIP LAB ------------------ */
+/* ------------------ COACH K LEADERSHIP LAB (DETAILED VERSION) ------------------ */
 
 .leadership {
   padding: 4rem 0;
@@ -1146,36 +1148,461 @@ tbody tr:nth-child(odd) {
     grid-template-columns: minmax(0, 1fr);
   }
 }
-/* === UNIFIED SECTION HEADING OVERRIDES === */
-/* Put this at the VERY BOTTOM of styles.css */
 
-.section-heading,
-.program-section-heading {
-  max-width: 900px;
-  margin: 0 auto 2.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 0.4rem;
+/* === NIKE / DUKE NAV + HERO + TOP SECTIONS (NEW) === */
+/* These override some of the earlier header + hero styles for the premium look. */
+
+/* Dark, premium header bar */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(14px);
+  background: rgba(0, 0, 0, 0.94);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.75);
 }
 
-.section-heading h2,
-.program-section-heading h2 {
-  font-size: clamp(1.6rem, 2vw + 1rem, 2.1rem);
+/* Nav inside header */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 7vw;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* Logo text – simple, bold */
+.nav-logo-text,
+.nav-logo {
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  font-size: 0.9rem;
   text-transform: uppercase;
-  letter-spacing: 0.18em;
-  font-weight: 700;
+  color: #f9fafb;
+}
+
+/* If you're still using the circular mark, make it more subtle on dark */
+.nav-logo-mark {
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 20%, #60a5fa, #012169);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.8rem;
+  color: #eff6ff;
+  box-shadow:
+    0 0 0 1px rgba(37, 99, 235, 0.6),
+    0 6px 18px rgba(15, 23, 42, 0.7);
+}
+
+.nav-logo-text strong,
+.nav-logo strong {
+  display: block;
+  letter-spacing: 0.16em;
+  font-size: 0.78rem;
+  color: #e5e7eb;
+}
+
+.nav-logo-text span,
+.nav-logo span {
+  font-size: 0.75rem;
+  color: rgba(148, 163, 184, 0.9);
+}
+
+/* Nav links – light on dark */
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  padding: 0.25rem 0;
+  border-radius: 0;
+  border: none;
+  color: rgba(209, 213, 219, 0.88);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-weight: 500;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 2px;
+  width: 0;
+  background: var(--accent-2);
+  transition: width 0.22s ease;
+}
+
+.nav-links a:hover {
+  color: #f9fafb;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+.nav-links a.active {
+  color: #f9fafb;
+}
+
+/* HERO – Nike / Duke style */
+
+.hero {
+  position: relative;
+  margin-top: 0;
+  padding: 64px 7vw 72px;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: radial-gradient(circle at top, #020617 0, #020617 45%, #020617 100%);
+  color: #f9fafb;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at top right, rgba(37, 99, 235, 0.35), transparent 55%);
+  opacity: 0.95;
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 40px;
+  align-items: center;
+  max-width: 1120px;
+  width: 100%;
+  z-index: 1;
+}
+
+.hero-text {
+  max-width: 640px;
+}
+
+.hero-title {
+  font-size: clamp(2.4rem, 3.2vw + 1rem, 3.6rem);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  line-height: 1.1;
+  margin: 0 0 18px;
+  color: #f9fafb;
+  white-space: normal;
+}
+
+.hero-subtitle {
+  margin: 0 0 26px;
+  font-size: 1.02rem;
+  color: rgba(209, 213, 219, 0.9);
+  max-width: 32rem;
+  white-space: normal;
+}
+
+.hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+/* Buttons */
+
+.btn-primary,
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-weight: 600;
+  border: 1px solid transparent;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease,
+    border-color 0.12s ease, color 0.12s ease;
+}
+
+.btn-primary {
+  background: var(--accent-2);
+  color: #f9fafb;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.8);
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 22px 50px rgba(15, 23, 42, 0.9);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: #f9fafb;
+  border-color: rgba(148, 163, 184, 0.5);
+}
+
+.btn-ghost:hover {
+  background: rgba(15, 23, 42, 0.6);
+}
+
+/* Hero image */
+
+.hero-image-wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hero-image {
+  max-width: 360px;
+  width: 100%;
+  border-radius: 24px;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  box-shadow: 0 28px 60px rgba(15, 23, 42, 0.95);
+  object-fit: cover;
+}
+
+/* VALUE STRIP under hero */
+
+.value-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 18px 7vw 34px;
+  gap: 26px;
+}
+
+.value-item {
+  font-size: 0.9rem;
+}
+
+.value-item h3 {
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  margin-bottom: 8px;
   color: #0f172a;
 }
 
-.section-heading p,
-.program-section-heading p {
+.value-item p {
   margin: 0;
-  font-size: 1.05rem;        /* larger, readable intro */
-  line-height: 1.7;
-  color: var(--text-muted);  /* or var(--text-main) if you want darker */
-  max-width: 800px;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+}
+
+/* Generic Nike-style sections for new top layout */
+
+.section {
+  padding: 56px 7vw 64px;
+}
+
+.section-alt {
+  padding: 56px 7vw 64px;
+  background: #edf2ff;
+}
+
+.section-header {
+  max-width: 1120px;
+  margin: 0 auto 32px;
+  text-align: left;
+}
+
+.section-header h2 {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  margin: 0 0 10px;
+  color: #0f172a;
+}
+
+.section-header p {
+  margin: 0;
+  max-width: 34rem;
+  color: var(--text-muted);
+}
+
+/* 3-column card grid for HOW THE GUARD LAB WORKS */
+
+.grid-3 {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.grid-3 .card {
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-soft);
+}
+
+.grid-3 .card h3 {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  margin: 0 0 10px;
+}
+
+/* Split layout (text + image) */
+
+.section-split {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: 32px;
+  align-items: center;
+}
+
+.section-text h2 {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  margin: 0 0 12px;
+  color: #0f172a;
+}
+
+.section-text p {
+  margin: 0 0 16px;
+  color: var(--text-muted);
+  font-size: 0.96rem;
+}
+
+.icon-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.icon-list li {
+  display: flex;
+  gap: 8px;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.icon-list span {
+  color: var(--accent-2);
+  margin-top: 2px;
+}
+
+.section-media {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.section-image {
+  max-width: 360px;
+  width: 100%;
+  border-radius: 24px;
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-soft);
+  object-fit: cover;
+}
+
+/* Weekly & Monthly Plan cards */
+
+.plan-grid {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.plan-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 20px;
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-soft);
+}
+
+.plan-card-highlight {
+  border-color: var(--accent-2);
+}
+
+.plan-card h3 {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  margin: 0 0 10px;
+  color: #0f172a;
+}
+
+.plan-card p {
+  margin: 0 0 12px;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.plan-card ul {
+  padding-left: 18px;
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* Responsive tweaks for new top layout */
+
+@media (max-width: 900px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-image-wrapper {
+    justify-content: flex-start;
+  }
+
+  .value-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-3,
+  .plan-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-split {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-links {
+    display: none; /* simple mobile nav for now */
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding-top: 48px;
+  }
+
+  .hero-title {
+    font-size: 2.1rem;
+  }
+
+  .section,
+  .section-alt {
+    padding-inline: 6vw;
+  }
 }
 
 /* ------------------ FOOTER ------------------ */
@@ -1241,6 +1668,3 @@ footer {
   color: #111827;         /* darker so it reads like a proper subheadline */
   max-width: 800px;
 }
-
-
-
