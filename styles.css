@@ -956,6 +956,84 @@ tbody tr:nth-child(odd) {
   margin: 2.5rem auto 0;     /* center it and add space above */
   display: block;
 }
+/* Full-width quote banner */
+.quote-card-wide {
+  width: 100%;
+  margin: 3rem auto 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+/* Inner container */
+.quote-inner {
+  max-width: 900px;
+  background: var(--card-bg, #ffffff);
+  padding: 2.5rem 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  text-align: center;
+  border-left: 4px solid var(--accent, var(--primary));
+}
+
+/* Quote text */
+.quote-text {
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--text-strong, #111);
+  margin-bottom: 1.2rem;
+  font-style: italic;
+}
+
+/* Attribution */
+.quote-attribution {
+  font-size: 0.95rem;
+  color: var(--text-muted, #778);
+  margin-bottom: 1.8rem;
+}
+
+/* Divider line */
+.quote-divider {
+  width: 70px;
+  height: 3px;
+  background: var(--primary, #0a3a75);
+  margin: 0 auto 1.8rem;
+  border-radius: 3px;
+}
+
+/* “Use your guard spot to” title */
+.quote-usage-title {
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin-bottom: 1rem;
+  color: var(--text-strong, #111);
+}
+
+/* Usage list */
+.quote-usage-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 550px;
+  text-align: left;
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.quote-usage-list li {
+  margin-bottom: 0.65rem;
+  padding-left: 1.4rem;
+  position: relative;
+}
+
+.quote-usage-list li::before {
+  content: "•";
+  color: var(--primary);
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
 
 /* ------------------ MEDIA (VIDEO & IMAGE LIBRARY) ------------------ */
 
