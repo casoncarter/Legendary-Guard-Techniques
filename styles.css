@@ -949,6 +949,13 @@ tbody tr:nth-child(odd) {
     margin: 0 auto 1.5rem auto;
   }
 }
+/* Make the Coach K quote span the full content width under the grid */
+.leadership .quote-card-wide {
+  width: 100%;
+  max-width: 1100px;         /* tweak to match your main content width */
+  margin: 2.5rem auto 0;     /* center it and add space above */
+  display: block;
+}
 
 /* ------------------ MEDIA (VIDEO & IMAGE LIBRARY) ------------------ */
 
