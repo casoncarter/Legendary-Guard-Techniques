@@ -1958,4 +1958,28 @@ footer {
   padding-left: 1.2rem;
   border-left: 6px solid #4f8bff; 
 }
+.quote-block {
+  max-width: 900px;
+  margin: 2.2rem auto;
+}
+
+.hero-quote {
+  font-size: 1.9rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #111;              /* FIX: now visible */
+  padding-left: 1.2rem;
+  border-left: 6px solid #4f8bff;
+  margin: 0;
+}
+
+.quote-attrib {
+  margin-top: 0.4rem;
+  padding-left: 1.2rem;     /* aligns with the quote's left border */
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;              /* readable but slightly softer */
+  opacity: 0.9;
+}
+
 
