@@ -1336,6 +1336,53 @@
         </article>
       </div>
     </section>
+  <!-- all your other sections... -->
+  </section>
+
+  <!-- Put the script RIGHT HERE, before the closing body tag -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const tabs = document.querySelectorAll(".skill-tab");
+      const cards = document.querySelectorAll(".skill-card");
+      const icons = document.querySelectorAll(".category-icon");
+
+      function showSkill(skill) {
+        if (!skill) return;
+        tabs.forEach(tab => {
+          tab.classList.toggle("active", tab.dataset.skill === skill);
+        });
+        cards.forEach(card => {
+          card.classList.toggle("active", card.dataset.skill === skill);
+        });
+      }
+
+      // Tab clicks
+      tabs.forEach(tab => {
+        tab.addEventListener("click", () => {
+          showSkill(tab.dataset.skill);
+        });
+      });
+
+      // Category icon clicks
+      icons.forEach(icon => {
+        const skill = icon.dataset.skill;
+        const link = icon.dataset.link;
+
+        icon.addEventListener("click", () => {
+          if (skill) {
+            showSkill(skill);
+            document.querySelector("#skills")?.scrollIntoView({ behavior: "smooth" });
+          } else if (link) {
+            // Jump to leadership or any other linked section
+            window.location.hash = link;
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
 
     <footer>
       <span>Elite Guard Development Lab &copy; 2025.</span>
