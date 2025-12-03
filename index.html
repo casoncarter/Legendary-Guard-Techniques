@@ -264,267 +264,515 @@
     </p>
   </div>
 
-  <!-- Tabs (no more S / H / P / D / L row) -->
+  <!-- Tabs -->
   <div class="skill-tabs" id="skillTabs">
-    <button class="skill-tab active" type="button" data-skill="handle">
-      Handles / Dribbling
-    </button>
-    <button class="skill-tab" type="button" data-skill="shooting">
-      Shooting
-    </button>
-    <button class="skill-tab" type="button" data-skill="passing">
-      Passing
-    </button>
-    <button class="skill-tab" type="button" data-skill="offball">
-      Off-Ball Movement
-    </button>
-    <button class="skill-tab" type="button" data-skill="defense">
-      Defense
-    </button>
-    <button class="skill-tab" type="button" data-skill="pnr">
-      Pick &amp; Roll
-    </button>
+    <button class="skill-tab active" type="button" data-skill="dribbling">Dribbling / Handles</button>
+    <button class="skill-tab" type="button" data-skill="shooting">Shooting</button>
+    <button class="skill-tab" type="button" data-skill="passing">Passing</button>
+    <button class="skill-tab" type="button" data-skill="movement">Off-Ball Movement</button>
+    <button class="skill-tab" type="button" data-skill="defense">Defense</button>
+    <button class="skill-tab" type="button" data-skill="pnr">Pick &amp; Roll</button>
   </div>
 
-  <!-- Dynamic skill video grid: populated by script.js -->
-  <div id="skill-videos" class="skill-video-grid">
-    <!-- JS will inject the Handles / Shooting / Passing / Off-ball / Defense / PnR cards here -->
+  <div class="skill-panels">
+    <!-- ========== DRIBBLING / HANDLES (original, restored) ========== -->
+    <article class="card skill-card active" data-skill="dribbling" id="skill-dribbling">
+      <small>Handles</small>
+      <h3>Dribbling Mechanics &amp; Ball Control</h3>
+      <p>
+        Build a guard handle that works against real pressure: float dribbles to change pace,
+        hesitations to freeze defenders, Nash-style probes in the paint, and escape techniques
+        for traps like Trae Young.
+      </p>
+
+      <!-- 1. Float Dribble -->
+      <h4 style="font-size:0.9rem;margin-top:0.6rem;">1. Float Dribble (Change of Pace)</h4>
+      <ul>
+        <li>Start in a relaxed stance, ball in your strong hand.</li>
+        <li>Push the ball out slightly in front of you, then <em>“hang”</em> it with a soft, controlled dribble.</li>
+        <li>Let your body rise up to sell that you might pull up or stop.</li>
+        <li>As the defender relaxes or stands up, explode past with a long, low push step.</li>
+        <li>Work both hands, and practice using the float into pull-ups, drives, and step-backs.</li>
+      </ul>
+
+      <div class="media-strip" style="margin-top:0.5rem;">
+        <a class="media-item"
+           href="https://www.youtube.com/watch?v=p6iiNacTeu8&t=4s"
+           target="_blank" rel="noopener noreferrer">
+          <div class="media-thumb" style="background-image:url('images/curry-float-dribble.jpg')">
+            <span class="badge">Float Dribble</span>
+            <span class="play">▶</span>
+          </div>
+          <div class="media-info">
+            <strong>The Float Dribble: Why Every Player Needs This</strong>
+            <span>Use this to change pace, keep defenders guessing, and set up your next move.</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- 2. Hesitation (Jamal Murray) -->
+      <h4 style="font-size:0.9rem;margin-top:0.9rem;">2. Hesitation Dribble (Jamal Murray)</h4>
+      <ul>
+        <li>Attack downhill, then let the ball “hang” at your side as you slightly rise up.</li>
+        <li>Eyes up at the rim as if you might shoot or pull up to force the defender to react.</li>
+        <li>As soon as the defender relaxes or shifts, drop your hips and explode past with one hard dribble.</li>
+        <li>Mix in hesitations into step-back threes, pull-ups, and drives to both hands.</li>
+      </ul>
+
+      <div class="media-strip" style="margin-top:0.5rem;">
+        <a class="media-item"
+           href="https://www.youtube.com/watch?v=-dxYG22cjL8"
+           target="_blank" rel="noopener noreferrer">
+          <div class="media-thumb" style="background-image:url('images/jamal-hesi.jpg')">
+            <span class="badge">Jamal Murray</span>
+            <span class="play">▶</span>
+          </div>
+          <div class="media-info">
+            <strong>Jamal Murray Basketball Moves For Guards</strong>
+            <span>Study his hang dribble, hesitation timing, and change of speed out of the pick-and-roll.</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- 3. Nash Dribble / Probe -->
+      <h4 style="font-size:0.9rem;margin-top:0.9rem;">3. Nash Dribble (Paint Probe)</h4>
+      <ul>
+        <li>Use a tight, controlled dribble to circle under the basket without picking the ball up.</li>
+        <li>Keep your eyes scanning: corner shooters, dunker spot, roller, and weak-side help.</li>
+        <li>If nothing is open, keep dribbling out the other side and re-attack—do not force a shot.</li>
+        <li>This move turns the paint into your “office” where you read the defense while still keeping your dribble.</li>
+      </ul>
+
+      <div class="media-strip" style="margin-top:0.5rem;">
+        <a class="media-item"
+           href="https://www.youtube.com/watch?v=V1rH7qdO1LQ"
+           target="_blank" rel="noopener noreferrer">
+          <div class="media-thumb" style="background-image:url('images/nash-probe.jpeg')">
+            <span class="badge">Steve Nash</span>
+            <span class="play">▶</span>
+          </div>
+          <div class="media-info">
+            <strong>Master the Nash Dribble | Become a Paint Playmaker</strong>
+            <span>Learn how to probe with the dribble and create layups, kick-outs, and dump-offs.</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- 4. Escaping Traps -->
+      <h4 style="font-size:0.9rem;margin-top:0.9rem;">4. Escaping Traps (Trae Young)</h4>
+      <ul>
+        <li>When a trap comes, <strong>do not pick up your dribble</strong> unless you have a clear pass.</li>
+        <li>Use retreat dribbles (backward dribble) to pull the traps away from the basket.</li>
+        <li>Turn your body to shield the ball, using your outside leg and hip as protection.</li>
+        <li>See over the trap to find the open teammate—usually one pass away or diagonally opposite.</li>
+      </ul>
+
+      <div class="media-strip" style="margin-top:0.5rem;">
+        <a class="media-item"
+           href="https://www.instagram.com/reel/DMje9ZXTvYz/"
+           target="_blank" rel="noopener noreferrer">
+          <div class="media-thumb" style="background-image:url('images/trae-trap-escape.jpeg')">
+            <span class="badge">Trae Young</span>
+            <span class="play">▶</span>
+          </div>
+          <div class="media-info">
+            <strong>Trae Young’s Dribbling Secrets vs Traps</strong>
+            <span>Watch how he uses his dribble, body, and angles to escape doubles and make plays.</span>
+          </div>
+        </a>
+      </div>
+    </article>
+
+    <!-- ========== SHOOTING (3 sub-skills, each with its own video slot) ========== -->
+    <article class="card skill-card" data-skill="shooting" id="skill-shooting">
+      <small>Shooting</small>
+      <h3>Shooting: Footwork, Pull-Ups, and Range</h3>
+      <p>
+        Build a repeatable shot: clean footwork, balanced pull-ups, and extended range without losing form.
+      </p>
+
+      <!-- 1. Shot Preparation -->
+      <h4 style="font-size:0.9rem;margin-top:0.6rem;">1. Shot Preparation &amp; Footwork</h4>
+      <ul>
+        <li>Land on two feet or 1–2 into every catch so you’re balanced and ready.</li>
+        <li>Hands and eyes up before the ball arrives—<em>be a receiver, not a watcher.</em></li>
+        <li>Lock in your follow-through and hold your finish for one count.</li>
+      </ul>
+
+      <div class="media-strip" style="margin-top:0.5rem;">
+        <a class="media-item"
+           href="https://www.youtube.com/watch?v=SHOT_PREP_VIDEO_ID"
+           target="_blank" rel="noopener noreferrer">
+          <div class="media-thumb" style="background-image:url('images/shooting-prep.jpg')">
+            <span class="badge">Shot Prep</span>
+            <span class="play">▶</span>
+          </div>
+          <div class="media-info">
+            <strong>Shot Preparation &amp; Footwork</strong>
+            <span>Dial in your base and rhythm so every shot starts the same way.</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- 2. Pull-Up Jumpers -->
+      <h4 style="font-size:0.9rem;margin-top:0.9rem;">2. Pull-Up Jumpers</h4>
+      <ul>
+        <li>Attack in a straight line, then plant into a 1–2 or two-foot stop.</li>
+        <li>Stay low into your stop so the shot flows up instead of drifting sideways.</li>
+        <li>Work pull-ups going left and right from the same starting move.</li>
+      </ul>
+
+      <div class="media-strip" style="margin-top:0.5rem;">
+        <a class="media-item"
+           href="https://www.youtube.com/watch?v=PULLUP_VIDEO_ID"
+           target="_blank" rel="noopener noreferrer">
+          <div class="media-thumb" style="background-image:url('images/shooting-pullup.jpg')">
+            <span class="badge">Pull-Ups</span>
+            <span class="play">▶</span>
+          </div>
+          <div class="media-info">
+            <strong>Pull-Up Jumper Progression</strong>
+            <span>Build a game-speed pull-up that works from all three levels.</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- 3. Range with Balance -->
+      <h4 style="font-size:0.9rem;margin-top:0.9rem;">3. Range with Balance</h4>
+      <ul>
+        <li>Back your feet up gradually—do not change your form to “push” the ball.</li>
+        <li>Keep your shot straight by keeping your follow-through on the same line.</li>
+        <li>Stay in your makes and watch the ball go through before you relax.</li>
+      </ul>
+
+      <div class="media-strip" style="margin-top:0.5rem;">
+        <a class="media-item"
+           href="https://www.youtube.com/watch?v=RANGE_VIDEO_ID"
+           target="_blank" rel="noopener noreferrer">
+          <div class="media-thumb" style="background-image:url('images/shooting-range.jpg')">
+            <span class="badge">Deep Range</span>
+            <span class="play">▶</span>
+          </div>
+          <div class="media-info">
+            <strong>Extending Your Range with Balance</strong>
+            <span>Learn how to stretch your range without sacrificing mechanics.</span>
+          </div>
+        </a>
+      </div>
+    </article>
+
+    <!-- ========== PASSING (3 sub-skills) ========== -->
+    <article class="card skill-card" data-skill="passing" id="skill-passing">
+      <small>Playmaking</small>
+      <h3>Passing &amp; Playmaking</h3>
+      <p>
+        Turn your handle and vision into easy shots for teammates: simple reads, on-time passes, and strong decisions.
+      </p>
+
+      <!-- 1. On-Time, On-Target -->
+      <h4 style="font-size:0.9rem;margin-top:0.6rem;">1. On-Time, On-Target Passing</h4>
+      <ul>
+        <li>Throw passes at chest height or directly into a shooter’s pocket.</li>
+        <li>Hit teammates as they are <em>getting open</em>, not after they’re standing still.</li>
+        <li>Use your off hand for simple push passes and skips.</li>
+      </ul>
+
+      <div class="media-strip" style="margin-top:0.5rem;">
+        <a class="media-item"
+           href="https://www.youtube.com/watch?v=PASSING_FUNDAMENTALS_VIDEO_ID"
+           target="_blank" rel="noopener noreferrer">
+          <div class="media-thumb" style="background-image:url('images/passing-fundamentals.jpg')">
+            <span class="badge">Fundamentals</span>
+            <span class="play">▶</span>
+          </div>
+          <div class="media-info">
+            <strong>Passing Fundamentals for Guards</strong>
+            <span>Build touch and accuracy with simple drills you can repeat every workout.</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- 2. Drive & Kick -->
+      <h4 style="font-size:0.9rem;margin-top:0.9rem;">2. Drive &amp; Kick Reads</h4>
+      <ul>
+        <li>Jump stop in the paint so you can see the floor without traveling.</li>
+        <li>Read the low man and the strong-side help before you leave your feet.</li>
+        <li>Kick to the first open teammate instead of hunting for the “fancy” pass.</li>
+      </ul>
+
+      <div class="media-strip" style="margin-top:0.5rem;">
+        <a class="media-item"
+           href="https://www.youtube.com/watch?v=DRIVE_KICK_VIDEO_ID"
+           target="_blank" rel="noopener noreferrer">
+          <div class="media-thumb" style="background-image:url('images/passing-drive-kick.jpg')">
+            <span class="badge">Drive &amp; Kick</span>
+            <span class="play">▶</span>
+          </div>
+          <div class="media-info">
+            <strong>Drive &amp; Kick Progression</strong>
+            <span>Practice seeing the help and finding shooters on time.</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- 3. Advanced Reads -->
+      <h4 style="font-size:0.9rem;margin-top:0.9rem;">3. Advanced Passing Reads</h4>
+      <ul>
+        <li>Use skips when the weak-side defender tags the roller.</li>
+        <li>Throw pocket passes only when you can see a clean window.</li>
+        <li>Keep your turnovers low: simple is better than spectacular.</li>
+      </ul>
+
+      <div class="media-strip" style="margin-top:0.5rem;">
+        <a class="media-item"
+           href="https://www.youtube.com/watch?v=ADVANCED_PASSING_VIDEO_ID"
+           target="_blank" rel="noopener noreferrer">
+          <div class="media-thumb" style="background-image:url('images/passing-advanced.jpg')">
+            <span class="badge">Advanced Reads</span>
+            <span class="play">▶</span>
+          </div>
+          <div class="media-info">
+            <strong>Advanced Passing Reads</strong>
+            <span>Layer in skips, pocket passes, and late reads as you improve.</span>
+          </div>
+        </a>
+      </div>
+    </article>
+
+    <!-- ========== OFF-BALL MOVEMENT (3 sub-skills) ========== -->
+    <article class="card skill-card" data-skill="movement" id="skill-movement">
+      <small>Off-Ball</small>
+      <h3>Movement Without the Ball</h3>
+      <p>
+        Become a guard who is dangerous even when you’re not dribbling: cutting, relocating, and using screens.
+      </p>
+
+      <!-- 1. Cutting -->
+      <h4 style="font-size:0.9rem;margin-top:0.6rem;">1. Cuts for Easy Buckets</h4>
+      <ul>
+        <li>Time your cuts when your defender turns their head or ball-watches.</li>
+        <li>Use backdoor cuts when your defender is overplaying the passing lane.</li>
+        <li>Finish off two feet through contact at the rim.</li>
+      </ul>
+
+      <div class="media-strip" style="margin-top:0.5rem;">
+        <a class="media-item"
+           href="https://www.youtube.com/watch?v=CUTS_VIDEO_ID"
+           target="_blank" rel="noopener noreferrer">
+          <div class="media-thumb" style="background-image:url('images/offball-cuts.jpg')">
+            <span class="badge">Cuts</span>
+            <span class="play">▶</span>
+          </div>
+          <div class="media-info">
+            <strong>5 Game-Ready Cuts</strong>
+            <span>Learn when and how to cut to create easy layups and open threes.</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- 2. Relocation -->
+      <h4 style="font-size:0.9rem;margin-top:0.9rem;">2. Relocation &amp; Spacing</h4>
+      <ul>
+        <li>After you pass, move to a new window instead of standing still.</li>
+        <li>Slide along the three-point line to stay in your passer’s vision.</li>
+        <li>Keep the paint clear for drives and post touches.</li>
+      </ul>
+
+      <div class="media-strip" style="margin-top:0.5rem;">
+        <a class="media-item"
+           href="https://www.youtube.com/watch?v=OFFBALL_MOVEMENT_VIDEO_ID"
+           target="_blank" rel="noopener noreferrer">
+          <div class="media-thumb" style="background-image:url('images/offball-relocate.jpg')">
+            <span class="badge">Relocation</span>
+            <span class="play">▶</span>
+          </div>
+          <div class="media-info">
+            <strong>Relocation Shooting &amp; Spacing</strong>
+            <span>Practice passing, relocating, and getting into your shot quickly.</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- 3. Using Screens -->
+      <h4 style="font-size:0.9rem;margin-top:0.9rem;">3. Using Off-Ball Screens</h4>
+      <ul>
+        <li>Set your defender up by walking them into the screen.</li>
+        <li>Read the defender: curl, fade, or pop depending on how they chase.</li>
+        <li>Catch ready to shoot, drive, or swing to the next action.</li>
+      </ul>
+
+      <div class="media-strip" style="margin-top:0.5rem;">
+        <a class="media-item"
+           href="https://www.youtube.com/watch?v=OFFBALL_SCREENS_VIDEO_ID"
+           target="_blank" rel="noopener noreferrer">
+          <div class="media-thumb" style="background-image:url('images/offball-screens.jpg')">
+            <span class="badge">Screens</span>
+            <span class="play">▶</span>
+          </div>
+          <div class="media-info">
+            <strong>Using Off-Ball Screens</strong>
+            <span>Study how great shooters use screens to create separation.</span>
+          </div>
+        </a>
+      </div>
+    </article>
+
+    <!-- ========== DEFENSE (3 sub-skills) ========== -->
+    <article class="card skill-card" data-skill="defense" id="skill-defense">
+      <small>Defense</small>
+      <h3>On-Ball Defense &amp; Competing</h3>
+      <p>
+        Become a guard coaches trust to guard the ball, talk, and finish possessions.
+      </p>
+
+      <!-- 1. Stance & Slides -->
+      <h4 style="font-size:0.9rem;margin-top:0.6rem;">1. Stance &amp; Slides</h4>
+      <ul>
+        <li>Wide base, hips low, chest up, and hands active.</li>
+        <li>Push off your back foot to slide—do not click your heels together.</li>
+        <li>Finish each rep with a contest and a two-hand rebound.</li>
+      </ul>
+
+      <div class="media-strip" style="margin-top:0.5rem;">
+        <a class="media-item"
+           href="https://www.youtube.com/watch?v=DEFENSE_STANCE_VIDEO_ID"
+           target="_blank" rel="noopener noreferrer">
+          <div class="media-thumb" style="background-image:url('images/defense-stance.jpg')">
+            <span class="badge">Stance</span>
+            <span class="play">▶</span>
+          </div>
+          <div class="media-info">
+            <strong>Defensive Stance &amp; Slides</strong>
+            <span>Lock in your stance and footwork with simple slide drills.</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- 2. On-Ball Defense -->
+      <h4 style="font-size:0.9rem;margin-top:0.9rem;">2. On-Ball Defense</h4>
+      <ul>
+        <li>Angle your body to push the ball toward help, not the middle of the floor.</li>
+        <li>Use chest and feet, not hands, to stay in front.</li>
+        <li>Compete to win the first two steps every time the ball changes direction.</li>
+      </ul>
+
+      <div class="media-strip" style="margin-top:0.5rem;">
+        <a class="media-item"
+           href="https://www.youtube.com/watch?v=ONBALL_DEFENSE_VIDEO_ID"
+           target="_blank" rel="noopener noreferrer">
+          <div class="media-thumb" style="background-image:url('images/defense-onball.jpg')">
+            <span class="badge">On-Ball</span>
+            <span class="play">▶</span>
+          </div>
+          <div class="media-info">
+            <strong>On-Ball Defense Drills</strong>
+            <span>Train your slides, cut-offs, and contests vs live ball handlers.</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- 3. Competing on Every Possession -->
+      <h4 style="font-size:0.9rem;margin-top:0.9rem;">3. Compete on Every Possession</h4>
+      <ul>
+        <li>Talk early and often: ball, help, screen, and switches.</li>
+        <li>Dive for loose balls and sprint back after every miss or turnover.</li>
+        <li>Finish plays with a rebound or a clean box-out.</li>
+      </ul>
+
+      <div class="media-strip" style="margin-top:0.5rem;">
+        <a class="media-item"
+           href="https://www.youtube.com/watch?v=DEFENSE_COMPETE_VIDEO_ID"
+           target="_blank" rel="noopener noreferrer">
+          <div class="media-thumb" style="background-image:url('images/defense-compete.jpg')">
+            <span class="badge">Compete</span>
+            <span class="play">▶</span>
+          </div>
+          <div class="media-info">
+            <strong>Competing on Defense</strong>
+            <span>See how elite guards treat defense as their calling card.</span>
+          </div>
+        </a>
+      </div>
+    </article>
+
+    <!-- ========== PICK & ROLL (3 sub-skills, as you requested) ========== -->
+    <article class="card skill-card" data-skill="pnr" id="skill-pnr">
+      <small>Pick &amp; Roll</small>
+      <h3>Pick &amp; Roll Reads for Guards</h3>
+      <p>
+        Learn how to use ball screens to create shots for yourself and teammates with three core reads.
+      </p>
+
+      <!-- 1. Turn the Corner vs. Drop -->
+      <h4 style="font-size:0.9rem;margin-top:0.6rem;">1. Turn the Corner vs. Drop Coverage</h4>
+      <ul>
+        <li>Come off the screen tight, with your inside shoulder almost brushing the screener.</li>
+        <li>Attack the big’s outside hip—make them decide between you and the roller.</li>
+        <li>If the big stays back, get downhill for a layup, floater, or paint touch.</li>
+      </ul>
+
+      <div class="media-strip" style="margin-top:0.5rem;">
+        <a class="media-item"
+           href="https://www.youtube.com/watch?v=PNR_TURN_CORNER_VIDEO_ID"
+           target="_blank" rel="noopener noreferrer">
+          <div class="media-thumb" style="background-image:url('images/pnr-turn-corner.jpg')">
+            <span class="badge">Turn the Corner</span>
+            <span class="play">▶</span>
+          </div>
+          <div class="media-info">
+            <strong>Turning the Corner vs. Drop</strong>
+            <span>See how great guards punish drop coverage by getting into the paint.</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- 2. Snake Dribble -->
+      <h4 style="font-size:0.9rem;margin-top:0.9rem;">2. Snake Dribble</h4>
+      <ul>
+        <li>Start like you’re turning the corner, then cross back in front of the screener.</li>
+        <li>Use your body to shield the defender on your back while you change angles.</li>
+        <li>Look for pull-ups, floaters, or pocket passes as you snake across the lane.</li>
+      </ul>
+
+      <div class="media-strip" style="margin-top:0.5rem;">
+        <a class="media-item"
+           href="https://www.youtube.com/watch?v=PNR_SNAKE_DRIBBLE_VIDEO_ID"
+           target="_blank" rel="noopener noreferrer">
+          <div class="media-thumb" style="background-image:url('images/pnr-snake.jpg')">
+            <span class="badge">Snake</span>
+            <span class="play">▶</span>
+          </div>
+          <div class="media-info">
+            <strong>Snake Dribble in the Pick &amp; Roll</strong>
+            <span>Learn how to keep your dribble alive and change angles to create space.</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- 3. Rejecting the Screen -->
+      <h4 style="font-size:0.9rem;margin-top:0.9rem;">3. Rejecting the Screen</h4>
+      <ul>
+        <li>Sell that you’re going to use the screen by taking a step toward it.</li>
+        <li>As the defender cheats over the top, cross or rip the ball away from the screen.</li>
+        <li>Attack the open space hard—no hesitation once you reject.</li>
+      </ul>
+
+      <div class="media-strip" style="margin-top:0.5rem;">
+        <a class="media-item"
+           href="https://www.youtube.com/watch?v=PNR_REJECT_VIDEO_ID"
+           target="_blank" rel="noopener noreferrer">
+          <div class="media-thumb" style="background-image:url('images/pnr-reject.jpg')">
+            <span class="badge">Reject</span>
+            <span class="play">▶</span>
+          </div>
+          <div class="media-info">
+            <strong>Rejecting the Screen</strong>
+            <span>Study how guards read the defender and attack by rejecting the screen.</span>
+          </div>
+        </a>
+      </div>
+    </article>
   </div>
-</section>
-
-
-  <!-- SHOOTING -->
-  <article class="card skill-card" data-skill="shooting">
-    <small>Shooting</small>
-    <h3>Footwork, Balance &amp; Range</h3>
-    <p>
-      Build a repeatable shot that works off the dribble, off the catch, and late in games
-      when you’re tired. Emphasize clean feet, consistent pickup, and the same follow-through
-      every time.
-    </p>
-
-    <h4 style="font-size:0.9rem;margin-top:0.6rem;">1. Shot Prep (Before the Catch)</h4>
-    <ul>
-      <li>Show your hands early and call for the ball with your voice.</li>
-      <li>Land on two feet or use a 1–2 step so you’re balanced on the catch.</li>
-      <li>Ball goes straight to your shooting pocket—no wasted dip or wind-up.</li>
-      <li>Eyes to the rim as soon as the ball is in your hands.</li>
-    </ul>
-
-    <h4 style="font-size:0.9rem;margin-top:0.9rem;">2. Off-the-Dribble Pull-Ups</h4>
-    <ul>
-      <li>Practice going right and left into pull-ups from the same spots every workout.</li>
-      <li>On your last dribble, plant hard, stop on balance, and go straight up.</li>
-      <li>Don’t fade unless you <em>have</em> to create space.</li>
-    </ul>
-
-    <h4 style="font-size:0.9rem;margin-top:0.9rem;">3. Range with Balance</h4>
-    <ul>
-      <li>Only back up when you’re 70–80% from closer range in that workout.</li>
-      <li>Keep the same form—if your mechanics change, move back in.</li>
-      <li>Track makes and misses so you know your “real” range.</li>
-    </ul>
-
-    <!-- Video placeholder -->
-    <div class="media-strip" style="margin-top:0.5rem;">
-      <a class="media-item"
-         href="#"
-         target="_blank" rel="noopener noreferrer">
-        <div class="media-thumb" style="background-image:url('images/shooting-form.jpg')">
-          <span class="badge">Form &amp; Footwork</span>
-          <span class="play">▶</span>
-        </div>
-        <div class="media-info">
-          <strong>Shooting Footwork for Guards</strong>
-          <span>Replace this link with your favorite shooting breakdown video.</span>
-        </div>
-      </a>
-    </div>
-  </article>
-
-  <!-- PASSING / PLAYMAKING -->
-  <article class="card skill-card" data-skill="passing">
-    <small>Playmaking</small>
-    <h3>Passing off the Dribble &amp; Out of Pressure</h3>
-    <p>
-      Great guards see the floor one pass ahead. Work on live-dribble passing, hit-ahead passes,
-      and simple reads that create layups and open threes for teammates.
-    </p>
-
-    <h4 style="font-size:0.9rem;margin-top:0.6rem;">1. Live-Dribble Passing</h4>
-    <ul>
-      <li>Practice one-hand push passes with both hands while moving.</li>
-      <li>Keep your eyes up—see help defenders, not just your own man.</li>
-      <li>Hit the outside hand of your teammate so they can catch and finish quickly.</li>
-    </ul>
-
-    <h4 style="font-size:0.9rem;margin-top:0.9rem;">2. Skip Pass vs. Help</h4>
-    <ul>
-      <li>When help comes from the strong-side or corner, skip to the opposite shooter.</li>
-      <li>Throw on a straight line—no looping “floaty” passes.</li>
-      <li>Drill this out of a drive: one dribble, help steps, skip pass.</li>
-    </ul>
-
-    <h4 style="font-size:0.9rem;margin-top:0.9rem;">3. Pocket Pass &amp; Lob</h4>
-    <ul>
-      <li>Out of ball-screens, read the big defender’s position.</li>
-      <li>If the roller is open in front of you, use a bounce “pocket pass.”</li>
-      <li>If the help is late at the rim, throw a high lob where only your big can get it.</li>
-    </ul>
-
-    <div class="media-strip" style="margin-top:0.5rem;">
-      <a class="media-item"
-         href="#"
-         target="_blank" rel="noopener noreferrer">
-        <div class="media-thumb" style="background-image:url('images/passing-reads.jpg')">
-          <span class="badge">Passing Reads</span>
-          <span class="play">▶</span>
-        </div>
-        <div class="media-info">
-          <strong>Pick-and-Roll Passing Breakdown</strong>
-          <span>Swap this URL for your favorite pocket pass / lob teaching clip.</span>
-        </div>
-      </a>
-    </div>
-  </article>
-
-  <!-- OFF-BALL MOVEMENT -->
-  <article class="card skill-card" data-skill="movement">
-    <small>Off-Ball Movement</small>
-    <h3>Cuts, Relocations &amp; Playing Next to Stars</h3>
-    <p>
-      Guards who can move without the ball are always valuable. Learn to relocate, cut with timing,
-      and create space for yourself and others.
-    </p>
-
-    <h4 style="font-size:0.9rem;margin-top:0.6rem;">1. Shot-Ready Relocations</h4>
-    <ul>
-      <li>When a teammate drives, don’t stand—slide along the three-point line to open windows.</li>
-      <li>Stay behind the ball and keep vision on the driver’s chest.</li>
-      <li>Catch on the hop, ready to shoot or attack the closeout.</li>
-    </ul>
-
-    <h4 style="font-size:0.9rem;margin-top:0.9rem;">2. Backdoor Cuts</h4>
-    <ul>
-      <li>If your defender turns their head or jumps the passing lane, cut behind them.</li>
-      <li>Plant hard and cut straight to the rim—no looping or rounding.</li>
-      <li>Show your hands and eyes to the passer to signal you’re open.</li>
-    </ul>
-
-    <h4 style="font-size:0.9rem;margin-top:0.9rem;">3. Screening for Teammates</h4>
-    <ul>
-      <li>Set wide, strong screens and stay still so your teammate can use you.</li>
-      <li>After the screen, always “screen and then play”—roll, pop, or slip to space.</li>
-      <li>Look for quick catch-and-shoot threes or attacks against mismatches.</li>
-    </ul>
-
-    <div class="media-strip" style="margin-top:0.5rem;">
-      <a class="media-item"
-         href="#"
-         target="_blank" rel="noopener noreferrer">
-        <div class="media-thumb" style="background-image:url('images/offball-movement.jpg')">
-          <span class="badge">Off-Ball</span>
-          <span class="play">▶</span>
-        </div>
-        <div class="media-info">
-          <strong>How Great Guards Move Without the Ball</strong>
-          <span>Place a favorite off-ball movement film clip here.</span>
-        </div>
-      </a>
-    </div>
-  </article>
-
-  <!-- DEFENSE -->
-  <article class="card skill-card" data-skill="defense">
-    <small>Defense</small>
-    <h3>On-Ball Pressure &amp; Competing Every Possession</h3>
-    <p>
-      Defense is effort plus technique. Use your stance, angles, and hands to bother ball handlers
-      without fouling or reaching.
-    </p>
-
-    <h4 style="font-size:0.9rem;margin-top:0.6rem;">1. Stance &amp; Slides</h4>
-    <ul>
-      <li>Stay low with your chest up and hands active.</li>
-      <li>Push off your back foot to slide, don’t click your feet together.</li>
-      <li>Angle the ball toward the sideline or help, not straight to the rim.</li>
-    </ul>
-
-    <h4 style="font-size:0.9rem;margin-top:0.9rem;">2. Closeouts</h4>
-    <ul>
-      <li>Sprint halfway, then chop your feet to arrive under control.</li>
-      <li>Hand up on the shooter’s inside hand to take away their strong side.</li>
-      <li>Be ready to slide if they drive—don’t jump past them.</li>
-    </ul>
-
-    <h4 style="font-size:0.9rem;margin-top:0.9rem;">3. Steals Without Fouling</h4>
-    <ul>
-      <li>Time your digs at the ball when the dribbler exposes it.</li>
-      <li>Swipe down through the ball, not across the body.</li>
-      <li>Prioritize staying in front over gambling in passing lanes.</li>
-    </ul>
-
-    <div class="media-strip" style="margin-top:0.5rem;">
-      <a class="media-item"
-         href="#"
-         target="_blank" rel="noopener noreferrer">
-        <div class="media-thumb" style="background-image:url('images/defense-stance.jpg')">
-          <span class="badge">On-Ball Defense</span>
-          <span class="play">▶</span>
-        </div>
-        <div class="media-info">
-          <strong>Guard Defense Fundamentals</strong>
-          <span>Add your favorite on-ball defense teaching video here.</span>
-        </div>
-      </a>
-    </div>
-  </article>
-
-  <!-- PICK & ROLL -->
-  <article class="card skill-card" data-skill="pnr">
-    <small>Pick &amp; Roll</small>
-    <h3>Reads, Footwork &amp; Simple Decisions</h3>
-    <p>
-      The best guards keep pick-and-roll reads simple: attack space, read the big, and punish help.
-      Work on the same reads over and over so they become automatic.
-    </p>
-
-    <h4 style="font-size:0.9rem;margin-top:0.6rem;">1. Turn the Corner vs. Drop</h4>
-    <ul>
-      <li>Use the screen shoulder-to-hip—don’t leave space for the defender to slip through.</li>
-      <li>If the big is back, attack downhill for a pull-up or layup.</li>
-      <li>Force help to commit, then hit the roller or kick to shooters.</li>
-    </ul>
-
-    <h4 style="font-size:0.9rem;margin-top:0.9rem;">2. Snake Dribble</h4>
-    <ul>
-      <li>After the screen, cross back across the lane line to keep your defender behind you.</li>
-      <li>Probe into the paint while keeping the big defender in “jail” on your back.</li>
-      <li>Look for short floaters, dump-offs, or corner kick-outs.</li>
-    </ul>
-
-    <h4 style="font-size:0.9rem;margin-top:0.9rem;">3. Rejecting the Screen</h4>
-    <ul>
-      <li>If your defender cheats over the top before the screen hits, fake using it and attack the opposite way.</li>
-      <li>Explode off your first step to create separation.</li>
-      <li>Teammates must space properly—corners filled and roller ready.</li>
-    </ul>
-
-    <div class="media-strip" style="margin-top:0.5rem;">
-      <a class="media-item"
-         href="#"
-         target="_blank" rel="noopener noreferrer">
-        <div class="media-thumb" style="background-image:url('images/pnr-reads.jpg')">
-          <span class="badge">PnR Reads</span>
-          <span class="play">▶</span>
-        </div>
-        <div class="media-info">
-          <strong>Pick-and-Roll for Guards</strong>
-          <span>Swap this URL for your go-to pick-and-roll breakdown video.</span>
-        </div>
-      </a>
-    </div>
-  </article>
 </section>
 
     <!-- SCHEDULES -->
