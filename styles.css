@@ -629,6 +629,27 @@ header {
     width: 100%;
   }
 }
+/* Only show the active skill card */
+.skill-card {
+  display: none;
+}
+.skill-card.active {
+  display: block;
+}
+
+/* Make the icons feel clickable */
+.category-icon {
+  cursor: pointer;
+}
+.category-icon:hover {
+  transform: translateY(-2px);
+}
+
+/* Optional: highlight active tab more clearly */
+.skill-tab.active {
+  font-weight: 600;
+  border-bottom: 2px solid var(--accent, #f5b301);
+}
 
 /* ------------------ SCHEDULES ------------------ */
 
