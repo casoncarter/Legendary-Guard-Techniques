@@ -1948,3 +1948,14 @@ footer {
   }
 }
 
+.hero-quote {
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #fff;
+  max-width: 800px;
+  margin: 1.5rem auto;
+  padding-left: 1.2rem;
+  border-left: 6px solid #4f8bff; /* your Duke blue highlight */
+}
+
