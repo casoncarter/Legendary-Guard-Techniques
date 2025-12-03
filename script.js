@@ -360,3 +360,28 @@ document.querySelectorAll(".skill-tab").forEach((tab) => {
     renderSkill(key);
   });
 });
+// Simple tab logic for the Skill System section
+document.addEventListener("DOMContentLoaded", () => {
+  const tabs = document.querySelectorAll("#skillTabs .skill-tab");
+  const panels = document.querySelectorAll(".skill-card");
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      const skill = tab.dataset.skill;
+
+      // update tab active state
+      tabs.forEach((t) => t.classList.remove("active"));
+      tab.classList.add("active");
+
+      // show the matching panel, hide the rest
+      panels.forEach((panel) => {
+        if (panel.dataset.skill === skill) {
+          panel.classList.add("active");
+        } else {
+          panel.classList.remove("active");
+        }
+      });
+    });
+  });
+});
+
