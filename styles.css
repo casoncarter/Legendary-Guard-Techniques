@@ -1949,13 +1949,13 @@ footer {
 }
 
 .hero-quote {
-  font-size: 1.8rem;
+  font-size: 1.9rem;
   font-weight: 700;
   line-height: 1.35;
-  color: #fff;
-  max-width: 800px;
-  margin: 1.5rem auto;
+  color: #111; /* <<< DARK TEXT SO IT'S VISIBLE */
+  max-width: 900px;
+  margin: 1.8rem auto 0.5rem auto;
   padding-left: 1.2rem;
-  border-left: 6px solid #4f8bff; /* your Duke blue highlight */
+  border-left: 6px solid #4f8bff; 
 }
 
