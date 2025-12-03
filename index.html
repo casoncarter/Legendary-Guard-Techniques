@@ -264,148 +264,34 @@
     </p>
   </div>
 
-  <!-- Category icons (now clickable) -->
-  <div class="category-icons">
-    <div class="category-icon" data-skill="shooting">
-      <div class="category-icon-badge">S</div>
-      <span>Shooting</span>
-    </div>
-    <div class="category-icon" data-skill="dribbling">
-      <div class="category-icon-badge">H</div>
-      <span>Handle</span>
-    </div>
-    <div class="category-icon" data-skill="passing">
-      <div class="category-icon-badge">P</div>
-      <span>Playmaking</span>
-    </div>
-    <div class="category-icon" data-skill="defense">
-      <div class="category-icon-badge">D</div>
-      <span>Defense</span>
-    </div>
-    <!-- This one jumps to the Coach K leadership section -->
-    <div class="category-icon" data-link="#leadership">
-      <div class="category-icon-badge">L</div>
-      <span>Leadership</span>
-    </div>
-  </div>
-
-  <!-- Tabs -->
+  <!-- Tabs (no more S / H / P / D / L row) -->
   <div class="skill-tabs" id="skillTabs">
-    <button class="skill-tab active" data-skill="dribbling">Dribbling</button>
-    <button class="skill-tab" data-skill="shooting">Shooting</button>
-    <button class="skill-tab" data-skill="passing">Passing</button>
-    <button class="skill-tab" data-skill="movement">Off-Ball Movement</button>
-    <button class="skill-tab" data-skill="defense">Defense</button>
-    <button class="skill-tab" data-skill="pnr">Pick &amp; Roll</button>
+    <button class="skill-tab active" type="button" data-skill="handle">
+      Handles / Dribbling
+    </button>
+    <button class="skill-tab" type="button" data-skill="shooting">
+      Shooting
+    </button>
+    <button class="skill-tab" type="button" data-skill="passing">
+      Passing
+    </button>
+    <button class="skill-tab" type="button" data-skill="offball">
+      Off-Ball Movement
+    </button>
+    <button class="skill-tab" type="button" data-skill="defense">
+      Defense
+    </button>
+    <button class="skill-tab" type="button" data-skill="pnr">
+      Pick &amp; Roll
+    </button>
   </div>
 
-  <!-- DRIBBLING / HANDLES (default) -->
-  <article class="card skill-card active" data-skill="dribbling" id="skillDetail">
-    <small>Handles</small>
-    <h3>Dribbling Mechanics &amp; Ball Control</h3>
-    <p>
-      Build a guard handle that works against real pressure: float dribbles to change pace,
-      hesitations to freeze defenders, Nash-style probes in the paint, and escape techniques
-      for traps like Trae Young.
-    </p>
+  <!-- Dynamic skill video grid: populated by script.js -->
+  <div id="skill-videos" class="skill-video-grid">
+    <!-- JS will inject the Handles / Shooting / Passing / Off-ball / Defense / PnR cards here -->
+  </div>
+</section>
 
-    <!-- Float Dribble -->
-    <h4 style="font-size:0.9rem;margin-top:0.6rem;">1. Float Dribble (Change of Pace)</h4>
-    <ul>
-      <li>Start in a relaxed stance, ball in your strong hand.</li>
-      <li>Push the ball out slightly in front of you, then <em>“hang”</em> it with a soft, controlled dribble.</li>
-      <li>Let your body rise up to sell that you might pull up or stop.</li>
-      <li>As the defender relaxes or stands up, explode past with a long, low push step.</li>
-      <li>Work both hands, and practice using the float into pull-ups, drives, and step-backs.</li>
-    </ul>
-
-    <div class="media-strip" style="margin-top:0.5rem;">
-      <a class="media-item"
-         href="https://www.youtube.com/watch?v=p6iiNacTeu8&t=4s"
-         target="_blank" rel="noopener noreferrer">
-        <div class="media-thumb" style="background-image:url('images/curry-float-dribble.jpg')">
-          <span class="badge">Float Dribble</span>
-          <span class="play">▶</span>
-        </div>
-        <div class="media-info">
-          <strong>The Float Dribble: Why Every Player Needs This</strong>
-          <span>Use this to change pace, keep defenders guessing, and set up your next move.</span>
-        </div>
-      </a>
-    </div>
-
-    <!-- Hesitation (Jamal Murray) -->
-    <h4 style="font-size:0.9rem;margin-top:0.9rem;">2. Hesitation Dribble (Jamal Murray)</h4>
-    <ul>
-      <li>Attack downhill, then let the ball “hang” at your side as you slightly rise up.</li>
-      <li>Eyes up at the rim as if you might shoot or pull up to force the defender to react.</li>
-      <li>As soon as the defender relaxes or shifts, drop your hips and explode past with one hard dribble.</li>
-      <li>Mix in hesitations into step-back threes, pull-ups, and drives to both hands.</li>
-    </ul>
-
-    <div class="media-strip" style="margin-top:0.5rem;">
-      <a class="media-item"
-         href="https://www.youtube.com/watch?v=-dxYG22cjL8"
-         target="_blank" rel="noopener noreferrer">
-        <div class="media-thumb" style="background-image:url('images/jamal-hesi.jpg')">
-          <span class="badge">Jamal Murray</span>
-          <span class="play">▶</span>
-        </div>
-        <div class="media-info">
-          <strong>Jamal Murray Basketball Moves For Guards</strong>
-          <span>Study his hang dribble, hesitation timing, and change of speed out of the pick-and-roll.</span>
-        </div>
-      </a>
-    </div>
-
-    <!-- Nash Dribble / Probe -->
-    <h4 style="font-size:0.9rem;margin-top:0.9rem;">3. Nash Dribble (Paint Probe)</h4>
-    <ul>
-      <li>Use a tight, controlled dribble to circle under the basket without picking the ball up.</li>
-      <li>Keep your eyes scanning: corner shooters, dunker spot, roller, and weak-side help.</li>
-      <li>If nothing is open, keep dribbling out the other side and re-attack—do not force a shot.</li>
-      <li>This move turns the paint into your “office” where you read the defense while still keeping your dribble.</li>
-    </ul>
-
-    <div class="media-strip" style="margin-top:0.5rem;">
-      <a class="media-item"
-         href="https://www.youtube.com/watch?v=V1rH7qdO1LQ"
-         target="_blank" rel="noopener noreferrer">
-        <div class="media-thumb" style="background-image:url('images/nash-probe.jpeg')">
-          <span class="badge">Steve Nash</span>
-          <span class="play">▶</span>
-        </div>
-        <div class="media-info">
-          <strong>Master the Nash Dribble | Become a Paint Playmaker</strong>
-          <span>Learn how to probe with the dribble and create layups, kick-outs, and dump-offs.</span>
-        </div>
-      </a>
-    </div>
-
-    <!-- Trae Young: Escaping Traps -->
-    <h4 style="font-size:0.9rem;margin-top:0.9rem;">4. Escaping Traps (Trae Young)</h4>
-    <ul>
-      <li>When a trap comes, <strong>do not pick up your dribble</strong> unless you have a clear pass.</li>
-      <li>Use retreat dribbles (backward dribble) to pull the traps away from the basket.</li>
-      <li>Turn your body to shield the ball, using your outside leg and hip as protection.</li>
-      <li>See over the trap to find the open teammate—usually one pass away or diagonally opposite.</li>
-    </ul>
-
-    <div class="media-strip" style="margin-top:0.5rem;">
-      <a class="media-item"
-         href="https://www.instagram.com/reel/DMje9ZXTvYz/"
-         target="_blank" rel="noopener noreferrer">
-        <div class="media-thumb" style="background-image:url('images/trae-trap-escape.jpeg')">
-          <span class="badge">Trae Young</span>
-          <span class="play">▶</span>
-        </div>
-        <div class="media-info">
-          <strong>Trae Young’s Dribbling Secrets vs Traps</strong>
-          <span>Watch how he uses his dribble, body, and angles to escape doubles and make plays.</span>
-        </div>
-      </a>
-    </div>
-  </article>
 
   <!-- SHOOTING -->
   <article class="card skill-card" data-skill="shooting">
